@@ -1,0 +1,10 @@
+services:
+  postgis:
+    image: mdillon/postgis:9.6
+    restart: always
+    environment:
+      POSTGRES_USER: pacific
+      POSTGRES_PASSWORD: secretpassword
+      POSTGRES_DB: odc
+    ports:
+      - "5432:5432"
