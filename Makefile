@@ -3,8 +3,46 @@
 # BBOX over Samoa and Tonga
 BBOX := -180.0,-20.0,-170.0,-10.0
 
+# Bigger BBOX over most of the Pacific
+BIGBBOX := 135.0,-30.0,180.0,15.0
+BIGBBOX2 := -180,-30.0,-120.0,15.0
+
 up:
 	docker compose up
+
+# Init the DB
+
+datacube-init:
+	docker-compose exec explorer \
+		datacube system init --no-init-users
+
+# Explorer
+
+explorer-init:
+	docker-compose exec explorer \
+		cubedash-gen --init
+
+explorer-geupdaten:
+	docker-compose exec explorer \
+		cubedash-gen --all
+
+# OWS
+
+ows-shell:
+	docker-compose exec ows bash
+
+ows-init:
+	docker-compose exec ows \
+		datacube-ows-update --schema --role odc_admin
+
+ows-update:
+	docker-compose exec ows \
+		bash -c " \
+			datacube-ows-update --views && \
+			datacube-ows-update \
+		"
+
+# Indexing
 
 products:
 	dc-sync-products products.csv
@@ -15,18 +53,38 @@ index-esri-lc:
 	stac-to-dc \
 		--catalog-href=https://planetarycomputer.microsoft.com/api/stac/v1/ \
 		--collections=io-lulc-9-class \
-		--bbox=${BBOX}
+		--bbox=${BIGBBOX}
+	stac-to-dc \
+		--catalog-href=https://planetarycomputer.microsoft.com/api/stac/v1/ \
+		--collections=io-lulc-9-class \
+		--bbox=${BIGBBOX2}
 
 index-nasadem:
 	stac-to-dc \
 		--catalog-href=https://planetarycomputer.microsoft.com/api/stac/v1/ \
 		--collections=nasadem \
-		--bbox=${BBOX}
+		--bbox=${BIGBBOX}
+	stac-to-dc \
+		--catalog-href=https://planetarycomputer.microsoft.com/api/stac/v1/ \
+		--collections=nasadem \
+		--bbox=${BIGBBOX2}
 
 index-sentinel-1:
 	stac-to-dc \
 		--catalog-href='https://planetarycomputer.microsoft.com/api/stac/v1/' \
 		--bbox='$(BBOX)' \
+		--datetime='2023-01-01/2023-12-31' \
+		--collections='sentinel-1-rtc'
+
+index-sentinel-1-pacific:
+	stac-to-dc \
+		--catalog-href='https://planetarycomputer.microsoft.com/api/stac/v1/' \
+		--bbox='$(BIGBBOX)' \
+		--datetime='2023-01-01/2023-12-31' \
+		--collections='sentinel-1-rtc'
+	stac-to-dc \
+		--catalog-href='https://planetarycomputer.microsoft.com/api/stac/v1/' \
+		--bbox='$(BIGBBOX2)' \
 		--datetime='2023-01-01/2023-12-31' \
 		--collections='sentinel-1-rtc'
 
