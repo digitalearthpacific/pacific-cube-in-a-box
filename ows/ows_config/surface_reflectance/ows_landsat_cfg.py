@@ -1,5 +1,4 @@
 from ows_config.common.ows_reslim_cfg import reslim_continental, reslim_landsat
-from ows_config.common.ows_util_tools import mask_by_emad_nan
 from ows_config.surface_reflectance.band_sr_cfg import (
     bands_ls5_7_sr,
     bands_ls8_9_sr,
@@ -24,7 +23,7 @@ TODO
     "resource_limits": reslim_continental,
     "time_resolution": "summary",
     "image_processing": {
-        "extent_mask_func": mask_by_emad_nan,
+        "extent_mask_func": "ows_config.common.ows_util_tools.mask_by_emad_nan",
         "always_fetch_bands": ["emad"],
         "manual_merge": False,
         "apply_solar_corrections": False,

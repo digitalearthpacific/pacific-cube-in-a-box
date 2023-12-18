@@ -5,9 +5,5 @@ def mask_by_nan(data, band):
     return ~numpy.isnan(data[band])
 
 
-def mask_by_emad_nan(data, band_mapper=None):
-    if band_mapper:
-        emad = band_mapper("emad")
-    else:
-        emad = "emad"
-    return ~numpy.isnan(data[emad])
+def mask_by_emad_nan(data):
+    return ~numpy.isnan(data["emad"])
