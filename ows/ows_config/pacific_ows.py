@@ -28,7 +28,8 @@ ows_cfg = {
             },
         },
         "allowed_urls": [
-            "http://localhost:80",
+            "http://localhost:8000",
+            "https://ows.staging.digitalearthpacific.org",
         ],
         # Metadata to go straight into GetCapabilities documents
         "title": "Digital Earth Pacific Web Services",
