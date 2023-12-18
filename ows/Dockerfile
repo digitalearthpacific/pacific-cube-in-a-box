@@ -10,4 +10,6 @@ RUN apt-get update && \
 
 RUN pip3 install planetary_computer && pip3 freeze
 
+COPY ./ows_config /env/config/ows_config
+
 USER ows

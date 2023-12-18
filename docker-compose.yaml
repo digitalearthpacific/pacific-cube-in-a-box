@@ -22,7 +22,7 @@ services:
       context: ows
       dockerfile: Dockerfile
     volumes:
-      - ./ows_config:/env/config/ows_config
+      - ./ows/ows_config:/env/config/ows_config
     environment:
       - DB_HOSTNAME=host.docker.internal
       - DB_USERNAME=odc_admin
