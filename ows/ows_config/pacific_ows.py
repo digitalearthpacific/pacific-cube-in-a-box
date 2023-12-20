@@ -102,32 +102,32 @@ ows_cfg = {
                     "title": "Earth Observation",
                     "abstract": """Earth Observation""",
                     "layers": [
-                        # {
-                        #     "title": "Surface Reflectance",
-                        #     "abstract": """Surface Reflectance""",
-                        #     "layers": [
-                        #         {
-                        #             "include": "ows_config.surface_reflectance.ows_s2_cfg.layer",
-                        #             "type": "python",
-                        #         },
-                        #         {
-                        #             "include": "ows_config.surface_reflectance.ows_landsat_cfg.layer_ls5",
-                        #             "type": "python",
-                        #         },
-                        #         {
-                        #             "include": "ows_config.surface_reflectance.ows_landsat_cfg.layer_ls7",
-                        #             "type": "python",
-                        #         },
-                        #         {
-                        #             "include": "ows_config.surface_reflectance.ows_landsat_cfg.layer_ls8",
-                        #             "type": "python",
-                        #         },
-                        #         {
-                        #             "include": "ows_config.surface_reflectance.ows_landsat_cfg.layer_ls9",
-                        #             "type": "python",
-                        #         },
-                        #     ],
-                        # },
+                        {
+                            "title": "Surface Reflectance",
+                            "abstract": """Surface Reflectance""",
+                            "layers": [
+                                # {
+                                #     "include": "ows_config.surface_reflectance.ows_s2_cfg.layer",
+                                #     "type": "python",
+                                # },
+                                # {
+                                #     "include": "ows_config.surface_reflectance.ows_landsat_cfg.layer_ls5",
+                                #     "type": "python",
+                                # },
+                                # {
+                                #     "include": "ows_config.surface_reflectance.ows_landsat_cfg.layer_ls7",
+                                #     "type": "python",
+                                # },
+                                {
+                                    "include": "ows_config.surface_reflectance.ows_landsat_cfg.layer_ls8",
+                                    "type": "python",
+                                },
+                                {
+                                    "include": "ows_config.surface_reflectance.ows_landsat_cfg.layer_ls9",
+                                    "type": "python",
+                                },
+                            ],
+                        },
                         # {
                         #     "title": "Radar backscatter",
                         #     "abstract": """Radar backscatter""",
