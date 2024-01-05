@@ -49,3 +49,22 @@ bands_ls_geomad = {
     "bcmad": ["bcdev"],
     "count": [],
 }
+
+bands_s2_geomad = {
+    # "B01": ["coastal_aerosol"],
+    "B02": ["blue"],
+    "B03": ["green"],
+    "B04": ["red"],
+    "B05": ["red_edge_1"],
+    "B06": ["red_edge_2"],
+    "B07": ["red_edge_3"],
+    "B08": ["nir", "nir_1"],
+    "B8A": ["nir_narrow", "nir_2"],
+    "B09": ["water_vapour"],
+    "B11": ["swir_1", "swir_16"],
+    "B12": ["swir_2", "swir_22"],
+    "smad": ["sdev"],
+    "emad": ["edev"],
+    "bcmad": ["bcdev"],
+    "count": [],
+}

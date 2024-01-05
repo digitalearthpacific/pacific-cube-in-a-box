@@ -91,9 +91,15 @@ index-sentinel-1-pacific:
 index-sentinel-2:
 	stac-to-dc \
 		--catalog-href='https://planetarycomputer.microsoft.com/api/stac/v1/' \
-		--bbox='$(BBOX)' \
-		--datetime='2023-01-01/2023-12-31' \
+		--bbox='$(BIGBBOX)' \
+		--datetime='2023' \
 		--collections='sentinel-2-l2a'
+	stac-to-dc \
+		--catalog-href='https://planetarycomputer.microsoft.com/api/stac/v1/' \
+		--bbox='$(BIGBBOX2)' \
+		--datetime='2023' \
+		--collections='sentinel-2-l2a'
+
 
 index-landsat-5:
 	stac-to-dc \
@@ -116,14 +122,14 @@ index-landsat-8:
 		--catalog-href=https://planetarycomputer.microsoft.com/api/stac/v1/ \
 		--bbox=${BIGBBOX} \
 		--collections=landsat-c2-l2 \
-		--datetime=2023-11 \
+		--datetime=2023 \
 		--options="query={\"platform\":{\"in\":[\"landsat-8\"]}}" \
 		--rename-product=ls8_c2l2_sr
 	stac-to-dc \
 		--catalog-href=https://planetarycomputer.microsoft.com/api/stac/v1/ \
 		--bbox=${BIGBBOX2} \
 		--collections=landsat-c2-l2 \
-		--datetime=2023-11 \
+		--datetime=2023 \
 		--options="query={\"platform\":{\"in\":[\"landsat-8\"]}}" \
 		--rename-product=ls8_c2l2_sr
 
@@ -132,13 +138,13 @@ index-landsat-9:
 		--catalog-href=https://planetarycomputer.microsoft.com/api/stac/v1/ \
 		--bbox=${BIGBBOX} \
 		--collections=landsat-c2-l2 \
-		--datetime=2023-11 \
+		--datetime=2023 \
 		--options="query={\"platform\":{\"in\":[\"landsat-9\"]}}" \
 		--rename-product=ls9_c2l2_sr
 	stac-to-dc \
 		--catalog-href=https://planetarycomputer.microsoft.com/api/stac/v1/ \
 		--bbox=${BIGBBOX2} \
 		--collections=landsat-c2-l2 \
-		--datetime=2023-11 \
+		--datetime=2023 \
 		--options="query={\"platform\":{\"in\":[\"landsat-9\"]}}" \
 		--rename-product=ls9_c2l2_sr

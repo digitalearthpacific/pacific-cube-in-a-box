@@ -203,7 +203,7 @@ style_ls_pure_blue = {
     "scale_range": [0.0, 3000.0],
 }
 
-style_sentinel_pure_blue = {
+style_s2_pure_blue = {
     "name": "blue",
     "title": "Blue - 490",
     "abstract": "Blue band, centered on 490nm",
@@ -693,7 +693,7 @@ styles_s2_list = [
     style_gals_mndwi,
     style_s2_ndci,
     style_s2_pure_aerosol,
-    style_sentinel_pure_blue,
+    style_s2_pure_blue,
     style_ls_pure_green,
     style_ls_pure_red,
     style_s2_pure_redge_1,
@@ -1164,6 +1164,54 @@ style_tmad_rgb_sens = {
 }
 
 
+style_gm_s2_count = {
+    "name": "count",
+    "title": "Clear observation count",
+    "abstract": "Count of observations included in geomedian/MAD calculations",
+    "index_function": {
+        "function": "datacube_ows.band_utils.single_band",
+        "mapped_bands": True,
+        "kwargs": {
+            "band": "count",
+        },
+    },
+    "needed_bands": ["count"],
+    "include_in_feature_info": False,
+    "color_ramp": [
+        {"value": 0, "color": "#666666", "alpha": 0},
+        {
+            # purely for legend display
+            # we should not get fractional
+            # values in this styles
+            "value": 0.2,
+            "color": "#FFFFFF",
+            "alpha": 1,
+        },
+        {"value": 10, "color": "#f3fabf"},
+        {"value": 20, "color": "#e1f3b2"},
+        {"value": 30, "color": "#c6e9b4"},
+        {"value": 40, "color": "#97d6b9"},
+        {"value": 50, "color": "#6bc6be"},
+        {"value": 60, "color": "#42b6c4"},
+        {"value": 70, "color": "#299dc1"},
+        {"value": 80, "color": "#1f80b8"},
+        {"value": 90, "color": "#225da8"},
+        {"value": 100, "color": "#24419a"},
+        {"value": 110, "color": "#1b2c80"},
+        {"value": 120, "color": "#081d58"},
+    ],
+    "legend": {
+        "begin": "0",
+        "end": "120",
+        "decimal_places": 0,
+        "ticks_every": 20,
+        "tick_labels": {
+            "120": {"suffix": "<"},
+        },
+    },
+}
+
+
 style_gm_ls_count = {
     "name": "count",
     "title": "Clear observation count",
@@ -1210,6 +1258,19 @@ style_gm_ls_count = {
 }
 
 
+style_gm_irg = {
+    "name": "infrared_green",
+    "title": "Geomedian - SWIR, NIR, Green",
+    "abstract": "False Colour image with SWIR1->Red, NIR->Green, and Green->Blue",
+    "components": {
+        "red": {"swir_1": 1.0},
+        "green": {"nir": 1.0},
+        "blue": {"green": 1.0},
+    },
+    "scale_range": [0, 3000],
+}
+
+
 styles_ls_geomad = [
     style_lsc2_sr_simple_rgb,
     style_lsc2_sr_irg,
@@ -1228,4 +1289,29 @@ styles_ls_geomad = [
     style_tmad_edev_std,
     style_tmad_bcdev_std,
     style_gm_ls_count,
+]
+
+styles_s2_geomad = [
+    style_gm_simple_rgb,
+    style_gm_irg,
+    style_tmad_rgb_std,
+    style_tmad_rgb_sens,
+    style_ls_ndvi,
+    style_ls_ndwi,
+    style_gals_mndwi,
+    style_s2_ndci,
+    style_s2_pure_blue,
+    style_ls_pure_green,
+    style_ls_pure_red,
+    style_s2_pure_redge_1,
+    style_s2_pure_redge_2,
+    style_s2_pure_redge_3,
+    style_ls_pure_nir,
+    style_s2_pure_narrow_nir,
+    style_s2_pure_swir1,
+    style_s2_pure_swir2,
+    style_tmad_sdev_std,
+    style_tmad_edev_std,
+    style_tmad_bcdev_std,
+    style_gm_s2_count,
 ]
