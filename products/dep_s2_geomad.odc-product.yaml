@@ -11,7 +11,7 @@ metadata:
     name: dep_s2_geomad
 
 storage:
-  crs: EPSG:6933
+  crs: EPSG:3832
   resolution:
     x: 10
     y: -10
