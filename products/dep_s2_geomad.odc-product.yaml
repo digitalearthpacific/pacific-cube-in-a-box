@@ -77,25 +77,25 @@ measurements:
     dtype: uint16
     nodata: 0
 
-  - name: "SMAD"
-    aliases: [smad, sdev, SDEV]
+  - name: "smad"
+    aliases: [SMAD, sdev, SDEV]
     units: "1"
     dtype: float32
     nodata: .nan
 
-  - name: "EMAD"
-    aliases: [emad, edev, EDEV]
+  - name: "emad"
+    aliases: [EMAD, edev, EDEV]
     units: "1"
     dtype: float32
     nodata: .nan
 
-  - name: "BCMAD"
-    aliases: [bcmad, bcdev, BCDEV]
+  - name: "bcmad"
+    aliases: [BCMAD, bcdev, BCDEV]
     units: "1"
     dtype: float32
     nodata: .nan
 
-  - name: "COUNT"
+  - name: "count"
     aliases: [count]
     units: "1"
     dtype: uint16
