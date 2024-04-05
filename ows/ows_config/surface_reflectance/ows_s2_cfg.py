@@ -47,9 +47,9 @@ TODO
         "apply_solar_corrections": False,
     },
     "native_crs": "EPSG:3832",
-    "native_resolution": [10.0, -10.0],
+    "native_resolution": [10, -10],
     "styling": {
         "default_style": "simple_rgb",
         "styles": styles_s2_geomad,
-    }
+    },
 }

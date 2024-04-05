@@ -13,7 +13,7 @@ up:
 # Init the DB
 
 datacube-init:
-	docker-compose exec explorer \
+	docker-compose exec ows \
 		datacube system init --no-init-users
 
 # Explorer
@@ -33,7 +33,7 @@ ows-shell:
 
 ows-init:
 	docker-compose exec ows \
-		datacube-ows-update --schema --role odc_admin
+		datacube-ows-update --schema --role pacific
 
 ows-update:
 	docker-compose exec ows \
@@ -42,10 +42,19 @@ ows-update:
 			datacube-ows-update \
 		"
 
+
 # Indexing
 
 products:
 	dc-sync-products products.csv
+
+index-s1-mosaic:
+	azure-to-dc --stac \
+	output \
+    ${AZURE_STORAGE_SAS_TOKEN} \
+    dep_s1_mosaic/0-0-2 \
+	stac-item.json
+
 
 index-all: index-landsat-5 index-landsat-7 index-landsat-8 index-landsat-9 index-sentinel-1 index-sentinel-2 index-nasadem index-esri-lc
 

@@ -1,0 +1,59 @@
+---
+name: dep_s1_mosaic
+description: Sentinel-1 Mosaic
+metadata_type: eo3
+
+license: CC-BY-4.0
+
+metadata:
+  product:
+    name: dep_s1_mosaic
+
+storage:
+  crs: EPSG:3832
+  resolution:
+    x: 10
+    y: -10
+
+measurements:
+  - name: "mean_vh"
+    aliases: [vh]
+    units: "1"
+    dtype: float32
+    nodata: -32768.0
+
+  - name: "mean_vv"
+    aliases: [vv]
+    units: "1"
+    dtype: float32
+    nodata: -32768.0
+
+  - name: "std_vh"
+    aliases: [vhs]
+    units: "1"
+    dtype: float32
+    nodata: -32768.0
+
+  - name: "std_vv"
+    aliases: [vvs]
+    units: "1"
+    dtype: float32
+    nodata: -32768.0
+
+  - name: "median_vh"
+    aliases: [vhm]
+    units: "1"
+    dtype: float32
+    nodata: -32768.0
+
+  - name: "median_vv"
+    aliases: [vvm]
+    units: "1"
+    dtype: float32
+    nodata: -32768.0
+
+  - name: "count"
+    aliases: [count]
+    units: "1"
+    dtype: uint16
+    nodata: 0

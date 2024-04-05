@@ -1,78 +1,26 @@
 services:
-  # postgis:
-  #   image: mdillon/postgis:9.6
-  #   restart: always
-  #   environment:
-  #     POSTGRES_USER: pacific
-  #     POSTGRES_PASSWORD: secretpassword
-  #     POSTGRES_DB: odc
-  #   ports:
-  #     - "5432:5432"
-  # terria:
-  #   image: alexgleith/terriamap
-  #   # environment:
-  #   #   - VIRTUAL_HOST=terria.vcap.me
-  #   # expose:
-  #   #   - "3001"
-  #   ports:
-  #     - "3001:3001"
+  postgis:
+    image: postgis/postgis:16-3.4
+    restart: always
+    environment:
+      POSTGRES_USER: pacific
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: pacific
+    ports:
+      - "5432:5432"
   ows:
-    network_mode: host
     build:
       context: ows
       dockerfile: Dockerfile
     volumes:
       - ./ows/ows_config:/env/config/ows_config
     environment:
-      - DB_HOSTNAME=host.docker.internal
-      - DB_USERNAME=odc_admin
+      - DB_HOSTNAME=postgis
+      - DB_USERNAME=pacific
       - DB_PASSWORD=${DB_PASSWORD}
-      - DB_DATABASE=odc
+      - DB_DATABASE=pacific
       - PYTHONPATH=/env/config
       - WMS_CONFIG_PATH=/env/config/ows_config/pacific_ows.py
       - DATACUBE_OWS_CFG=ows_config.pacific_ows.ows_cfg
-      # - PC_SDK_SUBSCRIPTION_KEY=${PC_SDK_SUBSCRIPTION_KEY}
-    #   - VIRTUAL_HOST=ows.localtest.me
     ports:
-      - "80:8000"
-  # explorer:
-  #   image: opendatacube/explorer:latest
-  #   environment:
-  #     - DB_HOSTNAME=postgis
-  #     - DB_USERNAME=pacific
-  #     - DB_PASSWORD=secretpassword
-  #     - DB_DATABASE=odc
-  #   #   - CUBEDASH_SETTINGS=/code/settings.env.py
-  #   #   - VIRTUAL_HOST=explorer.localtest.me
-  #   # expose: 
-  #   #   - "8080"
-  #   ports:
-  #     - "8080:8080"
-  #   # volumes:
-  #   #   - ./explorer/settings.env.py:/code/settings.env.py
-  #   command:
-  #     - "gunicorn"
-  #     -  "-b"
-  #     -  "0.0.0.0:8080"
-  #     -  "-w"
-  #     -  "3"
-  #     -  "--threads=2"
-  #     -  "-k"
-  #     -  "gthread"
-  #     -  "--timeout"
-  #     -  "90"
-  #     -  "--config"
-  #     -  "python:cubedash.gunicorn_config"
-  #     -  "cubedash:app"
-  # nginx-proxy:
-  #   image: nginxproxy/nginx-proxy
-  #   container_name: nginx-proxy
-  #   ports:
-  #     - "80:80"
-  #     # - "443:443"
-  #   volumes:
-  #   #   - conf:/etc/nginx/conf.d
-  #   #   - vhost:/etc/nginx/vhost.d
-  #   #   - html:/usr/share/nginx/html
-  #   #   - certs:/etc/nginx/certs:ro
-  #     - /var/run/docker.sock:/tmp/docker.sock:ro
+      - "8000:8000"

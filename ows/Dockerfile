@@ -1,4 +1,4 @@
-FROM opendatacube/ows:1.8.36
+FROM opendatacube/ows:1.8.39
 
 USER root
 

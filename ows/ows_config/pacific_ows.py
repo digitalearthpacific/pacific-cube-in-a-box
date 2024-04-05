@@ -37,9 +37,7 @@ ows_cfg = {
         "title": "Digital Earth Pacific Web Services",
         "abstract": """TODO...""",
         "info_url": "",
-        "keywords": [
-            "Digital Earth Pacific"
-        ],
+        "keywords": ["Digital Earth Pacific"],
         "contact_info": {
             "person": "TODO",
             "organisation": "Digital Earth Pacific",
@@ -57,7 +55,7 @@ ows_cfg = {
             "email": "TODO",
         },
         "fees": "",
-        "access_constraints": "TODO"
+        "access_constraints": "TODO",
     },  # END OF global SECTION
     "wms": {
         # Config for WMS service, for all products/layers
@@ -136,7 +134,7 @@ ows_cfg = {
                                     "include": "ows_config.radar_backscatter.ows_s1_cfg.layer",
                                     "type": "python",
                                 },
-                            ]
+                            ],
                         },
                         {
                             "title": "Annual Summary Products",
@@ -150,8 +148,12 @@ ows_cfg = {
                                     "include": "ows_config.surface_reflectance.ows_s2_cfg.dep_s2_geomad",
                                     "type": "python",
                                 },
-                            ]
-                        }
+                                {
+                                    "include": "ows_config.radar_backscatter.ows_s1_mosaic_cfg.layer",
+                                    "type": "python",
+                                },
+                            ],
+                        },
                     ],
                 },
                 # {
