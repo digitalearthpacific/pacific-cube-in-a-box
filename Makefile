@@ -46,7 +46,7 @@ ows-update:
 # Indexing
 
 products:
-	dc-sync-products products.csv
+	dc-sync-products products.csv --update-if-exists
 
 index-s1-mosaic:
 	azure-to-dc --stac \

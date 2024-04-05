@@ -1,0 +1,43 @@
+---
+name: dep_s2s1_mrd
+description: Mineral Resource Detection Land Cover
+metadata_type: eo3
+
+license: CC-BY-4.0
+
+metadata:
+  product:
+    name: dep_s2s1_mrd
+
+storage:
+  crs: EPSG:3832
+  resolution:
+    x: 10
+    y: -10
+
+measurements:
+  - name: class
+    aliases: ["classification"]
+    units: "1"
+    dtype: int8
+    nodata: 0
+    flags_definition:
+      class:
+        bits: [0, 1, 2, 3, 4, 5, 6, 7]
+        description: Class
+        values:
+          0: nodata
+          1: bare land
+          2: forest
+          3: crops
+          4: grassland
+          5: settlements
+          6: mangroves
+          7: water
+          8: quarry
+
+  - name: proba
+    aliases: ["probability"]
+    dtype: float32
+    nodata: .nan
+    units: "1"

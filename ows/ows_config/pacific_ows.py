@@ -166,16 +166,16 @@ ows_cfg = {
                 #         },
                 #     ],
                 # },
-                # {
-                #     "title": "Land Cover",
-                #     "abstract": """Land Cover""",
-                #     "layers": [
-                #         {
-                #             "include": "ows_config.land_cover.ows_io_lulc_cfg.layer_9_class",
-                #             "type": "python",
-                #         },
-                #     ],
-                # }
+                {
+                    "title": "Land Cover",
+                    "abstract": """Land Cover""",
+                    "layers": [
+                        {
+                            "include": "ows_config.land_cover.ows_landcover.dep_s2s1_mrd_layer",
+                            "type": "python",
+                        },
+                    ],
+                },
             ],
         }
     ],
