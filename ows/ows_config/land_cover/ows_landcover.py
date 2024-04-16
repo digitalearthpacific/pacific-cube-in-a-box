@@ -186,7 +186,7 @@ style_mud_and_gravel = {
             },
         ]
     },
-    "legend": {"width": 3.0, "height": 3.0},
+    # "legend": {"width": 3.0, "height": 3.0},
 }
 
 dep_s2s1_mrd_layer = {
