@@ -16,16 +16,6 @@ datacube-init:
 	docker-compose exec ows \
 		datacube system init --no-init-users
 
-# Explorer
-
-explorer-init:
-	docker-compose exec explorer \
-		cubedash-gen --init
-
-explorer-geupdaten:
-	docker-compose exec explorer \
-		cubedash-gen --all
-
 # OWS
 
 ows-shell:
@@ -33,7 +23,7 @@ ows-shell:
 
 ows-init:
 	docker-compose exec ows \
-		datacube-ows-update --schema --role pacific
+		datacube-ows-update --schema --role dearth
 
 ows-update:
 	docker-compose exec ows \
