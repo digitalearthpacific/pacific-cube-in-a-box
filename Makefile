@@ -23,7 +23,7 @@ ows-shell:
 
 ows-init:
 	docker-compose exec ows \
-		datacube-ows-update --schema --role dearth
+		datacube-ows-update --schema --read-role dearth --write-role dearth
 
 ows-update:
 	docker-compose exec ows \
