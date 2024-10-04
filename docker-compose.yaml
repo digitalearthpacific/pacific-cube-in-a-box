@@ -3,24 +3,26 @@ services:
     image: postgis/postgis:16-3.4
     restart: always
     environment:
-      POSTGRES_USER: pacific
-      POSTGRES_PASSWORD: ${DB_PASSWORD}
-      POSTGRES_DB: pacific
+      POSTGRES_DB: dearth
+      POSTGRES_USER: dearth
+      POSTGRES_PASSWORD: dearthdbpassword
     ports:
       - "5432:5432"
+
   ows:
-    build:
-      context: ows
-      dockerfile: Dockerfile
+    image: local:ows
+    # build:
+    #   context: ows
+    #   dockerfile: Dockerfile
     volumes:
       - ./ows/ows_config:/env/config/ows_config
+      - ./datacube.conf:/env/config/datacube.conf
     environment:
-      - DB_HOSTNAME=postgis
-      - DB_USERNAME=pacific
-      - DB_PASSWORD=${DB_PASSWORD}
-      - DB_DATABASE=pacific
+      - ODC_CONFIG_PATH=/env/config/datacube.conf
+      - ODC_DEFAULT_DB_URL=postgresql://dearth:dearthdbpassword@postgis:5432/dearth
+      - ODC_DEFAULT_INDEX_DRIVER=postgis
       - PYTHONPATH=/env/config
-      - WMS_CONFIG_PATH=/env/config/ows_config/pacific_ows.py
       - DATACUBE_OWS_CFG=ows_config.pacific_ows.ows_cfg
+      - OWS_CFG_DIR=/env/config/ows_config
     ports:
       - "8000:8000"

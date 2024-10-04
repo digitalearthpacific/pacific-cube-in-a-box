@@ -7,6 +7,9 @@ BBOX := -180.0,-20.0,-170.0,-10.0
 BIGBBOX := 135.0,-30.0,180.0,15.0
 BIGBBOX2 := -180,-30.0,-120.0,15.0
 
+build:
+	docker build --platform linux/amd64 -t ows:local ows
+
 up:
 	docker compose up
 
@@ -16,15 +19,13 @@ datacube-init:
 	docker-compose exec ows \
 		datacube system init --no-init-users
 
-# Explorer
+datacube-spindex:
+	docker-compose exec ows \
+		datacube spindex create 3832
 
-explorer-init:
-	docker-compose exec explorer \
-		cubedash-gen --init
-
-explorer-geupdaten:
-	docker-compose exec explorer \
-		cubedash-gen --all
+datacube-update-spindex:
+	docker-compose exec ows \
+		datacube spindex update 3832
 
 # OWS
 
@@ -33,7 +34,7 @@ ows-shell:
 
 ows-init:
 	docker-compose exec ows \
-		datacube-ows-update --schema --role pacific
+		datacube-ows-update --schema --read-role dearth --write-role dearth
 
 ows-update:
 	docker-compose exec ows \
@@ -41,7 +42,6 @@ ows-update:
 			datacube-ows-update --views && \
 			datacube-ows-update \
 		"
-
 
 # Indexing
 

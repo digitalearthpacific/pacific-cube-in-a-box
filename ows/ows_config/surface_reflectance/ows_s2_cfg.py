@@ -24,7 +24,7 @@ TODO
         "default_style": "simple_rgb",
         "styles": styles_s2_list,
     },
-    "patch_url_function": "planetary_computer.sign_url",
+    # "patch_url_function": "planetary_computer.sign_url",
 }
 
 
