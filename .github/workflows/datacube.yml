@@ -1,8 +1,8 @@
-name: Build and Push OWS Image
+name: Build and Push Datacube Image
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: digitalearthpacific/ows
+  IMAGE_NAME: digitalearthpacific/datacube
 
 on:
   pull_request:
@@ -23,12 +23,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      # - name: Check formatting
-      #   uses: rickstaa/action-black@v1
-      #   id: action_black
-      #   with:
-      #     black_args: "--check src"
-
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
 
@@ -38,15 +32,10 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v4
         with:
-          context: ows
           push: false
           tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:test
           cache-from: type=gha
           cache-to: type=gha,mode=max
-
-    # - name: Run tests in image
-    #   run: |
-    #       docker run --rm ${{ env.IMAGE_NAME }} bash -c "pip install -e /code; pip install -r /code/requirements-test.txt; pytest /code"
 
   push:
     permissions: write-all
@@ -81,7 +70,6 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v4
         with:
-          context: ows
           push: true
           tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.get_version.outputs.VERSION }},${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
           cache-from: type=gha
