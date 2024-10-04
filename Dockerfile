@@ -19,8 +19,9 @@ RUN apt-get update && apt-get install -y \
     && apt-get autoremove \
     && rm -rf /var/lib/{apt,dpkg,cache,log}
 
-RUN pip3 install --break-system-packages git+https://github.com/opendatacube/datacube-core.git@develop-1.9
-RUN pip3 install --break-system-packages git+https://github.com/opendatacube/datacube-ows.git@develop-1.9
-RUN pip3 install --break-system-packages "git+https://github.com/opendatacube/odc-tools.git@develop-1.9#subdirectory=apps/dc_tools"
+RUN pip3 install --break-system-packages \
+    "git+https://github.com/opendatacube/datacube-core.git@develop-1.9" \
+    "git+https://github.com/opendatacube/datacube-ows.git@develop-1.9" \
+    "git+https://github.com/opendatacube/odc-tools.git@develop-1.9#subdirectory=apps/dc_tools"
 
 RUN datacube --version
