@@ -20,6 +20,8 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/{apt,dpkg,cache,log}
 
 RUN pip3 install --break-system-packages \
+    odc-stac \
+    odc-geo \
     "git+https://github.com/opendatacube/datacube-core.git@develop-1.9" \
     "git+https://github.com/opendatacube/datacube-ows.git@develop-1.9" \
     "git+https://github.com/opendatacube/odc-tools.git@develop-1.9#subdirectory=apps/dc_tools" \
