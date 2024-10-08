@@ -13,6 +13,10 @@ build:
 up:
 	docker compose up
 
+init: 
+	datacube system init --no-init-users
+	datacube-ows-update --schema --read-role dearth --write-role dearth
+
 # Init the DB
 
 datacube-init:
