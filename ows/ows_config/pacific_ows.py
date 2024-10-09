@@ -29,8 +29,8 @@ ows_cfg = {
         },
         "allowed_urls": [
             "http://localhost:8000",
-            "https://ows.staging.digitalearthpacific.org",
-            "https://ows-too.staging.digitalearthpacific.org",
+            "https://ows.staging.digitalearthpacific.io",
+            "https://ows.prod.digitalearthpacific.io",
             "https://ows.digitalearthpacific.org",
         ],
         # Metadata to go straight into GetCapabilities documents
