@@ -1,22 +1,19 @@
 ---
-name: dep_s2_geomad
-description: Sentinel-2 Annual Geometric Median and Median
-  Absolute Deviations
+name: sentinel_2_c1_l2a
+description: Sentinel-2 Collection 1, processed to Level 2A (Surface Reflectance)
 metadata_type: eo3
-
-license: CC-BY-4.0
 
 metadata:
   product:
-    name: dep_s2_geomad
-
-storage:
-  crs: EPSG:3832
-  resolution:
-    x: 10
-    y: -10
+    name: sentinel_2_c1_l2a
 
 measurements:
+  - name: "coastal"
+    aliases: [band_01, B01, coastal_aerosol]
+    units: "1"
+    dtype: uint16
+    nodata: 0
+
   - name: "blue"
     aliases: [band_02, B02]
     units: "1"
@@ -83,26 +80,49 @@ measurements:
     dtype: uint16
     nodata: 0
 
-  - name: "smad"
-    aliases: [SMAD, sdev, SDEV]
+  - name: "scl"
+    aliases: [mask, SCL, qa]
     units: "1"
-    dtype: float32
-    nodata: .nan
+    dtype: uint8
+    nodata: 0
+    flags_definition:
+      qa:
+        bits: [0, 1, 2, 3, 4, 5, 6, 7]
+        description: Sen2Cor Scene Classification
+        values:
+          0: no data
+          1: saturated or defective
+          2: dark area pixels
+          3: cloud shadows
+          4: vegetation
+          5: bare soils
+          6: water
+          7: unclassified
+          8: cloud medium probability
+          9: cloud high probability
+          10: thin cirrus
+          11: snow or ice
 
-  - name: "emad"
-    aliases: [EMAD, edev, EDEV]
-    units: "1"
-    dtype: float32
-    nodata: .nan
-
-  - name: "bcmad"
-    aliases: [BCMAD, bcdev, BCDEV]
-    units: "1"
-    dtype: float32
-    nodata: .nan
-
-  - name: "count"
-    aliases: [count]
+  - name: "aot"
+    aliases: [aerosol_optical_thickness, AOT]
     units: "1"
     dtype: uint16
+    nodata: 0
+
+  - name: "wvp"
+    aliases: [scene_average_water_vapour, WVP]
+    units: "1"
+    dtype: uint16
+    nodata: 0
+
+  - name: "cloud"
+    aliases: [qa_cloud]
+    units: "1"
+    dtype: uint8
+    nodata: 0
+
+  - name: "snow"
+    aliases: [qa_]
+    units: "1"
+    dtype: uint8
     nodata: 0

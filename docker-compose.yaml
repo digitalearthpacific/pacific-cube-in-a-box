@@ -9,20 +9,20 @@ services:
     ports:
       - "5432:5432"
 
-  ows:
-    image: local:ows
-    # build:
-    #   context: ows
-    #   dockerfile: Dockerfile
-    volumes:
-      - ./ows/ows_config:/env/config/ows_config
-      - ./datacube.conf:/env/config/datacube.conf
-    environment:
-      - ODC_CONFIG_PATH=/env/config/datacube.conf
-      - ODC_DEFAULT_DB_URL=postgresql://dearth:dearthdbpassword@postgis:5432/dearth
-      - ODC_DEFAULT_INDEX_DRIVER=postgis
-      - PYTHONPATH=/env/config
-      - DATACUBE_OWS_CFG=ows_config.pacific_ows.ows_cfg
-      - OWS_CFG_DIR=/env/config/ows_config
-    ports:
-      - "8000:8000"
+  # ows:
+  #   image: local:ows
+  #   # build:
+  #   #   context: ows
+  #   #   dockerfile: Dockerfile
+  #   volumes:
+  #     - ./ows/ows_config:/env/config/ows_config
+  #     - ./datacube.conf:/env/config/datacube.conf
+  #   environment:
+  #     - ODC_CONFIG_PATH=/env/config/datacube.conf
+  #     - ODC_DEFAULT_DB_URL=postgresql://dearth:dearthdbpassword@postgis:5432/dearth
+  #     - ODC_DEFAULT_INDEX_DRIVER=postgis
+  #     - PYTHONPATH=/env/config
+  #     - DATACUBE_OWS_CFG=ows_config.pacific_ows.ows_cfg
+  #     - OWS_CFG_DIR=/env/config/ows_config
+  #   ports:
+  #     - "8000:8000"

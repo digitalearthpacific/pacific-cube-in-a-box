@@ -4,11 +4,11 @@ from ows_config.surface_reflectance.style_sr_cfg import styles_s2_geomad, styles
 
 layer = {
     "title": "Sentinel-2 L2A",
-    "name": "s2_l2a",
+    "name": "sentinel_2_c1_l2a",
     "abstract": """
 TODO
 """,
-    "product_name": "s2_l2a",
+    "product_name": "sentinel_2_c1_l2a",
     "bands": bands_sentinel2,
     "dynamic": True,
     "resource_limits": reslim_sentinel2,
@@ -24,7 +24,6 @@ TODO
         "default_style": "simple_rgb",
         "styles": styles_s2_list,
     },
-    # "patch_url_function": "planetary_computer.sign_url",
 }
 
 
@@ -35,7 +34,6 @@ dep_s2_geomad = {
 TODO
 """,
     "product_name": "dep_s2_geomad",
-    # "low_res_product_name": "gm_ls8_ls9_annual_lowres",  # todo...
     "bands": bands_s2_geomad,
     "dynamic": False,
     "resource_limits": reslim_continental,
