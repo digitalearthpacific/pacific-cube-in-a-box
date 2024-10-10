@@ -29,8 +29,11 @@ ows_cfg = {
         },
         "allowed_urls": [
             "http://localhost:8000",
+            "https://ows-cached.staging.digitalearthpacific.io",  # TODO: Remove
             "https://ows.staging.digitalearthpacific.io",
+            "https://ows-uncached.staging.digitalearthpacific.io",
             "https://ows.prod.digitalearthpacific.io",
+            "https://ows-uncached.prod.digitalearthpacific.io",
             "https://ows.digitalearthpacific.org",
         ],
         # Metadata to go straight into GetCapabilities documents
