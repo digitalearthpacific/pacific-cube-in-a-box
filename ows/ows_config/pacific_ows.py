@@ -65,6 +65,8 @@ ows_cfg = {
         # "s3_aws_zone": "us-west-2",
         "max_width": 512,
         "max_height": 512,
+        # Allow the WMS/WMTS GetCapabilities responses to be cached for 1 hour
+        "caps_cache_maxage": 60 * 60,
     },  # END OF wms SECTION
     "wcs": {
         # Config for WCS service, for all products/coverages
