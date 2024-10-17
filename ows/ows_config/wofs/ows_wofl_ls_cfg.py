@@ -39,13 +39,13 @@ For more information on the algorithm, see https://doi.org/10.1016/j.rse.2015.11
             "fuse_func": "datacube_ows.wms_utils.wofls_fuser",
         },
     ],
-    "native_crs": "EPSG:3857",
+    "native_crs": "EPSG:3832",
     "native_resolution": [30.0, -30.0],
     "styling": {
         "default_style": "observations",
         "styles": [
             style_wofl_ls_obs,
-            style_wofl_ls_wet,
+            style_wofs_ls_wet,
         ],
     },
 }
