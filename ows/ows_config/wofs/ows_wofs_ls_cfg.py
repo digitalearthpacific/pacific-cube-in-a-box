@@ -1,7 +1,7 @@
 # Adapted from https://github.com/digitalearthafrica/config/blob/master/services/ows_refactored/wofs/ows_wofs_ls_cfg.py
-from ows_refactored.common.ows_reslim_cfg import reslim_wofs_daily
-from ows_refactored.wofs.band_wofs_cfg import bands_wofs_obs
-from ows_refactored.wofs.style_wofs_ls import style_wofs_ls_obs, style_wofs_ls_wet
+from ows_config.common.ows_reslim_cfg import reslim_wofs_daily
+from ows_config.wofs.band_wofs_cfg import bands_wofs_obs
+from ows_config.wofs.style_wofs_ls import style_wofl_ls_obs, style_wofl_ls_wet
 
 layer = {
     "title": "Water Observations from Space feature layer",
@@ -44,8 +44,8 @@ For more information on the algorithm, see https://doi.org/10.1016/j.rse.2015.11
     "styling": {
         "default_style": "observations",
         "styles": [
-            style_wofs_ls_obs,
-            style_wofs_ls_wet,
+            style_wofl_ls_obs,
+            style_wofl_ls_wet,
         ],
     },
 }
