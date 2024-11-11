@@ -56,8 +56,7 @@ TODO""",
     "styling": {
         "default_style": "simple_rgb",
         "styles": styles_landsat_5_7,
-    },
-    "patch_url_function": "planetary_computer.sign_url",
+    }
 }
 
 layer_ls7 = {
@@ -80,8 +79,7 @@ TODO""",
     "styling": {
         "default_style": "simple_rgb",
         "styles": styles_landsat_5_7,
-    },
-    "patch_url_function": "planetary_computer.sign_url",
+    }
 }
 
 layer_ls8 = {
@@ -104,8 +102,7 @@ TODO""",
     "styling": {
         "default_style": "simple_rgb",
         "styles": styles_landsat_8_9,
-    },
-    "patch_url_function": "planetary_computer.sign_url",
+    }
 }
 
 layer_ls9 = {
@@ -128,6 +125,5 @@ TODO""",
     "styling": {
         "default_style": "simple_rgb",
         "styles": styles_landsat_8_9,
-    },
-    "patch_url_function": "planetary_computer.sign_url",
+    }
 }
