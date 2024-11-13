@@ -11,8 +11,6 @@ RUN apt-get update && \
     && apt-get autoremove \
     && rm -rf /var/lib/{apt,dpkg,cache,log}
 
-RUN echo "Do it again and again and again"
-
 RUN pip3 install \
     "git+https://github.com/opendatacube/datacube-core.git@develop-1.9" \
     "git+https://github.com/opendatacube/datacube-ows.git@add-proxy-fix-middleware-option"

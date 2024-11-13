@@ -1028,9 +1028,13 @@ styles_landsat_8_9 = [
 ]
 
 # styles tmad
-sdev_scaling = [0.020, 0.18]
-edev_scaling = [6.2, 7.3]
-bcdev_scaling = [0.025, 0.13]
+sdev_scaling = [0.00, 0.002]  # 0.02, 0.18
+edev_scaling = [0.00, 1000.]  # 6.2, 7.3
+bdev_scaling = [0.00, 0.020]  # 0.025, 0.13
+
+sdev_scaling_2 = [0.00, 0.004]
+edev_scaling_2 = [0.00, 1000.]
+bdev_scaling_2 = [0.00, 0.040]
 
 style_tmad_sdev_std = {
     "name": "arcsec_sdev",
@@ -1088,7 +1092,7 @@ style_tmad_bcdev_std = {
         "mapped_bands": True,
         "kwargs": {
             "band": "bcdev",
-            "scale_from": bcdev_scaling,
+            "scale_from": bdev_scaling,
             "scale_to": [0.0, 4.0],
         },
     },
@@ -1132,7 +1136,7 @@ style_tmad_rgb_std = {
             "mapped_bands": True,
             "kwargs": {
                 "band": "bcdev",
-                "scale_from": bcdev_scaling,
+                "scale_from": bdev_scaling,
             },
         },
     },
@@ -1142,22 +1146,22 @@ style_tmad_rgb_std = {
 style_tmad_rgb_sens = {
     "inherits": style_tmad_rgb_std,
     "name": "tmad_rgb_sens",
-    "title": "MADs (desert) - SMAD, EMAD, BCMAD",
+    "title": "MADs (alt.) - SMAD, EMAD, BCMAD",
     "abstract": "Good for arid land and desert",
     "components": {
         "red": {
             "kwargs": {
-                "scale_from": [0.0005, 0.11],
+                "scale_from": sdev_scaling_2,
             }
         },
         "green": {
             "kwargs": {
-                "scale_from": [5.9, 6.9],
+                "scale_from": edev_scaling_2,
             }
         },
         "blue": {
             "kwargs": {
-                "scale_from": [0.008, 0.07],
+                "scale_from": bdev_scaling_2,
             }
         },
     },
