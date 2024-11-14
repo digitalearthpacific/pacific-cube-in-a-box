@@ -13,7 +13,7 @@ RUN apt-get update && \
 
 RUN pip3 install \
     # "git+https://github.com/opendatacube/datacube-core.git@develop-1.9" \
-    "git+https://github.com/opendatacube/datacube-ows.git@webmerc-attempt"
+    "git+https://github.com/opendatacube/datacube-ows.git@develop-1.9"
 
 RUN echo "[default]" > /tmp/datacube.conf
 
