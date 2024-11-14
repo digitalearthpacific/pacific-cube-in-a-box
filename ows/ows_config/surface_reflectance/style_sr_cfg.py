@@ -1030,11 +1030,11 @@ styles_landsat_8_9 = [
 # styles tmad
 sdev_scaling = [0.0, 0.15]  # 0.02, 0.18
 bdev_scaling = [0.0, 0.15]  # 0.025, 0.13
-edev_scaling = [0.0, 1500]  # 6.2, 7.3
+edev_scaling = [500, 2000]  # 6.2, 7.3
 
 sdev_scaling_2 = [0.00034, 0.00182]
 bdev_scaling_2 = [0.02575, 0.06488]
-edev_scaling_2 = [609.704, 1491.28]
+edev_scaling_2 = [533.782, 1695.34]
 
 style_tmad_sdev_std = {
     "name": "arcsec_sdev",
