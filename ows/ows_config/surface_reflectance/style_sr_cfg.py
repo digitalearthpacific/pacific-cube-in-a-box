@@ -1028,12 +1028,12 @@ styles_landsat_8_9 = [
 ]
 
 # Loose range from min to max
-sdev_scaling = [0.00, 0.001]  # 0.02, 0.18
-bdev_scaling = [0.01, 0.100]  # 0.025, 0.13
-edev_scaling = [250., 2000.]  # 6.2, 7.3
+sdev_scaling = [0.00, 0.10]
+bdev_scaling = [0.01, 0.10]
+edev_scaling = [250., 2000]
 
 # Percentiles at 0.05 and 0.95
-sdev_scaling_2 = [0.00028074, 0.00238612]
+sdev_scaling_2 = [0.0, 0.01]
 bdev_scaling_2 = [0.02257398, 0.07464499]
 edev_scaling_2 = [533.782714, 1695.34313]
 
