@@ -1027,14 +1027,15 @@ styles_landsat_8_9 = [
     style_ls8c2_pq,
 ]
 
-# styles tmad
-sdev_scaling = [0.0, 0.15]  # 0.02, 0.18
-bdev_scaling = [0.0, 0.15]  # 0.025, 0.13
-edev_scaling = [0.0, 2000.0]  # 6.2, 7.3
+# Loose range from min to max
+sdev_scaling = [0.00, 0.01]  # 0.02, 0.18
+bdev_scaling = [0.01, 0.10]  # 0.025, 0.13
+edev_scaling = [250., 2000]  # 6.2, 7.3
 
-sdev_scaling_2 = [0.00028, 0.00238]
-bdev_scaling_2 = [0.02257, 0.07464]
-edev_scaling_2 = [533.782, 1695.34]
+# Percentiles at 0.05 and 0.95
+sdev_scaling_2 = [0.00028074, 0.00238612]
+bdev_scaling_2 = [0.02257398, 0.07464499]
+edev_scaling_2 = [533.782714, 1695.34313]
 
 style_tmad_sdev_std = {
     "name": "arcsec_sdev",
