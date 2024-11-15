@@ -41,7 +41,7 @@ TODO
     "image_processing": {
         "extent_mask_func": "ows_config.common.ows_util_tools.mask_by_emad_nan",
         "always_fetch_bands": ["emad"],
-        "manual_merge": False,
+        "manual_merge": True,
         "apply_solar_corrections": False,
     },
     "native_crs": "EPSG:3832",
