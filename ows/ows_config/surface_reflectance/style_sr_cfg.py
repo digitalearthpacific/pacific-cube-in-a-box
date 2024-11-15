@@ -1041,7 +1041,7 @@ style_tmad_sdev_std = {
     "title": "Spectral MAD (SMAD)",
     "abstract": "Good for cropland and forest",
     "index_function": {
-        "function": "datacube_ows.band_utils.single_band_arcsec",
+        "function": "datacube_ows.band_utils.single_band_offset_log",
         "mapped_bands": True,
         "kwargs": {"band": "sdev", "scale_from": sdev_scaling, "scale_to": [0.0, 4.0]},
     },
@@ -1064,7 +1064,7 @@ style_tmad_edev_std = {
     "title": "Euclidean MAD (EMAD)",
     "abstract": "Good for cropland and forest",
     "index_function": {
-        "function": "datacube_ows.band_utils.single_band_offset_log",
+        "function": "datacube_ows.band_utils.single_band",
         "mapped_bands": True,
         "kwargs": {"band": "edev", "scale_from": edev_scaling, "scale_to": [0.0, 4.0]},
     },
@@ -1116,7 +1116,7 @@ style_tmad_rgb_std = {
     "abstract": "Good for cropland and forest",
     "components": {
         "red": {
-            "function": "datacube_ows.band_utils.single_band_arcsec",
+            "function": "datacube_ows.band_utils.single_band_offset_log",
             "mapped_bands": True,
             "kwargs": {
                 "band": "sdev",
@@ -1124,7 +1124,7 @@ style_tmad_rgb_std = {
             },
         },
         "green": {
-            "function": "datacube_ows.band_utils.single_band_offset_log",
+            "function": "datacube_ows.band_utils.single_band",
             "mapped_bands": True,
             "kwargs": {
                 "band": "edev",
