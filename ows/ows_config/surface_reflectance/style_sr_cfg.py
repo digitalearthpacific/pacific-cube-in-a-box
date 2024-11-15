@@ -1032,8 +1032,8 @@ sdev_scaling = [0.0, 0.15]  # 0.02, 0.18
 bdev_scaling = [0.0, 0.15]  # 0.025, 0.13
 edev_scaling = [250, 2000]  # 6.2, 7.3
 
-sdev_scaling_2 = [0.00034, 0.00182]
-bdev_scaling_2 = [0.02575, 0.06488]
+sdev_scaling_2 = [0.00028, 0.00238]
+bdev_scaling_2 = [0.02257, 0.07464]
 edev_scaling_2 = [533.782, 1695.34]
 
 style_tmad_sdev_std = {
