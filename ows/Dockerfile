@@ -18,5 +18,3 @@ RUN pip3 install --break-system-packages \
 RUN echo "[default]" > /tmp/datacube.conf
 
 COPY ./ows_config /env/config/ows_config
-
-USER ows
