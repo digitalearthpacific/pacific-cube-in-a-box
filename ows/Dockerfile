@@ -13,7 +13,7 @@ RUN apt-get update && \
 
 RUN echo "Uncache"
 
-RUN pip3 install \
+RUN pip3 install --break-system-packages \
     "git+https://github.com/opendatacube/datacube-core.git@develop-1.9" \
     "git+https://github.com/opendatacube/datacube-ows.git@develop-1.9"
 
