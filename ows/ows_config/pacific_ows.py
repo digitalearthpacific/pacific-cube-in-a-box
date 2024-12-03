@@ -29,7 +29,6 @@ ows_cfg = {
         },
         "allowed_urls": [
             "http://localhost:8000",
-            "https://ows-cached.staging.digitalearthpacific.io",  # TODO: Remove
             "https://ows.staging.digitalearthpacific.io",
             "https://ows-uncached.staging.digitalearthpacific.io",
             "https://ows.prod.digitalearthpacific.io",
@@ -113,22 +112,22 @@ ows_cfg = {
                                     "include": "ows_config.surface_reflectance.ows_s2_cfg.layer",
                                     "type": "python",
                                 },
-                                # {
-                                #     "include": "ows_config.surface_reflectance.ows_landsat_cfg.layer_ls5",
-                                #     "type": "python",
-                                # },
-                                # {
-                                #     "include": "ows_config.surface_reflectance.ows_landsat_cfg.layer_ls7",
-                                #     "type": "python",
-                                # },
-                                # {
-                                #     "include": "ows_config.surface_reflectance.ows_landsat_cfg.layer_ls8",
-                                #     "type": "python",
-                                # },
-                                # {
-                                #     "include": "ows_config.surface_reflectance.ows_landsat_cfg.layer_ls9",
-                                #     "type": "python",
-                                # },
+                                {
+                                    "include": "ows_config.surface_reflectance.ows_landsat_cfg.layer_ls5",
+                                    "type": "python",
+                                },
+                                {
+                                    "include": "ows_config.surface_reflectance.ows_landsat_cfg.layer_ls7",
+                                    "type": "python",
+                                },
+                                {
+                                    "include": "ows_config.surface_reflectance.ows_landsat_cfg.layer_ls8",
+                                    "type": "python",
+                                },
+                                {
+                                    "include": "ows_config.surface_reflectance.ows_landsat_cfg.layer_ls9",
+                                    "type": "python",
+                                },
                             ],
                         },
                         # {

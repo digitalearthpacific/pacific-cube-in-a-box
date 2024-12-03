@@ -1027,10 +1027,15 @@ styles_landsat_8_9 = [
     style_ls8c2_pq,
 ]
 
-# styles tmad
-sdev_scaling = [0.020, 0.18]
-edev_scaling = [6.2, 7.3]
-bcdev_scaling = [0.025, 0.13]
+# Loose range from min to max
+sdev_scaling = [0.00, 0.10]
+bdev_scaling = [0.01, 0.10]
+edev_scaling = [250., 2000]
+
+# Percentiles at 0.05 and 0.95
+sdev_scaling_2 = [0.0, 0.05]
+bdev_scaling_2 = [0.02257398, 0.07464499]
+edev_scaling_2 = [533.782714, 1695.34313]
 
 style_tmad_sdev_std = {
     "name": "arcsec_sdev",
@@ -1060,7 +1065,7 @@ style_tmad_edev_std = {
     "title": "Euclidean MAD (EMAD)",
     "abstract": "Good for cropland and forest",
     "index_function": {
-        "function": "datacube_ows.band_utils.single_band_offset_log",
+        "function": "datacube_ows.band_utils.single_band",
         "mapped_bands": True,
         "kwargs": {"band": "edev", "scale_from": edev_scaling, "scale_to": [0.0, 4.0]},
     },
@@ -1088,7 +1093,7 @@ style_tmad_bcdev_std = {
         "mapped_bands": True,
         "kwargs": {
             "band": "bcdev",
-            "scale_from": bcdev_scaling,
+            "scale_from": bdev_scaling,
             "scale_to": [0.0, 4.0],
         },
     },
@@ -1120,7 +1125,7 @@ style_tmad_rgb_std = {
             },
         },
         "green": {
-            "function": "datacube_ows.band_utils.single_band_offset_log",
+            "function": "datacube_ows.band_utils.single_band",
             "mapped_bands": True,
             "kwargs": {
                 "band": "edev",
@@ -1132,7 +1137,7 @@ style_tmad_rgb_std = {
             "mapped_bands": True,
             "kwargs": {
                 "band": "bcdev",
-                "scale_from": bcdev_scaling,
+                "scale_from": bdev_scaling,
             },
         },
     },
@@ -1142,22 +1147,22 @@ style_tmad_rgb_std = {
 style_tmad_rgb_sens = {
     "inherits": style_tmad_rgb_std,
     "name": "tmad_rgb_sens",
-    "title": "MADs (desert) - SMAD, EMAD, BCMAD",
+    "title": "MADs (alt.) - SMAD, EMAD, BCMAD",
     "abstract": "Good for arid land and desert",
     "components": {
         "red": {
             "kwargs": {
-                "scale_from": [0.0005, 0.11],
+                "scale_from": sdev_scaling_2,
             }
         },
         "green": {
             "kwargs": {
-                "scale_from": [5.9, 6.9],
+                "scale_from": edev_scaling_2,
             }
         },
         "blue": {
             "kwargs": {
-                "scale_from": [0.008, 0.07],
+                "scale_from": bdev_scaling_2,
             }
         },
     },

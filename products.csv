@@ -1,4 +1,5 @@
 product,definition
+ls5_c2l2_sr;ls7_c2l2_sr;ls8_c2l2_sr;ls9_c2l2_sr,https://raw.githubusercontent.com/opendatacube/datacube-dataset-config/main/products/lsX_c2l2_sr.odc-product.yaml
 sentinel_2_c1_l2a,https://raw.githubusercontent.com/digitalearthpacific/pacific-cube-in-a-box/main/products/sentinel_2_c1_l2a.odc-product.yaml
 dep_s2_geomad,https://raw.githubusercontent.com/digitalearthpacific/pacific-cube-in-a-box/main/products/dep_s2_geomad.odc-product.yaml
 dep_s2s1_mrd,https://raw.githubusercontent.com/digitalearthpacific/pacific-cube-in-a-box/main/products/dep_s2s1_mrd.odc-product.yaml
