@@ -5,7 +5,7 @@
 # Adapted from
 # https://github.com/digitalearthafrica/config/blob/master/services/ows_refactored/wofs/style_wofs_ls.py
 
-from ows_refactored.common.ows_legend_cfg import legend_idx_percentage_by_10
+from ows_config.common.ows_legend_cfg import legend_idx_percentage_by_10
 
 # styles used by wofs_ls_summary_annual
 style_wofs_summary_annual_frequency_masked = {

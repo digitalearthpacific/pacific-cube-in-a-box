@@ -189,7 +189,7 @@ ows_cfg = {
                             "abstract": """Daily surface water""",
                             "layers": [
                                 {
-                                    "include": "ows_config.wofs.ows_wofs_ls_cfg.layer",
+                                    "include": "ows_config.wofs.ows_wofl_ls_cfg.layer",
                                     "type": "python",
                                 },
                             ],
@@ -199,7 +199,7 @@ ows_cfg = {
                             "abstract": """Annual surface water""",
                             "layers": [
                                 {
-                                    "include": "ows_config.wofs.ows_wofs_ls_annual_cfg.layer",
+                                    "include": "ows_config.wofs.ows_wofs_annual_cfg.layer",
                                     "type": "python",
                                 }
                             ],

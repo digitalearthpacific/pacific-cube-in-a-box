@@ -20,7 +20,7 @@ WOfS shows surface water on the day and time that satellite passed overhead, whi
 For more information on the algorithm, see https://doi.org/10.1016/j.rse.2015.11.003
 
 """,
-    "product_name": "wofs_ls",
+    "product_name": "dep_ls_wofl",
     "bands": bands_wofs_obs,
     "resource_limits": reslim_wofs_daily,
     "dynamic": True,
@@ -33,7 +33,7 @@ For more information on the algorithm, see https://doi.org/10.1016/j.rse.2015.11
     "flags": [
         {
             "band": "water",
-            "product": "wofs_ls",
+            "product": "dep_ls_wofl",
             "ignore_time": False,
             "ignore_info_flags": [],
             "fuse_func": "datacube_ows.wms_utils.wofls_fuser",
@@ -45,7 +45,7 @@ For more information on the algorithm, see https://doi.org/10.1016/j.rse.2015.11
         "default_style": "observations",
         "styles": [
             style_wofl_ls_obs,
-            style_wofs_ls_wet,
+            style_wofl_ls_wet,
         ],
     },
 }
