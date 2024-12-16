@@ -24,7 +24,7 @@ WOfS shows surface water on the day and time that satellite passed overhead, whi
 
 For more information on the algorithm, see https://doi.org/10.1016/j.rse.2015.11.003
 """,
-    "product_name": "wofs_ls_summary_annual",
+    "product_name": "dep_ls_wofs_summary_annual",
     "time_resolution": "year",
     "bands": bands_wofs_summary,
     "resource_limits": reslim_wofs,

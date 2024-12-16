@@ -5,7 +5,7 @@ from ows_config.wofs.style_wofs_ls import style_wofl_ls_obs, style_wofl_ls_wet
 
 layer = {
     "title": "Water Observations from Space feature layer",
-    "name": "wofs_ls",
+    "name": "dep_ls_wofl",
     "abstract": """
 Water Observations from Space (WOfS) provides surface water observations derived from satellite imagery for all Pacific nations. The WOfS product allows users to get a better understanding of where water is normally present in a landscape, where water is seldom observed, and where inundation has occurred occasionally. Data is provided as Water Observation Feature Layers (WOFLs), in a 1 to 1 relationship with the input satellite data. Hence there is one WOFL for each satellite dataset processed for the occurrence of water.
 
@@ -39,7 +39,7 @@ For more information on the algorithm, see https://doi.org/10.1016/j.rse.2015.11
             "fuse_func": "datacube_ows.wms_utils.wofls_fuser",
         },
     ],
-    "native_crs": "EPSG:3832",
+    "native_crs": "EPSG:3857",
     "native_resolution": [30.0, -30.0],
     "styling": {
         "default_style": "observations",

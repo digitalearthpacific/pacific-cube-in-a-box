@@ -1,5 +1,5 @@
 ---
-name: wofs_ls_summary_annual
+name: dep_ls_wofs_summary_annual
 description: Water Observations from Space Annual Statistics
 metadata_type: eo3
 
