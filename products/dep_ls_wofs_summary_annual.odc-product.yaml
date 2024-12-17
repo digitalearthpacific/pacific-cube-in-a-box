@@ -7,7 +7,7 @@ license: CC-BY-4.0
 
 metadata:
   product:
-    name: wofs_ls_summary_annual
+    name: dep_ls_wofs_summary_annual
 
 storage:
   crs: EPSG:3832
