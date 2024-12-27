@@ -284,8 +284,8 @@ style_wofs_summary_annual_wet = {
 # wofs_ls (WOFL) styles
 style_wofl_ls_obs = {
     "name": "observations",
-    "title": "Observations",
-    "abstract": "Observations",
+    "title": "Daily Water Observations",
+    "abstract": "Daily water observations",
     "value_map": {
         "water": [
             {
