@@ -96,6 +96,93 @@ ows_cfg = {
     },  # END OF wcs SECTION
     "layers": [
         {
+            "title": "Digital Earth Pacific OWS",
+            "abstract": "TODO",
+            "layers": [
+                # Hierarchical list of layers
+                {
+                    "title": "Earth Observation",
+                    "abstract": """Earth Observation""",
+                    "layers": [
+                        {
+                            "title": "Surface Reflectance",
+                            "abstract": """Surface Reflectance""",
+                            "layers": [
+                                {
+                                    "include": "ows_config.surface_reflectance.ows_s2_cfg.layer",
+                                    "type": "python",
+                                },
+                                {
+                                    "include": "ows_config.surface_reflectance.ows_landsat_cfg.layer_ls5",
+                                    "type": "python",
+                                },
+                                {
+                                    "include": "ows_config.surface_reflectance.ows_landsat_cfg.layer_ls7",
+                                    "type": "python",
+                                },
+                                {
+                                    "include": "ows_config.surface_reflectance.ows_landsat_cfg.layer_ls8",
+                                    "type": "python",
+                                },
+                                {
+                                    "include": "ows_config.surface_reflectance.ows_landsat_cfg.layer_ls9",
+                                    "type": "python",
+                                },
+                            ],
+                        },
+                        # {
+                        #     "title": "Radar backscatter",
+                        #     "abstract": """Radar backscatter""",
+                        #     "layers": [
+                        #         {
+                        #             "include": "ows_config.radar_backscatter.ows_s1_cfg.layer",
+                        #             "type": "python",
+                        #         },
+                        #     ],
+                        # },
+                        {
+                            "title": "Annual Summary Products",
+                            "abstract": """Annual Summary Products""",
+                            "layers": [
+                                # {
+                                #     "include": "ows_config.surface_reflectance.ows_landsat_cfg.dep_ls_geomad",
+                                #     "type": "python",
+                                # },
+                                {
+                                    "include": "ows_config.surface_reflectance.ows_s2_cfg.dep_s2_geomad",
+                                    "type": "python",
+                                },
+                                # {
+                                #     "include": "ows_config.radar_backscatter.ows_s1_mosaic_cfg.layer",
+                                #     "type": "python",
+                                # },
+                            ],
+                        },
+                    ],
+                },
+                # {
+                #     "title": "Elevation",
+                #     "abstract": """Digital elevation model""",
+                #     "layers": [
+                #         {
+                #             "include": "ows_config.elevation.ows_nasadem_cfg.layer",
+                #             "type": "python",
+                #         },
+                #     ],
+                # },
+                # {
+                #     "title": "Land Cover",
+                #     "abstract": """Land Cover""",
+                #     "layers": [
+                #         {
+                #             "include": "ows_config.land_cover.ows_landcover.dep_s2s1_mrd_layer",
+                #             "type": "python",
+                #         },
+                #     ],
+                # },
+            ],
+        },
+        {
             "title": "Surface water",
             "abstract": """Surface water""",
             "layers": [
@@ -120,6 +207,6 @@ ows_cfg = {
                     ],
                 },
             ],
-        }
+        },
     ],
 }

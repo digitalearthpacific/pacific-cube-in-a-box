@@ -33,7 +33,7 @@ TODO
     "styling": {
         "default_style": "simple_rgb",
         "styles": styles_ls_geomad,
-    },
+    }
 }
 
 layer_ls5 = {
@@ -56,7 +56,7 @@ TODO""",
     "styling": {
         "default_style": "simple_rgb",
         "styles": styles_landsat_5_7,
-    },
+    }
 }
 
 layer_ls7 = {
@@ -79,7 +79,7 @@ TODO""",
     "styling": {
         "default_style": "simple_rgb",
         "styles": styles_landsat_5_7,
-    },
+    }
 }
 
 layer_ls8 = {
@@ -102,7 +102,7 @@ TODO""",
     "styling": {
         "default_style": "simple_rgb",
         "styles": styles_landsat_8_9,
-    },
+    }
 }
 
 layer_ls9 = {
@@ -125,5 +125,5 @@ TODO""",
     "styling": {
         "default_style": "simple_rgb",
         "styles": styles_landsat_8_9,
-    },
+    }
 }
