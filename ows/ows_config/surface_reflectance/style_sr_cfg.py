@@ -244,6 +244,15 @@ style_gm_simple_rgb = {
     "multi_date": [{"allowed_count_range": [2, 4], "animate": True}],
 }
 
+style_gm_simple_s2_rgb = {
+    "name": "simple_rgb",
+    "title": "Geomedian - Red, Green, Blue",
+    "abstract": "Simple true-colour image, using the red, green and blue bands",
+    "components": {"red": {"red": 1.0}, "green": {"green": 1.0}, "blue": {"blue": 1.0}},
+    "scale_range": s2_range,
+    "multi_date": [{"allowed_count_range": [2, 4], "animate": True}],
+}
+
 style_ls_pure_red = {
     "name": "red",
     "title": "Red - 660",
@@ -1149,6 +1158,18 @@ style_gm_irg = {
     "scale_range": ls_range,
 }
 
+style_gm_s2_irg = {
+    "name": "infrared_green",
+    "title": "Geomedian - SWIR, NIR, Green",
+    "abstract": "False Colour image with SWIR1->Red, NIR->Green, and Green->Blue",
+    "components": {
+        "red": {"swir_1": 1.0},
+        "green": {"nir": 1.0},
+        "blue": {"green": 1.0},
+    },
+    "scale_range": s2_range,
+}
+
 styles_s2_list = [
     style_s2_rgb,
     style_s2_irg,
@@ -1205,8 +1226,8 @@ styles_ls_geomad = [
 ]
 
 styles_s2_geomad = [
-    style_gm_simple_rgb,
-    style_gm_irg,
+    style_gm_simple_s2_rgb,
+    style_gm_s2_irg,
     style_tmad_rgb_std,
     style_tmad_rgb_sens,
     style_ndvi,
