@@ -272,6 +272,14 @@ style_ls_pure_swir1 = {
     "scale_range": ls_range,
 }
 
+style_s2_pure_swir1 = {
+    "name": "swir_1",
+    "title": "Shortwave Infrared (SWIR) - 1610",
+    "abstract": "Short wave infra-red band 1, centered on 1610nm",
+    "components": {"red": {"B11": 1.0}, "green": {"B11": 1.0}, "blue": {"B11": 1.0}},
+    "scale_range": s2_range,
+}
+
 style_ls_pure_swir2 = {
     "name": "swir2",
     "title": "Shortwave Infrared (SWIR) - 2220",
@@ -282,14 +290,6 @@ style_ls_pure_swir2 = {
         "blue": {"swir2": 1.0},
     },
     "scale_range": ls_range,
-}
-
-style_s2_pure_swir1 = {
-    "name": "swir_1",
-    "title": "Shortwave Infrared (SWIR) - 1610",
-    "abstract": "Short wave infra-red band 1, centered on 1610nm",
-    "components": {"red": {"B11": 1.0}, "green": {"B11": 1.0}, "blue": {"B11": 1.0}},
-    "scale_range": s2_range,
 }
 
 style_s2_pure_swir2 = {
@@ -402,18 +402,6 @@ style_s2_pure_narrow_nir = {
     "title": "Narrow Near Infrared - 870",
     "abstract": "Near infra-red band, centred on 865nm",
     "components": {"red": {"nir": 1.0}, "green": {"nir": 1.0}, "blue": {"nir": 1.0}},
-    "scale_range": s2_range,
-}
-
-style_s2_pure_swir2 = {
-    "name": "swir2",
-    "title": "Shortwave Infrared (SWIR) - 2200",
-    "abstract": "Short wave infra-red band 2, centered on 2200nm",
-    "components": {
-        "red": {"swir2": 1.0},
-        "green": {"swir2": 1.0},
-        "blue": {"swir2": 1.0},
-    },
     "scale_range": s2_range,
 }
 
