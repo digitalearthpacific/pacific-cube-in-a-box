@@ -1,15 +1,18 @@
 from ows_config.common.ows_legend_cfg import legend_idx_0_1_5ticks
 
-style_gals_irg = {
+ls_range = [1000.0, 4000.0]
+s2_range = [0.0, 3000.0]
+
+style_ls_irg = {
     "name": "infrared_green",
     "title": "False colour - Green, SWIR, NIR",
     "abstract": "False Colour image with SWIR1->Red, NIR->Green, and Green->Blue",
     "components": {
-        "red": {"swir_1": 1.0},
+        "red": {"swir1": 1.0},
         "green": {"nir": 1.0},
         "blue": {"green": 1.0},
     },
-    "scale_range": [7272.0, 18181.0],
+    "scale_range": ls_range,
 }
 
 style_s2_irg = {
@@ -21,22 +24,10 @@ style_s2_irg = {
         "green": {"nir": 1.0},
         "blue": {"green": 1.0},
     },
-    "scale_range": [1000, 4000],
+    "scale_range": s2_range,
 }
 
-style_ls_irg = {
-    "name": "infrared_green",
-    "title": "False colour - Green, SWIR, NIR",
-    "abstract": "False Colour image with SWIR1->Red, NIR->Green, and Green->Blue",
-    "components": {
-        "red": {"swir1": 1.0},
-        "green": {"nir": 1.0},
-        "blue": {"green": 1.0},
-    },
-    "scale_range": [1000.0, 4000.0],
-}
-
-style_ls_ndvi = {
+style_ndvi = {
     "name": "ndvi",
     "title": "NDVI - Red, NIR",
     "abstract": "Normalised Difference Vegetation Index - a derived index that correlates well with the existence of vegetation",
@@ -78,7 +69,7 @@ style_ls_ndvi = {
                     "-1.0",
                     "0.0",
                     "1.0",
-                ]
+                ],
             },
             "feature_info_label": "ndvi_delta",
         },
@@ -86,7 +77,7 @@ style_ls_ndvi = {
     ],
 }
 
-style_ls_ndwi = {
+style_ndwi = {
     "name": "ndwi",
     "title": "NDWI - Green, NIR",
     "abstract": "Normalised Difference Water Index - a derived index that correlates well with the existence of water (McFeeters 1996)",
@@ -134,7 +125,7 @@ style_ls_ndwi = {
                     "-1.0",
                     "0.0",
                     "1.0",
-                ]
+                ],
             },
             "feature_info_label": "ndwi_delta",
         },
@@ -142,29 +133,7 @@ style_ls_ndwi = {
     ],
 }
 
-style_gals_mndwi = {
-    "name": "mndwi",
-    "title": "MNDWI - Green, SWIR",
-    "abstract": "Modified Normalised Difference Water Index - a derived index that correlates well with the existence of water (Xu 2006)",
-    "index_function": {
-        "function": "datacube_ows.band_utils.norm_diff",
-        "mapped_bands": True,
-        "kwargs": {"band1": "green", "band2": "swir_1"},
-    },
-    "needed_bands": ["green", "swir_1"],
-    "color_ramp": [
-        {"value": -0.1, "color": "#f7fbff", "alpha": 0.0},
-        {"value": 0.0, "color": "#d8e7f5"},
-        {"value": 0.2, "color": "#b0d2e8"},
-        {"value": 0.4, "color": "#73b3d8"},
-        {"value": 0.6, "color": "#3e8ec4"},
-        {"value": 0.8, "color": "#1563aa"},
-        {"value": 1.0, "color": "#08306b"},
-    ],
-    "legend": legend_idx_0_1_5ticks,
-}
-
-style_ls_mndwi = {
+style_mndwi = {
     "name": "mndwi",
     "title": "MNDWI - Green, SWIR",
     "abstract": "Modified Normalised Difference Water Index - a derived index that correlates "
@@ -187,20 +156,12 @@ style_ls_mndwi = {
     "legend": legend_idx_0_1_5ticks,
 }
 
-style_gals_pure_blue = {
-    "name": "blue",
-    "title": "Blue - 480",
-    "abstract": "Blue band, centered on 480nm",
-    "components": {"red": {"blue": 1.0}, "green": {"blue": 1.0}, "blue": {"blue": 1.0}},
-    "scale_range": [7272.0, 18181.0],
-}
-
 style_ls_pure_blue = {
     "name": "blue",
     "title": "Blue - 480",
     "abstract": "Blue band, centered on 480nm",
     "components": {"red": {"blue": 1.0}, "green": {"blue": 1.0}, "blue": {"blue": 1.0}},
-    "scale_range": [1000.0, 4000.0],
+    "scale_range": ls_range,
 }
 
 style_s2_pure_blue = {
@@ -208,19 +169,7 @@ style_s2_pure_blue = {
     "title": "Blue - 490",
     "abstract": "Blue band, centered on 490nm",
     "components": {"red": {"blue": 1.0}, "green": {"blue": 1.0}, "blue": {"blue": 1.0}},
-    "scale_range": [1000.0, 4000.0],
-}
-
-style_gals_pure_green = {
-    "name": "green",
-    "title": "Green - 560",
-    "abstract": "Green band, centered on 560nm",
-    "components": {
-        "red": {"green": 1.0},
-        "green": {"green": 1.0},
-        "blue": {"green": 1.0},
-    },
-    "scale_range": [7272.0, 18181.0],
+    "scale_range": s2_range,
 }
 
 style_ls_pure_green = {
@@ -232,15 +181,27 @@ style_ls_pure_green = {
         "green": {"green": 1.0},
         "blue": {"green": 1.0},
     },
-    "scale_range": [1000.0, 4000.0],
+    "scale_range": ls_range,
 }
 
-style_ls_simple_rgb = {
+style_s2_pure_green = {
+    "name": "green",
+    "title": "Green - 560",
+    "abstract": "Green band, centered on 560nm",
+    "components": {
+        "red": {"green": 1.0},
+        "green": {"green": 1.0},
+        "blue": {"green": 1.0},
+    },
+    "scale_range": s2_range,
+}
+
+style_simple_rgb = {
     "name": "simple_rgb",
     "title": "Simple RGB",
     "abstract": "Simple true-colour image, using the red, green and blue bands",
     "components": {"red": {"red": 1.0}, "green": {"green": 1.0}, "blue": {"blue": 1.0}},
-    "scale_range": [1000.0, 4000.0],
+    "scale_range": ls_range,
 }
 
 style_gm_simple_rgb = {
@@ -248,27 +209,8 @@ style_gm_simple_rgb = {
     "title": "Geomedian - Red, Green, Blue",
     "abstract": "Simple true-colour image, using the red, green and blue bands",
     "components": {"red": {"red": 1.0}, "green": {"green": 1.0}, "blue": {"blue": 1.0}},
-    "scale_range": [1000.0, 4000.0],
+    "scale_range": ls_range,
     "multi_date": [{"allowed_count_range": [2, 4], "animate": True}],
-}
-
-style_gals_simple_rgb = {
-    "name": "simple_rgb",
-    "title": "Simple RGB",
-    "abstract": "Simple true-colour image, using the red, green and blue bands",
-    "components": {"red": {"red": 1.0}, "green": {"green": 1.0}, "blue": {"blue": 1.0}},
-    # The raw band value range to be compressed to an 8 bit range for the output image tiles.
-    # Band values outside this range are clipped to 0 or 255 as appropriate.
-    "scale_range": [7272.0, 18181.0],
-}
-
-
-style_gals_pure_red = {
-    "name": "red",
-    "title": "Red - 660",
-    "abstract": "Red band, centered on 660nm",
-    "components": {"red": {"red": 1.0}, "green": {"red": 1.0}, "blue": {"red": 1.0}},
-    "scale_range": [7272.0, 18181.0],
 }
 
 style_ls_pure_red = {
@@ -276,15 +218,7 @@ style_ls_pure_red = {
     "title": "Red - 660",
     "abstract": "Red band, centered on 660nm",
     "components": {"red": {"red": 1.0}, "green": {"red": 1.0}, "blue": {"red": 1.0}},
-    "scale_range": [1000.0, 4000.0],
-}
-
-style_gals_pure_nir = {
-    "name": "nir",
-    "title": "Near Infrared (NIR) - 840",
-    "abstract": "Near infra-red band, centered on 840nm",
-    "components": {"red": {"nir": 1.0}, "green": {"nir": 1.0}, "blue": {"nir": 1.0}},
-    "scale_range": [7272.0, 18181.0],
+    "scale_range": ls_range,
 }
 
 style_ls_pure_nir = {
@@ -292,36 +226,15 @@ style_ls_pure_nir = {
     "title": "Near Infrared (NIR) - 840",
     "abstract": "Near infra-red band, centered on 840nm",
     "components": {"red": {"nir": 1.0}, "green": {"nir": 1.0}, "blue": {"nir": 1.0}},
-    "scale_range": [1000.0, 4000.0],
+    "scale_range": ls_range,
 }
 
-style_sentinel_pure_nir = {
+style_s2_pure_nir = {
     "name": "nir",
     "title": "Near Infrared (NIR) - 870",
     "abstract": "Near infra-red band, centered on 870nm",
     "components": {"red": {"nir": 1.0}, "green": {"nir": 1.0}, "blue": {"nir": 1.0}},
-    "scale_range": [1000.0, 4000.0],
-}
-
-style_gals_pure_swir1 = {
-    "name": "swir_1",
-    "title": "Shortwave Infrared (SWIR) - 1610",
-    "abstract": "Short wave infra-red band 1, centered on 1610nm",
-    "components": {
-        "red": {"swir_1": 1.0},
-        "green": {"swir_1": 1.0},
-        "blue": {"swir_1": 1.0},
-    },
-    "scale_range": [7272.0, 18181.0],
-}
-
-
-style_s2_pure_swir1 = {
-    "name": "swir_1",
-    "title": "Shortwave Infrared (SWIR) - 1610",
-    "abstract": "Short wave infra-red band 1, centered on 1610nm",
-    "components": {"red": {"B11": 1.0}, "green": {"B11": 1.0}, "blue": {"B11": 1.0}},
-    "scale_range": [1000.0, 4000.0],
+    "scale_range": s2_range,
 }
 
 style_ls_pure_swir1 = {
@@ -333,43 +246,7 @@ style_ls_pure_swir1 = {
         "green": {"swir1": 1.0},
         "blue": {"swir1": 1.0},
     },
-    "scale_range": [1000.0, 4000.0],
-}
-
-style_sentinel_pure_swir1 = {
-    "name": "swir1",
-    "title": "Shortwave Infrared (SWIR) - 1610",
-    "abstract": "Short wave infra-red band 1, centered on 1610nm",
-    "components": {
-        "red": {"swir1": 1.0},
-        "green": {"swir1": 1.0},
-        "blue": {"swir1": 1.0},
-    },
-    "scale_range": [1000.0, 4000.0],
-}
-
-style_gals_pure_swir2 = {
-    "name": "swir_2",
-    "title": "Shortwave Infrared (SWIR) - 2200",
-    "abstract": "Short wave infra-red band 2, centered on 2200nm",
-    "components": {
-        "red": {"swir_2": 1.0},
-        "green": {"swir_2": 1.0},
-        "blue": {"swir_2": 1.0},
-    },
-    "scale_range": [7272.0, 18181.0],
-}
-
-style_s2_pure_swir2 = {
-    "name": "swir_2",
-    "title": "Shortwave Infrared (SWIR) - 2200",
-    "abstract": "Short wave infra-red band 2, centered on 2200nm",
-    "components": {
-        "red": {"swir_2": 1.0},
-        "green": {"swir_2": 1.0},
-        "blue": {"swir_2": 1.0},
-    },
-    "scale_range": [1000, 4000.0],
+    "scale_range": ls_range,
 }
 
 style_ls_pure_swir2 = {
@@ -381,7 +258,27 @@ style_ls_pure_swir2 = {
         "green": {"swir2": 1.0},
         "blue": {"swir2": 1.0},
     },
-    "scale_range": [1000.0, 4000.0],
+    "scale_range": ls_range,
+}
+
+style_s2_pure_swir1 = {
+    "name": "swir_1",
+    "title": "Shortwave Infrared (SWIR) - 1610",
+    "abstract": "Short wave infra-red band 1, centered on 1610nm",
+    "components": {"red": {"B11": 1.0}, "green": {"B11": 1.0}, "blue": {"B11": 1.0}},
+    "scale_range": s2_range,
+}
+
+style_s2_pure_swir2 = {
+    "name": "swir_2",
+    "title": "Shortwave Infrared (SWIR) - 2200",
+    "abstract": "Short wave infra-red band 2, centered on 2200nm",
+    "components": {
+        "red": {"swir_2": 1.0},
+        "green": {"swir_2": 1.0},
+        "blue": {"swir_2": 1.0},
+    },
+    "scale_range": s2_range,
 }
 
 style_s2_ndci = {
@@ -435,7 +332,7 @@ style_s2_pure_aerosol = {
         "green": {"coastal_aerosol": 1.0},
         "blue": {"coastal_aerosol": 1.0},
     },
-    "scale_range": [1000.0, 4000.0],
+    "scale_range": s2_range,
 }
 
 
@@ -448,7 +345,7 @@ style_s2_pure_redge_1 = {
         "green": {"red_edge_1": 1.0},
         "blue": {"red_edge_1": 1.0},
     },
-    "scale_range": [1000.0, 4000.0],
+    "scale_range": s2_range,
 }
 
 
@@ -461,7 +358,7 @@ style_s2_pure_redge_2 = {
         "green": {"red_edge_2": 1.0},
         "blue": {"red_edge_2": 1.0},
     },
-    "scale_range": [1000.0, 4000.0],
+    "scale_range": s2_range,
 }
 
 
@@ -474,7 +371,7 @@ style_s2_pure_redge_3 = {
         "green": {"red_edge_3": 1.0},
         "blue": {"red_edge_3": 1.0},
     },
-    "scale_range": [1000.0, 4000.0],
+    "scale_range": s2_range,
 }
 
 style_s2_pure_narrow_nir = {
@@ -482,10 +379,10 @@ style_s2_pure_narrow_nir = {
     "title": "Narrow Near Infrared - 870",
     "abstract": "Near infra-red band, centred on 865nm",
     "components": {"red": {"nir": 1.0}, "green": {"nir": 1.0}, "blue": {"nir": 1.0}},
-    "scale_range": [1000.0, 4000.0],
+    "scale_range": s2_range,
 }
 
-style_sentinel_pure_swir2 = {
+style_s2_pure_swir2 = {
     "name": "swir2",
     "title": "Shortwave Infrared (SWIR) - 2200",
     "abstract": "Short wave infra-red band 2, centered on 2200nm",
@@ -494,7 +391,7 @@ style_sentinel_pure_swir2 = {
         "green": {"swir2": 1.0},
         "blue": {"swir2": 1.0},
     },
-    "scale_range": [1000.0, 4000.0],
+    "scale_range": s2_range,
 }
 
 style_s2_scl = {
@@ -582,7 +479,7 @@ style_s2_scl = {
 }
 
 
-style_sentinel_count = {
+style_s2_count = {
     "name": "count",
     "title": "Included observation count",
     "abstract": "Count of observations included in geomedian/MAD calculations",
@@ -674,52 +571,6 @@ style_gm_count = {
     },
 }
 
-styles_ls8c_list = [
-    style_gals_simple_rgb,
-    style_gals_irg,
-    style_gals_pure_blue,
-    style_gals_pure_green,
-    style_gals_pure_red,
-    style_gals_pure_nir,
-    style_gals_pure_swir1,
-    style_gals_pure_swir2,
-]
-
-styles_s2_list = [
-    style_ls_simple_rgb,
-    style_s2_irg,
-    style_ls_ndvi,
-    # style_ls_ndwi,
-    style_gals_mndwi,
-    style_s2_ndci,
-    style_s2_pure_aerosol,
-    style_s2_pure_blue,
-    style_ls_pure_green,
-    style_ls_pure_red,
-    style_s2_pure_redge_1,
-    style_s2_pure_redge_2,
-    style_s2_pure_redge_3,
-    style_ls_pure_nir,
-    style_s2_pure_narrow_nir,
-    style_s2_pure_swir1,
-    style_s2_pure_swir2,
-    style_s2_scl,
-]
-
-styles_sr_list = [
-    style_ls_simple_rgb,
-    style_ls_irg,
-    style_ls_ndvi,
-    style_ls_ndwi,
-    style_ls_mndwi,
-    style_ls_pure_blue,
-    style_ls_pure_green,
-    style_ls_pure_red,
-    style_sentinel_pure_nir,
-    style_sentinel_pure_swir1,
-    style_sentinel_pure_swir2,
-]
-
 # styles for Landsat C2
 # Band wavelengths have been removed as they differ
 # between LS5, 7 and 8
@@ -730,11 +581,7 @@ style_lsc2_sr_simple_rgb = {
     "name": "simple_rgb",
     "title": "True colour - RGB",
     "abstract": "True-colour image, using the red, green and blue bands",
-    "components": {
-        "red": {"red": 1.0},
-        "green": {"green": 1.0},
-        "blue": {"blue": 1.0}
-    },
+    "components": {"red": {"red": 1.0}, "green": {"green": 1.0}, "blue": {"blue": 1.0}},
     "scale_range": [7272.0, 18181.0],
 }
 
@@ -850,15 +697,23 @@ style_lsc2_sr_pure_red = {
     "scale_range": [7272.0, 18181.0],
 }
 
+style_s2_pure_red = {
+    "name": "red",
+    "title": "Red",
+    "abstract": "Red band",
+    "components": {
+        "red": {"red": 1.0},
+        "green": {"red": 1.0},
+        "blue": {"red": 1.0},
+    },
+    "scale_range": s2_range,
+}
+
 style_lsc2_sr_pure_nir = {
     "name": "nir",
     "title": "Near Infrared (NIR)",
     "abstract": "Near infra-red band",
-    "components": {
-        "red": {"nir": 1.0},
-        "green": {"nir": 1.0},
-        "blue": {"nir": 1.0}
-    },
+    "components": {"red": {"nir": 1.0}, "green": {"nir": 1.0}, "blue": {"nir": 1.0}},
     "scale_range": [7272.0, 18181.0],
 }
 
@@ -936,7 +791,7 @@ style_lsc2_pq = {
                 "color": "#96966e",
             },
         ]
-    }
+    },
 }
 
 style_ls8c2_pq = {
@@ -995,7 +850,7 @@ style_ls8c2_pq = {
                 "color": "#96966e",
             },
         ]
-    }
+    },
 }
 
 styles_landsat_5_7 = [
@@ -1030,7 +885,7 @@ styles_landsat_8_9 = [
 # Loose range from min to max
 sdev_scaling = [0.00, 0.10]
 bdev_scaling = [0.01, 0.10]
-edev_scaling = [250., 2000]
+edev_scaling = [250.0, 2000]
 
 # Percentiles at 0.05 and 0.95
 sdev_scaling_2 = [0.0, 0.05]
@@ -1272,18 +1127,67 @@ style_gm_irg = {
         "green": {"nir": 1.0},
         "blue": {"green": 1.0},
     },
-    "scale_range": [1000, 4000],
+    "scale_range": ls_range,
 }
 
+
+styles_s2_list = [
+    style_simple_rgb,
+    style_s2_irg,
+    style_ndvi,
+    style_ndwi,
+    style_mndwi,
+    style_s2_ndci,
+    style_s2_pure_aerosol,
+    style_s2_pure_blue,
+    style_ls_pure_green,
+    style_ls_pure_red,
+    style_s2_pure_redge_1,
+    style_s2_pure_redge_2,
+    style_s2_pure_redge_3,
+    style_ls_pure_nir,
+    style_s2_pure_narrow_nir,
+    style_s2_pure_swir1,
+    style_s2_pure_swir2,
+    style_s2_scl,
+]
+
+styles_sr_list = [
+    style_simple_rgb,
+    style_ls_irg,
+    style_ndvi,
+    style_ndwi,
+    style_mndwi,
+    style_ls_pure_blue,
+    style_ls_pure_green,
+    style_ls_pure_red,
+    style_ls_pure_nir,
+    style_ls_pure_swir1,
+    style_ls_pure_swir2,
+]
+
+styles_s2_list = [
+    style_simple_rgb,
+    style_s2_irg,
+    style_ndvi,
+    style_ndwi,
+    style_mndwi,
+    style_s2_pure_red,
+    style_s2_pure_blue,
+    style_s2_pure_green,
+    style_s2_pure_nir,
+    style_s2_pure_swir1,
+    style_s2_pure_swir2,
+]
 
 styles_ls_geomad = [
     style_lsc2_sr_simple_rgb,
     style_lsc2_sr_irg,
     style_tmad_rgb_std,
     style_tmad_rgb_sens,
-    style_ls_ndvi,
-    style_ls_ndwi,
-    style_gals_mndwi,
+    style_ndvi,
+    style_ndwi,
+    style_mndwi,
     style_lsc2_sr_pure_blue,
     style_lsc2_sr_pure_green,
     style_lsc2_sr_pure_red,
@@ -1301,17 +1205,17 @@ styles_s2_geomad = [
     style_gm_irg,
     style_tmad_rgb_std,
     style_tmad_rgb_sens,
-    style_ls_ndvi,
-    style_ls_ndwi,
-    style_gals_mndwi,
+    style_ndvi,
+    style_ndwi,
+    style_mndwi,
     style_s2_ndci,
     style_s2_pure_blue,
-    style_ls_pure_green,
-    style_ls_pure_red,
+    style_s2_pure_green,
+    style_s2_pure_red,
     style_s2_pure_redge_1,
     style_s2_pure_redge_2,
     style_s2_pure_redge_3,
-    style_ls_pure_nir,
+    style_s2_pure_nir,
     style_s2_pure_narrow_nir,
     style_s2_pure_swir1,
     style_s2_pure_swir2,
