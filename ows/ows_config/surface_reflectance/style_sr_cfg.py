@@ -219,12 +219,20 @@ style_s2_pure_green = {
     "scale_range": s2_range,
 }
 
-style_simple_rgb = {
+style_ls_rgb = {
     "name": "simple_rgb",
     "title": "Simple RGB",
     "abstract": "Simple true-colour image, using the red, green and blue bands",
     "components": {"red": {"red": 1.0}, "green": {"green": 1.0}, "blue": {"blue": 1.0}},
     "scale_range": ls_range,
+}
+
+style_s2_rgb = {
+    "name": "simple_rgb",
+    "title": "Simple RGB",
+    "abstract": "Simple true-colour image, using the red, green and blue bands",
+    "components": {"red": {"red": 1.0}, "green": {"green": 1.0}, "blue": {"blue": 1.0}},
+    "scale_range": s2_range,
 }
 
 style_gm_simple_rgb = {
@@ -1143,7 +1151,7 @@ style_gm_irg = {
 
 
 styles_s2_list = [
-    style_simple_rgb,
+    style_s2_rgb,
     style_s2_irg,
     style_ndvi,
     style_ndwi,
@@ -1164,7 +1172,7 @@ styles_s2_list = [
 ]
 
 styles_sr_list = [
-    style_simple_rgb,
+    style_ls_rgb,
     style_ls_irg,
     style_ndvi,
     style_ndwi,
@@ -1178,7 +1186,7 @@ styles_sr_list = [
 ]
 
 styles_s2_list = [
-    style_simple_rgb,
+    style_s2_rgb,
     style_s2_irg,
     style_ndvi,
     style_ndwi,
