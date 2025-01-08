@@ -133,7 +133,7 @@ style_ndwi = {
     ],
 }
 
-style_mndwi = {
+style_ls_mndwi = {
     "name": "mndwi",
     "title": "MNDWI - Green, SWIR",
     "abstract": "Modified Normalised Difference Water Index - a derived index that correlates "
@@ -144,6 +144,29 @@ style_mndwi = {
         "kwargs": {"band1": "green", "band2": "swir1"},
     },
     "needed_bands": ["green", "swir1"],
+    "color_ramp": [
+        {"value": -0.1, "color": "#f7fbff", "alpha": 0.0},
+        {"value": 0.0, "color": "#d8e7f5"},
+        {"value": 0.2, "color": "#b0d2e8"},
+        {"value": 0.4, "color": "#73b3d8"},
+        {"value": 0.6, "color": "#3e8ec4"},
+        {"value": 0.8, "color": "#1563aa"},
+        {"value": 1.0, "color": "#08306b"},
+    ],
+    "legend": legend_idx_0_1_5ticks,
+}
+
+style_s2_mndwi = {
+    "name": "mndwi",
+    "title": "MNDWI - Green, SWIR",
+    "abstract": "Modified Normalised Difference Water Index - a derived index that correlates "
+    "well with the existence of water (Xu 2006)",
+    "index_function": {
+        "function": "datacube_ows.band_utils.norm_diff",
+        "mapped_bands": True,
+        "kwargs": {"band1": "green", "band2": "swir_1"},
+    },
+    "needed_bands": ["green", "swir_1"],
     "color_ramp": [
         {"value": -0.1, "color": "#f7fbff", "alpha": 0.0},
         {"value": 0.0, "color": "#d8e7f5"},
@@ -1136,7 +1159,7 @@ styles_s2_list = [
     style_s2_irg,
     style_ndvi,
     style_ndwi,
-    style_mndwi,
+    style_ls_mndwi,
     style_s2_ndci,
     style_s2_pure_aerosol,
     style_s2_pure_blue,
@@ -1157,7 +1180,7 @@ styles_sr_list = [
     style_ls_irg,
     style_ndvi,
     style_ndwi,
-    style_mndwi,
+    style_ls_mndwi,
     style_ls_pure_blue,
     style_ls_pure_green,
     style_ls_pure_red,
@@ -1171,7 +1194,7 @@ styles_s2_list = [
     style_s2_irg,
     style_ndvi,
     style_ndwi,
-    style_mndwi,
+    style_s2_mndwi,
     style_s2_pure_red,
     style_s2_pure_blue,
     style_s2_pure_green,
@@ -1187,7 +1210,7 @@ styles_ls_geomad = [
     style_tmad_rgb_sens,
     style_ndvi,
     style_ndwi,
-    style_mndwi,
+    style_ls_mndwi,
     style_lsc2_sr_pure_blue,
     style_lsc2_sr_pure_green,
     style_lsc2_sr_pure_red,
@@ -1207,7 +1230,7 @@ styles_s2_geomad = [
     style_tmad_rgb_sens,
     style_ndvi,
     style_ndwi,
-    style_mndwi,
+    style_s2_mndwi,
     style_s2_ndci,
     style_s2_pure_blue,
     style_s2_pure_green,
