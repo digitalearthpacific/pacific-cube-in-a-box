@@ -1149,13 +1149,12 @@ style_gm_irg = {
     "scale_range": ls_range,
 }
 
-
 styles_s2_list = [
     style_s2_rgb,
     style_s2_irg,
     style_ndvi,
     style_ndwi,
-    style_ls_mndwi,
+    style_s2_mndwi,
     style_s2_ndci,
     style_s2_pure_aerosol,
     style_s2_pure_blue,
@@ -1183,20 +1182,6 @@ styles_sr_list = [
     style_ls_pure_nir,
     style_ls_pure_swir1,
     style_ls_pure_swir2,
-]
-
-styles_s2_list = [
-    style_s2_rgb,
-    style_s2_irg,
-    style_ndvi,
-    style_ndwi,
-    style_s2_mndwi,
-    style_s2_pure_red,
-    style_s2_pure_blue,
-    style_s2_pure_green,
-    style_s2_pure_nir,
-    style_s2_pure_swir1,
-    style_s2_pure_swir2,
 ]
 
 styles_ls_geomad = [
