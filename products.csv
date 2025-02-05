@@ -3,5 +3,5 @@ ls5_c2l2_sr;ls7_c2l2_sr;ls8_c2l2_sr;ls9_c2l2_sr,https://raw.githubusercontent.co
 sentinel_2_c1_l2a,https://raw.githubusercontent.com/digitalearthpacific/pacific-cube-in-a-box/main/products/sentinel_2_c1_l2a.odc-product.yaml
 dep_s2_geomad,https://raw.githubusercontent.com/digitalearthpacific/pacific-cube-in-a-box/main/products/dep_s2_geomad.odc-product.yaml
 dep_s2s1_mrd,https://raw.githubusercontent.com/digitalearthpacific/pacific-cube-in-a-box/main/products/dep_s2s1_mrd.odc-product.yaml
-dep_ls_wofl,https://raw.githubusercontent.com/digitalearthpacific/pacific-cube-in-a-box/refs/heads/wofs/products/dep_ls_wofl.odc-product.yaml
-dep_ls_wofs_summary_annual,https://raw.githubusercontent.com/digitalearthpacific/pacific-cube-in-a-box/refs/heads/wofs/products/dep_ls_wofs_summary_annual.odc-product.yaml
+dep_ls_wofl,https://raw.githubusercontent.com/digitalearthpacific/pacific-cube-in-a-box/main/products/dep_ls_wofl.odc-product.yaml
+dep_ls_wofs_summary_annual,https://raw.githubusercontent.com/digitalearthpacific/pacific-cube-in-a-box/main/products/dep_ls_wofs_summary_annual.odc-product.yaml
