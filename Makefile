@@ -34,6 +34,15 @@ datacube-update-spindex:
 products:
 	dc-sync-products products.csv --update-if-exists
 
+index-dep-wofl:
+	stac-to-dc \
+		--catalog-href='https://stac.staging.digitalearthpacific.io' \
+		--collections='dep_ls_wofl'
+
+index-dep-wofs-annual:
+	stac-to-dc \
+		--catalog-href='https://stac.staging.digitalearthpacific.io' \
+		--collections='dep_ls_wofs_summary_annual'
 
 index-dep-s2-geomad:
 	stac-to-dc \
@@ -114,8 +123,6 @@ index-s1-mosaic:
     ${AZURE_STORAGE_SAS_TOKEN} \
     dep_s1_mosaic/0-0-2 \
 	stac-item.json
-
-
 
 
 index-all: index-landsat-5 index-landsat-7 index-landsat-8 index-landsat-9 index-sentinel-1 index-sentinel-2 index-nasadem index-esri-lc
