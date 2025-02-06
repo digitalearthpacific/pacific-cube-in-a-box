@@ -179,33 +179,32 @@ ows_cfg = {
                 #             "type": "python",
                 #         },
                 #     ],
-                # },
-            ],
-        },
-        {
-            "title": "Surface water",
-            "abstract": """Surface water""",
-            "layers": [
                 {
-                    "title": "Daily surface water",
-                    "abstract": """Daily surface water""",
+                    "title": "Surface water",
+                    "abstract": """Surface water""",
                     "layers": [
                         {
-                            "include": "ows_config.wofs.ows_wofl_ls_cfg.layer",
-                            "type": "python",
+                            "title": "Daily surface water",
+                            "abstract": """Daily surface water""",
+                            "layers": [
+                                {
+                                    "include": "ows_config.wofs.ows_wofl_ls_cfg.layer",
+                                    "type": "python",
+                                },
+                            ],
                         },
-                    ],
-                },
-                {
-                    "title": "Annual surface water",
-                    "abstract": """Annual surface water""",
-                    "layers": [
                         {
-                            "include": "ows_config.wofs.ows_wofs_annual_cfg.layer",
-                            "type": "python",
+                            "title": "Annual surface water",
+                            "abstract": """Annual surface water""",
+                            "layers": [
+                                {
+                                    "include": "ows_config.wofs.ows_wofs_annual_cfg.layer",
+                                    "type": "python",
+                                },
+                            ],
                         },
                     ],
-                },
+                },  # },
             ],
         },
     ],
