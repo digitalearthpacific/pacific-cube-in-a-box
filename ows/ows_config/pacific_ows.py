@@ -204,7 +204,23 @@ ows_cfg = {
                             ],
                         },
                     ],
-                },  # },
+                },
+                {
+                    "title": "Vegetation",
+                    "abstract": """Vegetation""",
+                    "layers": [
+                        {
+                            "title": "Mangroves",
+                            "abstract": """Mangrove cover""",
+                            "layers": [
+                                {
+                                    "include": "ows_config.mangroves.ows_mangroves_cfg.layer",
+                                    "type": "python",
+                                },
+                            ],
+                        },
+                    ],
+                },
             ],
         },
     ],

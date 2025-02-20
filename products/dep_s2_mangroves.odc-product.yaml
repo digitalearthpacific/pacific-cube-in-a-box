@@ -1,0 +1,23 @@
+---
+name: dep_s2_mangroves
+description: Sentinel-2 Mangroves
+metadata_type: eo3
+
+license: CC-BY-4.0
+
+metadata:
+  product:
+    name: dep_s2_mangroves
+
+storage:
+  crs: EPSG:3832
+  resolution:
+    x: 10
+    y: -10
+
+measurements:
+- name: "mangroves"
+  aliases: [ MANGROVES ]
+  units: "1"
+  dtype: uint16
+  nodata: 0

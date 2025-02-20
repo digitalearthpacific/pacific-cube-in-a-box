@@ -5,3 +5,4 @@ dep_s2_geomad,https://raw.githubusercontent.com/digitalearthpacific/pacific-cube
 dep_s2s1_mrd,https://raw.githubusercontent.com/digitalearthpacific/pacific-cube-in-a-box/main/products/dep_s2s1_mrd.odc-product.yaml
 dep_ls_wofl,https://raw.githubusercontent.com/digitalearthpacific/pacific-cube-in-a-box/main/products/dep_ls_wofl.odc-product.yaml
 dep_ls_wofs_summary_annual,https://raw.githubusercontent.com/digitalearthpacific/pacific-cube-in-a-box/main/products/dep_ls_wofs_summary_annual.odc-product.yaml
+dep_s2_mangroves,https://raw.githubusercontent.com/digitalearthpacific/pacific-cube-in-a-box/main/products/dep_s2_mangroves.odc-product.yaml
