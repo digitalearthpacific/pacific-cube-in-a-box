@@ -26,7 +26,7 @@ layer = {
     "abstract": """
 Todo...
 """,
-    "product_name": "mangroves",
+    "product_name": "dep_s2_mangroves",
     "time_resolution": "summary",
     "bands": {"mangroves": []},
     "resource_limits": reslim_continental,

@@ -37,12 +37,19 @@ products:
 index-dep-wofl:
 	stac-to-dc \
 		--catalog-href='https://stac.staging.digitalearthpacific.io' \
-		--collections='dep_ls_wofl'
+		--collections='dep_ls_wofl' \
+		--limit=10
 
 index-dep-wofs-annual:
 	stac-to-dc \
 		--catalog-href='https://stac.staging.digitalearthpacific.io' \
-		--collections='dep_ls_wofs_summary_annual'
+		--collections='dep_ls_wofs_summary_annual' \
+		--limit=10
+
+index-mangroves:
+	stac-to-dc \
+		--catalog-href='https://stac.staging.digitalearthpacific.io' \
+		--collections='dep_s2_mangroves'
 
 index-dep-s2-geomad:
 	stac-to-dc \

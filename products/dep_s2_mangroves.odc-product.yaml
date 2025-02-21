@@ -19,5 +19,5 @@ measurements:
 - name: "mangroves"
   aliases: [ MANGROVES ]
   units: "1"
-  dtype: uint16
-  nodata: 0
+  dtype: uint8
+  nodata: 255
