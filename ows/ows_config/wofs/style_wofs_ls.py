@@ -10,8 +10,8 @@ from ows_config.common.ows_legend_cfg import legend_idx_percentage_by_10
 # styles used by wofs_ls_summary_annual
 style_wofs_summary_annual_frequency_masked = {
     "name": "wofs_summary_annual_frequency_masked",
-    "title": "Water frequency",
-    "abstract": "WOfS summary showing the frequency of water",
+    "title": "Water frequency, ocean masked",
+    "abstract": "WOfS summary showing the frequency of water, with oceans masked",
     "index_function": {
         "function": "datacube_ows.band_utils.single_band",
         "mapped_bands": True,
@@ -159,127 +159,159 @@ style_wofs_summary_annual_wet = {
 }
 
 # styles used by wofs_ls_summary_alltime
-# style_wofs_summary_alltime_frequency = {
-#    "name": "wofs_summary_alltime_frequency",
-#    "title": " Water frequency",
-#    "abstract": "WOfS summary showing the frequency of Wetness",
-#    "index_function": {
-#        "function": "datacube_ows.band_utils.single_band",
-#        "mapped_bands": True,
-#        "kwargs": {
-#            "band": "frequency",
-#        },
-#    },
-#    "needed_bands": ["frequency"],
-#    "include_in_feature_info": False,
-#    "color_ramp": [
-#        {"value": 0.0, "color": "#FFFFFF", "alpha": 0.0},
-#        {"value": 0.002, "color": "#FFFFFF", "alpha": 0.0},
-#        {"value": 0.005, "color": "#b9e6c7", "alpha": 0.25},
-#        {"value": 0.01, "color": "#8bdab2", "alpha": 0.75},
-#        {"value": 0.02, "color": "#59ccad"},
-#        {"value": 0.05, "color": "#40b7ad"},
-#        {"value": 0.1, "color": "#36a3ab"},
-#        {"value": 0.2, "color": "#348fa7"},
-#        {"value": 0.3, "color": "#357aa2"},
-#        {"value": 0.4, "color": "#37659e"},
-#        {"value": 0.5, "color": "#3e5095"},
-#        {"value": 0.6, "color": "#413d7b"},
-#        {"value": 0.7, "color": "#3a2c59"},
-#        {"value": 0.8, "color": "#2e1e3b"},
-#        {"value": 0.9, "color": "#1e111f"},
-#    ],
-#    "legend": legend_idx_percentage_by_10,
-# }
+style_wofs_summary_alltime_frequency_masked = {
+    "name": "wofs_summary_alltime_frequency_masked",
+    "title": "Water frequency, ocean masked",
+    "abstract": "WOfS summary showing the frequency of water, with oceans masked",
+    "index_function": {
+        "function": "datacube_ows.band_utils.single_band",
+        "mapped_bands": True,
+        "kwargs": {
+            "band": "frequency",
+        },
+    },
+    "needed_bands": ["frequency"],
+    "include_in_feature_info": False,
+    "color_ramp": [
+        {"value": 0.0, "color": "#FFFFFF", "alpha": 0.0},
+        {"value": 0.002, "color": "#FFFFFF", "alpha": 0.0},
+        {"value": 0.005, "color": "#b9e6c7", "alpha": 0.25},
+        {"value": 0.01, "color": "#8bdab2", "alpha": 0.75},
+        {"value": 0.02, "color": "#59ccad"},
+        {"value": 0.05, "color": "#40b7ad"},
+        {"value": 0.1, "color": "#36a3ab"},
+        {"value": 0.2, "color": "#348fa7"},
+        {"value": 0.3, "color": "#357aa2"},
+        {"value": 0.4, "color": "#37659e"},
+        {"value": 0.5, "color": "#3e5095"},
+        {"value": 0.6, "color": "#413d7b"},
+        {"value": 0.7, "color": "#3a2c59"},
+        {"value": 0.8, "color": "#2e1e3b"},
+        {"value": 0.9, "color": "#1e111f"},
+    ],
+    "legend": legend_idx_percentage_by_10,
+}
+style_wofs_summary_alltime_frequency = {
+    "name": "wofs_summary_alltime_frequency",
+    "title": "Water frequency",
+    "abstract": "WOfS summary showing the frequency of water",
+    "index_function": {
+        "function": "datacube_ows.band_utils.single_band",
+        "mapped_bands": True,
+        "kwargs": {
+            "band": "frequency",
+        },
+    },
+    "needed_bands": ["frequency"],
+    "include_in_feature_info": False,
+    "color_ramp": [
+        {"value": 0.0, "color": "#FFFFFF", "alpha": 0.0},
+        {"value": 0.002, "color": "#FFFFFF", "alpha": 0.0},
+        {"value": 0.005, "color": "#b9e6c7", "alpha": 0.25},
+        {"value": 0.01, "color": "#8bdab2", "alpha": 0.75},
+        {"value": 0.02, "color": "#59ccad"},
+        {"value": 0.05, "color": "#40b7ad"},
+        {"value": 0.1, "color": "#36a3ab"},
+        {"value": 0.2, "color": "#348fa7"},
+        {"value": 0.3, "color": "#357aa2"},
+        {"value": 0.4, "color": "#37659e"},
+        {"value": 0.5, "color": "#3e5095"},
+        {"value": 0.6, "color": "#413d7b"},
+        {"value": 0.7, "color": "#3a2c59"},
+        {"value": 0.8, "color": "#2e1e3b"},
+        {"value": 0.9, "color": "#1e111f"},
+    ],
+    "legend": legend_idx_percentage_by_10,
+}
 #
-# style_wofs_summary_alltime_clear = {
-#    "name": "wofs_summary_alltime_clear",
-#    "title": "Count of clear observations",
-#    "abstract": "WOfS summary showing the count of clear observations",
-#    "index_function": {
-#        "function": "datacube_ows.band_utils.single_band",
-#        "mapped_bands": True,
-#        "kwargs": {
-#            "band": "count_clear",
-#        },
-#    },
-#    "needed_bands": ["count_clear"],
-#    "color_ramp": [
-#        {"value": 0, "color": "#FFFFFF", "alpha": 0},
-#        {
-#            # purely for legend display
-#            # we should not get fractional
-#            # values in this styles
-#            "value": 0,
-#            "color": "#FFFFFF",
-#            "alpha": 1,
-#        },
-#        {"value": 20, "color": "#f1faba"},
-#        {"value": 40, "color": "#d6efb3"},
-#        {"value": 60, "color": "#abdeb7"},
-#        {"value": 80, "color": "#73c8bd"},
-#        {"value": 100, "color": "#40b5c4"},
-#        {"value": 120, "color": "#2498c1"},
-#        {"value": 140, "color": "#2072b1"},
-#        {"value": 160, "color": "#234da0"},
-#        {"value": 180, "color": "#1f2f87"},
-#    ],
-#    "legend": {
-#        "begin": "0",
-#        "end": "180",
-#        "decimal_places": 0,
-#        "ticks_every": 20,
-#        "legend_strip_location": [0.05, 0.5, 0.89, 0.15],
-#        "tick_labels": {
-#            "180": {"prefix": ">"},
-#        },
-#    },
-# }
+style_wofs_summary_alltime_clear = {
+    "name": "wofs_summary_alltime_clear",
+    "title": "Count of clear observations",
+    "abstract": "WOfS summary showing the count of clear observations",
+    "index_function": {
+        "function": "datacube_ows.band_utils.single_band",
+        "mapped_bands": True,
+        "kwargs": {
+            "band": "count_clear",
+        },
+    },
+    "needed_bands": ["count_clear"],
+    "color_ramp": [
+        {"value": 0, "color": "#FFFFFF", "alpha": 0},
+        {
+            # purely for legend display
+            # we should not get fractional
+            # values in this styles
+            "value": 0,
+            "color": "#FFFFFF",
+            "alpha": 1,
+        },
+        {"value": 20, "color": "#f1faba"},
+        {"value": 40, "color": "#d6efb3"},
+        {"value": 60, "color": "#abdeb7"},
+        {"value": 80, "color": "#73c8bd"},
+        {"value": 100, "color": "#40b5c4"},
+        {"value": 120, "color": "#2498c1"},
+        {"value": 140, "color": "#2072b1"},
+        {"value": 160, "color": "#234da0"},
+        {"value": 180, "color": "#1f2f87"},
+    ],
+    "legend": {
+        "begin": "0",
+        "end": "180",
+        "decimal_places": 0,
+        "ticks_every": 20,
+        "legend_strip_location": [0.05, 0.5, 0.89, 0.15],
+        "tick_labels": {
+            "180": {"prefix": ">"},
+        },
+    },
+}
 #
-# style_wofs_summary_alltime_wet = {
-#    "name": "wofs_summary_alltime_wet",
-#    "title": "Count of wet observations",
-#    "abstract": "WOfS summary showing the count of water observations",
-#    "index_function": {
-#        "function": "datacube_ows.band_utils.single_band",
-#        "mapped_bands": True,
-#        "kwargs": {
-#            "band": "count_wet",
-#        },
-#    },
-#    "needed_bands": ["count_wet"],
-#    "color_ramp": [
-#        {"value": 0, "color": "#FFFFFF", "alpha": 0},
-#        {
-#            # purely for legend display
-#            # we should not get fractional
-#            # values in this styles
-#            "value": 0.2,
-#            "color": "#FFFFFF",
-#            "alpha": 1,
-#        },
-#        {"value": 20, "color": "#f2ecf5"},
-#        {"value": 30, "color": "#e3e0ee"},
-#        {"value": 40, "color": "#d0d1e6"},
-#        {"value": 50, "color": "#b4c4df"},
-#        {"value": 60, "color": "#96b6d7"},
-#        {"value": 70, "color": "#73a9cf"},
-#        {"value": 80, "color": "#4a98c5"},
-#        {"value": 90, "color": "#2685bb"},
-#        {"value": 100, "color": "#056faf"},
-#        {"value": 110, "color": "#046198"},
-#        {"value": 120, "color": "#034e7b"},
-#    ],
-#    "legend": {
-#        "begin": "0",
-#        "end": "120",
-#        "decimal_places": 0,
-#        "ticks_every": 20,
-#        "tick_labels": {
-#            "120": {"prefix": ">"},
-#        },
-#    },
-# }
+style_wofs_summary_alltime_wet = {
+    "name": "wofs_summary_alltime_wet",
+    "title": "Count of wet observations",
+    "abstract": "WOfS summary showing the count of water observations",
+    "index_function": {
+        "function": "datacube_ows.band_utils.single_band",
+        "mapped_bands": True,
+        "kwargs": {
+            "band": "count_wet",
+        },
+    },
+    "needed_bands": ["count_wet"],
+    "color_ramp": [
+        {"value": 0, "color": "#FFFFFF", "alpha": 0},
+        {
+            # purely for legend display
+            # we should not get fractional
+            # values in this styles
+            "value": 0.2,
+            "color": "#FFFFFF",
+            "alpha": 1,
+        },
+        {"value": 20, "color": "#f2ecf5"},
+        {"value": 30, "color": "#e3e0ee"},
+        {"value": 40, "color": "#d0d1e6"},
+        {"value": 50, "color": "#b4c4df"},
+        {"value": 60, "color": "#96b6d7"},
+        {"value": 70, "color": "#73a9cf"},
+        {"value": 80, "color": "#4a98c5"},
+        {"value": 90, "color": "#2685bb"},
+        {"value": 100, "color": "#056faf"},
+        {"value": 110, "color": "#046198"},
+        {"value": 120, "color": "#034e7b"},
+    ],
+    "legend": {
+        "begin": "0",
+        "end": "120",
+        "decimal_places": 0,
+        "ticks_every": 20,
+        "tick_labels": {
+            "120": {"prefix": ">"},
+        },
+    },
+}
 
 # wofs_ls (WOFL) styles
 style_wofl_ls_obs = {
