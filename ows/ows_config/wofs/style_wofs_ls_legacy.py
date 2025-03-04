@@ -9,7 +9,7 @@ from ows_config.common.ows_legend_cfg import legend_idx_percentage_by_10
 legacy_style_wofs_summary_annual_frequency_masked = {
     "name": "legacy_wofs_summary_annual_frequency_masked",
     "title": " Water frequency, ocean masked (legacy colourmap)",
-    "abstract": "WOfS summary showing the frequency of water",
+    "abstract": "WOfS summary showing the frequency of water, with oceans masked",
     "index_function": {
         "function": "datacube_ows.band_utils.single_band",
         "mapped_bands": True,
@@ -72,7 +72,7 @@ legacy_style_wofs_summary_annual_frequency = {
 legacy_style_wofs_summary_alltime_frequency_masked = {
     "name": "legacy_wofs_summary_alltime_frequency_masked",
     "title": " Water frequency, ocean masked (legacy colourmap)",
-    "abstract": "WOfS summary showing the frequency of water",
+    "abstract": "WOfS summary showing the frequency of water, with oceans masked",
     "index_function": {
         "function": "datacube_ows.band_utils.single_band",
         "mapped_bands": True,

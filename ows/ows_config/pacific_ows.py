@@ -181,7 +181,7 @@ ows_cfg = {
                 #     ],
                 {
                     "title": "Surface water",
-                    "abstract": """Surface water""",
+                    "abstract": """Surface water as measured by the Water Observations from Space (WOfS) algorithm.""",
                     "layers": [
                         {
                             "title": "Surface water",

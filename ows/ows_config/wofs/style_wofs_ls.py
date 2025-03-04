@@ -167,10 +167,10 @@ style_wofs_summary_alltime_frequency_masked = {
         "function": "datacube_ows.band_utils.single_band",
         "mapped_bands": True,
         "kwargs": {
-            "band": "frequency",
+            "band": "frequency_masked",
         },
     },
-    "needed_bands": ["frequency"],
+    "needed_bands": ["frequency_masked"],
     "include_in_feature_info": False,
     "color_ramp": [
         {"value": 0.0, "color": "#FFFFFF", "alpha": 0.0},
