@@ -10,7 +10,7 @@ from ows_config.common.ows_legend_cfg import legend_idx_percentage_by_10
 # styles used by wofs_ls_summary_annual
 style_wofs_summary_annual_frequency_masked = {
     "name": "wofs_summary_annual_frequency_masked",
-    "title": "Water frequency, ocean masked",
+    "title": " Water frequency, ocean masked",
     "abstract": "WOfS summary showing the frequency of water, with oceans masked",
     "index_function": {
         "function": "datacube_ows.band_utils.single_band",

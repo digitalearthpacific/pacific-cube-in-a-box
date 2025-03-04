@@ -7,6 +7,12 @@ from ows_config.wofs.style_wofs_ls import (
     style_wofs_summary_alltime_wet,
 )
 
+from ows_config.wofs.style_wofs_ls_legacy import (
+    legacy_style_wofs_summary_alltime_frequency_masked,
+    legacy_style_wofs_summary_alltime_frequency,
+)
+
+
 layer = {
     "title": "Water Observations from Space all time summary",
     "name": "wofs_ls_summary_alltime",
@@ -38,7 +44,9 @@ For more information on the algorithm, see https://doi.org/10.1016/j.rse.2015.11
         "default_style": "wofs_summary_alltime_frequency_masked",
         "styles": [
             style_wofs_summary_alltime_frequency_masked,
+            legacy_style_wofs_summary_alltime_frequency_masked,
             style_wofs_summary_alltime_frequency,
+            legacy_style_wofs_summary_alltime_frequency,
             style_wofs_summary_alltime_wet,
             style_wofs_summary_alltime_clear,
         ],

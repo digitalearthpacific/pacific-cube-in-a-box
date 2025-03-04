@@ -8,13 +8,18 @@ from ows_config.wofs.style_wofs_ls import (
     style_wofs_summary_annual_wet,
 )
 
+from ows_config.wofs.style_wofs_ls_legacy import (
+    legacy_style_wofs_summary_annual_frequency_masked,
+    legacy_style_wofs_summary_annual_frequency,
+)
+
 layer = {
     "title": "Water Observations from Space annual summary",
     "name": "wofs_ls_summary_annual",
     "abstract": """
 Annual water summary is one of the statistical summaries of the Water Observation from Space (WOfS) product that shows what percentage of clear observations were detected as wet (ie. the ration of wet to clear as a percentage) from each calendar year.
 
-This product has a spatial resolution of 30 m and a temporal coverage of 1980s to last calender year.
+This product has a spatial resolution of 30 m and a temporal coverage of 1980s to last calender year. The exact start year varies regionally due to data availability.
 
 It is derived from Landsat Collection 2 surface reflectance product.
 
@@ -39,7 +44,9 @@ For more information on the algorithm, see https://doi.org/10.1016/j.rse.2015.11
         "default_style": "wofs_summary_annual_frequency_masked",
         "styles": [
             style_wofs_summary_annual_frequency_masked,
+            legacy_style_wofs_summary_annual_frequency_masked,
             style_wofs_summary_annual_frequency,
+            legacy_style_wofs_summary_annual_frequency,
             style_wofs_summary_annual_wet,
             style_wofs_summary_annual_clear,
         ],
