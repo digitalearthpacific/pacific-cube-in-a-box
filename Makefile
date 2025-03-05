@@ -36,15 +36,18 @@ products:
 
 index-dep-wofl:
 	stac-to-dc \
-		--catalog-href='https://stac.staging.digitalearthpacific.io' \
-		--collections='dep_ls_wofl' \
-		--limit=10
+		--catalog-href='https://stac.prod.digitalearthpacific.io' \
+		--collections='dep_ls_wofl'
 
 index-dep-wofs-annual:
 	stac-to-dc \
-		--catalog-href='https://stac.staging.digitalearthpacific.io' \
-		--collections='dep_ls_wofs_summary_annual' \
-		--limit=10
+		--catalog-href='https://stac.prod.digitalearthpacific.io' \
+		--collections='dep_ls_wofs_summary_annual'
+
+index-dep-wofs-alltime:
+	stac-to-dc \
+		--catalog-href='https://stac.prod.digitalearthpacific.io' \
+		--collections='dep_ls_wofs_summary_alltime'
 
 index-mangroves:
 	stac-to-dc \

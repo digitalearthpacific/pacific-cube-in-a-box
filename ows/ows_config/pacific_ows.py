@@ -181,14 +181,14 @@ ows_cfg = {
                 #     ],
                 {
                     "title": "Surface water",
-                    "abstract": """Surface water""",
+                    "abstract": """Surface water as measured by the Water Observations from Space (WOfS) algorithm.""",
                     "layers": [
                         {
-                            "title": "Daily surface water",
-                            "abstract": """Daily surface water""",
+                            "title": "Surface water",
+                            "abstract": """All-time surface water""",
                             "layers": [
                                 {
-                                    "include": "ows_config.wofs.ows_wofl_ls_cfg.layer",
+                                    "include": "ows_config.wofs.ows_wofs_alltime_cfg.layer",
                                     "type": "python",
                                 },
                             ],
@@ -199,6 +199,16 @@ ows_cfg = {
                             "layers": [
                                 {
                                     "include": "ows_config.wofs.ows_wofs_annual_cfg.layer",
+                                    "type": "python",
+                                },
+                            ],
+                        },
+                        {
+                            "title": "Daily surface water",
+                            "abstract": """Daily surface water""",
+                            "layers": [
+                                {
+                                    "include": "ows_config.wofs.ows_wofl_ls_cfg.layer",
                                     "type": "python",
                                 },
                             ],
