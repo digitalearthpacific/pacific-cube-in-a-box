@@ -14,19 +14,19 @@ style_blues = {
         },
     },
     "color_ramp": [
-        {"value": -0, "color": "#f1eef6", "alpha": 0.0},
-        {"value": -0.1, "color": "#f1eef6"},
-        {"value": -1.0, "color": "#d0d1e6"},
-        {"value": -2.0, "color": "#a6bddb"},
-        {"value": -4.0, "color": "#74a9cf"},
-        {"value": -8.0, "color": "#3690c0"},
-        {"value": -16.0, "color": "#0570b0"},
         {"value": -32.0, "color": "#034e7b"},
+        {"value": -16.0, "color": "#0570b0"},
+        {"value": -8.0, "color": "#3690c0"},
+        {"value": -4.0, "color": "#74a9cf"},
+        {"value": -3.0, "color": "#a6bddb"},
+        {"value": -2.0, "color": "#d0d1e6"},
+        {"value": -1.0, "color": "#f1eef6"},
+        {"value": -0, "color": "#f1eef6", "alpha": 0.0},
     ],
     "legend": {
         "title": "Depth ",
         "begin": "0",
-        "end": "-20",
+        "end": "-32",
         "ticks_every": 2,
         "units": "m",
         "tick_labels": {
@@ -50,9 +50,9 @@ style_greyscale = {
     },
     "color_ramp": [
         {"value": -0, "color": "#0000FF", "alpha": 0.0},
-        {"value": -0.1, "color": "#0000CC"},
-        {"value": -1.0, "color": "#000099"},
-        {"value": -2.0, "color": "#000066"},
+        {"value": -1.0, "color": "#0000CC"},
+        {"value": -3.0, "color": "#000099"},
+        {"value": -3.0, "color": "#000066"},
         {"value": -4.0, "color": "#000033"},
         {"value": -8.0, "color": "#000022"},
         {"value": -16.0, "color": "#000011"},
@@ -95,6 +95,6 @@ Todo...
     "wcs": {},
     "styling": {
         "default_style": "blues",
-        "styles": [style_greyscale, style_blues],
+        "styles": [style_blues, style_greyscale],
     },
 }
