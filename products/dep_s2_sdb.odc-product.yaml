@@ -1,5 +1,5 @@
 ---
-name: deb_s2_sdb
+name: dep_s2_sdb
 description: Satellite-derived Bathymetry from Sentinel-2
 metadata_type: eo3
 
@@ -7,7 +7,7 @@ license: CC-BY-4.0
 
 metadata:
   product:
-    name: deb_s2_sdb
+    name: dep_s2_sdb
 
 storage:
   crs: EPSG:3832
