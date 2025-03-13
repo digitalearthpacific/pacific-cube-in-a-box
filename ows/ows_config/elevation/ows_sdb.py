@@ -71,12 +71,12 @@ style_greyscale = {
 }
 
 layer = {
-    "title": "NASADEM",
-    "name": "nasadem",
+    "title": "SDB",
+    "name": "sdb",
     "abstract": """
 Todo...
 """,
-    "product_name": "nasadem",
+    "product_name": "dep_s2_sdb",
     "time_resolution": "summary",
     "bands": {
         "depth": [],
