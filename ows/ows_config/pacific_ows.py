@@ -160,16 +160,16 @@ ows_cfg = {
                         },
                     ],
                 },
-                # {
-                #     "title": "Elevation",
-                #     "abstract": """Digital elevation model""",
-                #     "layers": [
-                #         {
-                #             "include": "ows_config.elevation.ows_nasadem_cfg.layer",
-                #             "type": "python",
-                #         },
-                #     ],
-                # },
+                {
+                    "title": "Elevation",
+                    "abstract": """Depth""",
+                    "layers": [
+                        {
+                            "include": "ows_config.elevation.ows_sdb.layer",
+                            "type": "python",
+                        },
+                    ],
+                },
                 # {
                 #     "title": "Land Cover",
                 #     "abstract": """Land Cover""",
