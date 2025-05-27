@@ -133,8 +133,30 @@ style_ndwi = {
     ],
 }
 
-# Sentinel-2 NDMI = (B08 - B11) / (B08 + B11)  nir/swir16
-style_ndmi = {
+style_ls_mndwi = {
+    "name": "mndwi",
+    "title": "MNDWI - Green, SWIR",
+    "abstract": "Modified Normalised Difference Water Index - a derived index that correlates "
+    "well with the existence of water (Xu 2006)",
+    "index_function": {
+        "function": "datacube_ows.band_utils.norm_diff",
+        "mapped_bands": True,
+        "kwargs": {"band1": "green", "band2": "swir1"},
+    },
+    "needed_bands": ["green", "swir1"],
+    "color_ramp": [
+        {"value": -0.1, "color": "#f7fbff", "alpha": 0.0},
+        {"value": 0.0, "color": "#d8e7f5"},
+        {"value": 0.2, "color": "#b0d2e8"},
+        {"value": 0.4, "color": "#73b3d8"},
+        {"value": 0.6, "color": "#3e8ec4"},
+        {"value": 0.8, "color": "#1563aa"},
+        {"value": 1.0, "color": "#08306b"},
+    ],
+    "legend": legend_idx_0_1_5ticks,
+}
+
+style_s2_ndmi = {
     "name": "ndmi",
     "title": "NDMI - NIR, SWIR",
     "abstract": "Normalised Difference Moisture Index - a derived index that correlates well with the existence of water in leaves",
@@ -164,53 +186,7 @@ style_ndmi = {
             "0.4": {"label": "0.4"},
             "0.5": {"prefix": ">"},
         },
-    },
-    "multi_date": [
-        {
-            "allowed_count_range": [2, 2],
-            "animate": False,
-            "preserve_user_date_order": True,
-            "aggregator_function": {
-                "function": "datacube_ows.band_utils.multi_date_delta",
-            },
-            "mpl_ramp": "RdYlBu",
-            "range": [-1.0, 1.0],
-            "legend": {
-                "begin": "-1.0",
-                "end": "1.0",
-                "ticks": [
-                    "-1.0",
-                    "0.0",
-                    "1.0",
-                ],
-            },
-            "feature_info_label": "ndmi_delta",
-        },
-        {"allowed_count_range": [3, 4], "animate": True},
-    ],
-}
-
-style_ls_mndwi = {
-    "name": "mndwi",
-    "title": "MNDWI - Green, SWIR",
-    "abstract": "Modified Normalised Difference Water Index - a derived index that correlates "
-    "well with the existence of water (Xu 2006)",
-    "index_function": {
-        "function": "datacube_ows.band_utils.norm_diff",
-        "mapped_bands": True,
-        "kwargs": {"band1": "green", "band2": "swir1"},
-    },
-    "needed_bands": ["green", "swir1"],
-    "color_ramp": [
-        {"value": -0.1, "color": "#f7fbff", "alpha": 0.0},
-        {"value": 0.0, "color": "#d8e7f5"},
-        {"value": 0.2, "color": "#b0d2e8"},
-        {"value": 0.4, "color": "#73b3d8"},
-        {"value": 0.6, "color": "#3e8ec4"},
-        {"value": 0.8, "color": "#1563aa"},
-        {"value": 1.0, "color": "#08306b"},
-    ],
-    "legend": legend_idx_0_1_5ticks,
+    }
 }
 
 style_s2_mndwi = {
@@ -1289,7 +1265,7 @@ styles_s2_geomad = [
     style_tmad_rgb_sens,
     style_ndvi,
     style_ndwi,
-    style_ndmi,
+    style_s2_ndmi,
     style_s2_mndwi,
     style_s2_ndci,
     style_s2_pure_blue,
