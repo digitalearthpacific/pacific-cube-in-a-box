@@ -7,14 +7,14 @@ style_vh_over_vv = {
     "abstract": "False colour representation of VV, VH and VH/VV for R, G and B respectively",
     "additional_bands": [],
     "components": {
-        "red": {"mean_vv": 1.0, "scale_range": [0.0, 0.28]},
-        "green": {"mean_vh": 1.0, "scale_range": [0.0, 0.06]},
+        "red": {"vv": 1.0, "scale_range": [0.0, 0.28]},
+        "green": {"vh": 1.0, "scale_range": [0.0, 0.06]},
         "blue": {
             "function": "datacube_ows.band_utils.band_quotient",
             "mapped_bands": True,
             "kwargs": {
-                "band1": "mean_vh",
-                "band2": "mean_vv",
+                "band1": "vh",
+                "band2": "vv",
                 "scale_from": [0.0, 0.49],
             },
         },
@@ -23,7 +23,7 @@ style_vh_over_vv = {
 
 
 styles = {
-    f"style{name}": {
+    f"style_{name}": {
         "name": name,
         "title": name.upper(),
         "abstract": f"{name} band",
@@ -34,7 +34,7 @@ styles = {
             "blue": {name: 1.0, "scale_range": [0.0, 0.28]},
         },
     }
-    for name in ["mean_vv", "mean_vh", "std_vv", "std_vh", "median_vv", "median_vh"]
+    for name in ["vv", "vh", "stdev_vv", "stdev_vh", "vv", "vh"]
 }
 
 
@@ -85,6 +85,84 @@ style_count = {
     },
 }
 
+smad_scaling = [0.00, 0.10]
+emad_scaling = [0.00, 0.10]
+bcmad_scaling = [0.00, 0.2]
+
+style_smad_std = {
+    "name": "arcsec_smad",
+    "title": "Spectral MAD (SMAD)",
+    "abstract": "Good for cropland and forest",
+    "index_function": {
+        "function": "datacube_ows.band_utils.single_band_arcsec",
+        "mapped_bands": True,
+        "kwargs": {"band": "smad", "scale_from": smad_scaling, "scale_to": [0.0, 4.0]},
+    },
+    "needed_bands": ["smad"],
+    "mpl_ramp": "coolwarm",
+    "range": [0.0, 4.0],
+    "legend": {
+        "start": "0.0",
+        "end": "4.0",
+        "ticks": ["0.0", "4.0"],
+        "tick_labels": {
+            "0.0": {"label": "Low\nSMAD"},
+            "4.0": {"label": "High\nSMAD"},
+        },
+    },
+}
+
+style_emad_std = {
+    "name": "log_emad",
+    "title": "Euclidean MAD (EMAD)",
+    "abstract": "Good for cropland and forest",
+    "index_function": {
+        "function": "datacube_ows.band_utils.single_band",
+        "mapped_bands": True,
+        "kwargs": {"band": "emad", "scale_from": emad_scaling, "scale_to": [0.0, 4.0]},
+    },
+    "needed_bands": ["emad"],
+    "mpl_ramp": "coolwarm",
+    "range": [0.0, 4.0],
+    "legend": {
+        "start": "0.0",
+        "end": "4.0",
+        "ticks": ["0.0", "4.0"],
+        "tick_labels": {
+            "0.0": {"label": "Low\nEMAD"},
+            "4.0": {"label": "High\nEMAD"},
+        },
+    },
+}
+
+
+style_bcmad_std = {
+    "name": "log_bcmad",
+    "title": "Bray-Curtis MAD (BCMAD)",
+    "abstract": "Good for cropland and forest",
+    "index_function": {
+        "function": "datacube_ows.band_utils.single_band_offset_log",
+        "mapped_bands": True,
+        "kwargs": {
+            "band": "bcmad",
+            "scale_from": bcmad_scaling,
+            "scale_to": [0.0, 4.0],
+        },
+    },
+    "needed_bands": ["bcmad"],
+    "mpl_ramp": "coolwarm",
+    "range": [0.0, 4.0],
+    "legend": {
+        "start": "0.0",
+        "end": "4.0",
+        "ticks": ["0.0", "4.0"],
+        "tick_labels": {
+            "0.0": {"label": "Low\nBCMAD"},
+            "4.0": {"label": "High\nBCMAD"},
+        },
+    },
+}
+
 
 layer = {
     "title": "Sentinel-1 RTC Mosaic",
@@ -93,12 +171,15 @@ layer = {
 todo...""",
     "product_name": "dep_s1_mosaic",
     "bands": {
+        "vv": [],
+        "vh": [],
+        "stdev_vv": [],
+        "stdev_vh": [],
         "mean_vv": [],
         "mean_vh": [],
-        "std_vv": [],
-        "std_vh": [],
-        "median_vv": [],
-        "median_vh": [],
+        "bcmad": [],
+        "smad": [],
+        "emad": [],
         "count": [],
     },
     "dynamic": False,
@@ -118,6 +199,9 @@ todo...""",
             style_vh_over_vv,
             *styles.values(),
             style_count,
+            style_smad_std,
+            style_emad_std,
+            style_bcmad_std,
         ],
     },
 }

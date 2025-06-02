@@ -13,18 +13,13 @@ build:
 up:
 	docker compose up
 
-init: 
-	datacube system init
 
 # Init the DB
 
-datacube-init:
+init: 
 	datacube system init
 	datacube spindex create 3832
 	datacube spindex update 3832
-
-datacube-spindex:
-	datacube spindex create 3832
 
 datacube-update-spindex:
 	datacube spindex update 3832
@@ -32,7 +27,7 @@ datacube-update-spindex:
 # Indexing
 
 products:
-	dc-sync-products products.csv --update-if-exists
+	dc-sync-products products-staging.csv --update-if-exists
 
 index-dep-wofl:
 	stac-to-dc \
@@ -58,6 +53,11 @@ index-dep-s2-geomad:
 	stac-to-dc \
 		--catalog-href='https://stac.staging.digitalearthpacific.io' \
 		--collections='dep_s2_geomad'
+
+index-dep-s1-geomad:
+	stac-to-dc \
+		--catalog-href='https://stac.staging.digitalearthpacific.io' \
+		--collections='dep_s1_geomad'
 
 index-sentinel-2:
 	stac-to-dc \
@@ -126,14 +126,6 @@ ows-update:
 			datacube-ows-update --views && \
 			datacube-ows-update \
 		"
-
-index-s1-mosaic:
-	azure-to-dc --stac \
-	output \
-    ${AZURE_STORAGE_SAS_TOKEN} \
-    dep_s1_mosaic/0-0-2 \
-	stac-item.json
-
 
 index-all: index-landsat-5 index-landsat-7 index-landsat-8 index-landsat-9 index-sentinel-1 index-sentinel-2 index-nasadem index-esri-lc
 
