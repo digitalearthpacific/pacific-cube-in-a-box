@@ -131,8 +131,8 @@ ows_cfg = {
                             ],
                         },
                         {
-                            "title": "Radar backscatter",
-                            "abstract": """Radar backscatter""",
+                            "title": "Radar Backscatter",
+                            "abstract": """Radar Backscatter""",
                             "layers": [
                                 {
                                     "include": "ows_config.radar_backscatter.ows_s1_geomad_cfg.layer",

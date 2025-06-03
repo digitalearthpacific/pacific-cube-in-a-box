@@ -34,7 +34,7 @@ styles = {
             "blue": {name: 1.0, "scale_range": [0.0, 0.28]},
         },
     }
-    for name in ["vv", "vh", "stdev_vv", "stdev_vh", "vv", "vh"]
+    for name in ["vv", "vh", "stdev_vv", "stdev_vh", "mean_vv", "mean_vh"]
 }
 
 
@@ -134,7 +134,6 @@ style_emad_std = {
         },
     },
 }
-
 
 style_bcmad_std = {
     "name": "log_bcmad",
