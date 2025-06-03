@@ -185,7 +185,7 @@ todo...""",
     "resource_limits": reslim_continental,
     "time_resolution": "summary",
     "image_processing": {
-        "extent_mask_func": "datacube_ows.ogc_utils.mask_by_val",
+        "extent_mask_func": "datacube_ows.ogc_utils.mask_by_nan",
         "always_fetch_bands": [],
         "manual_merge": False,
         "apply_solar_corrections": False,
