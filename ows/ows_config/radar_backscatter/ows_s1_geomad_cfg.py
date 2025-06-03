@@ -166,10 +166,10 @@ style_bcmad_std = {
 
 layer = {
     "title": "Sentinel-1 RTC Mosaic",
-    "name": "dep_s1_mosaic",
+    "name": "dep_s1_geomad",
     "abstract": """
 todo...""",
-    "product_name": "dep_s1_mosaic",
+    "product_name": "dep_s1_geomad",
     "bands": {
         "vv": [],
         "vh": [],
