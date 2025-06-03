@@ -130,16 +130,16 @@ ows_cfg = {
                                 },
                             ],
                         },
-                        # {
-                        #     "title": "Radar backscatter",
-                        #     "abstract": """Radar backscatter""",
-                        #     "layers": [
-                        #         {
-                        #             "include": "ows_config.radar_backscatter.ows_s1_cfg.layer",
-                        #             "type": "python",
-                        #         },
-                        #     ],
-                        # },
+                        {
+                            "title": "Radar backscatter",
+                            "abstract": """Radar backscatter""",
+                            "layers": [
+                                {
+                                    "include": "ows_config.radar_backscatter.ows_s1_geomad_cfg.layer",
+                                    "type": "python",
+                                },
+                            ],
+                        },
                         {
                             "title": "Annual Summary Products",
                             "abstract": """Annual Summary Products""",
