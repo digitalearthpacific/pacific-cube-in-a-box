@@ -187,7 +187,7 @@ todo...""",
     "image_processing": {
         "extent_mask_func": "datacube_ows.ogc_utils.mask_by_nan",
         "always_fetch_bands": [],
-        "manual_merge": True,
+        "manual_merge": False,
         "apply_solar_corrections": False,
     },
     "native_crs": "EPSG:3832",
