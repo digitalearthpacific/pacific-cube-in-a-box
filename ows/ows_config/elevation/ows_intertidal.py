@@ -33,8 +33,41 @@ style_blues = {
     },
 }
 
+style_exposure = {
+    "name": "Exposure",
+    "title": "Exposure",
+    "abstract": "Exposure",
+    "needed_bands": ["exposure"],
+    "index_function": {
+        "function": "datacube_ows.band_utils.single_band",
+        "mapped_bands": True,
+        "kwargs": {
+            "band": "exposure",
+        },
+    },
+    "color_ramp": [
+        {"value": 0, "color": "#980043"},
+        {"value": 20, "color": "#dd1c77"},
+        {"value": 40, "color": "#df65b0"},
+        {"value": 60, "color": "#c994c7"},
+        {"value": 80, "color": "#d4b9da"},
+        {"value": 100, "color": "#f1eef6"},
+        # {"value": -0, "color": "#f1eef6", "alpha": 0.0},
+    ],
+    "legend": {
+        "title": "Exposure",
+        "begin": "0",
+        "end": "100",
+        "ticks_every": 20,
+        "units": "m",
+        "tick_labels": {
+            "-1": {"prefix": "<"},
+        },
+    },
+}
+
 layer = {
-    "title": "Intertidal - Elevation",
+    "title": "Intertidal",
     "name": "dep_s2ls_intertidal",
     "abstract": """
 Todo...
