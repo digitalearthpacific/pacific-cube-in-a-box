@@ -1,0 +1,28 @@
+---
+name: dep_s2ls_intertidal
+description: Intertidal Exposure and Elevation from Sentinel-2 and Landsat
+metadata_type: eo3
+
+license: CC-BY-4.0
+
+metadata:
+  product:
+    name: dep_s2ls_intertidal
+
+storage:
+  crs: EPSG:3832
+  resolution:
+    x: 30
+    y: -30
+
+measurements:
+- name: "exposure"
+  aliases: [ EXPOSURE ]
+  units: "1"
+  dtype: float64
+  nodata: .nan
+- name: "elevation"
+  aliases: [ ELEVATION ]
+  units: "1"
+  dtype: float64
+  nodata: .nan
