@@ -76,6 +76,7 @@ Todo...
     "time_resolution": "summary",
     "bands": {
         "elevation": [],
+        "exposure": [],
     },
     "resource_limits": reslim_nasadem,
     "image_processing": {
