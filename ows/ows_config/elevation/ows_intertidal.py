@@ -25,7 +25,7 @@ style_elevation = {
         "title": "Depth ",
         "begin": "-1",
         "end": "0",
-        "ticks_every": 0.5,
+        "ticks_every": 0.25,
         "units": "m",
         "tick_labels": {
             "-1": {"prefix": "<"},
