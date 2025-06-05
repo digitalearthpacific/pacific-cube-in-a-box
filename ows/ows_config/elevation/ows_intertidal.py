@@ -1,9 +1,9 @@
 from ows_config.common.ows_reslim_cfg import reslim_nasadem
 
-style_blues = {
-    "name": "blues",
-    "title": "Blues",
-    "abstract": "Blue depth",
+style_elevation = {
+    "name": "Elevation",
+    "title": "Elevation",
+    "abstract": "Elevation",
     "needed_bands": ["elevation"],
     "index_function": {
         "function": "datacube_ows.band_utils.single_band",
@@ -25,7 +25,7 @@ style_blues = {
         "title": "Depth ",
         "begin": "-1",
         "end": "0",
-        "ticks_every": 0.2,
+        "ticks_every": 0.5,
         "units": "m",
         "tick_labels": {
             "-1": {"prefix": "<"},
@@ -91,7 +91,7 @@ Todo...
     ],
     "wcs": {},
     "styling": {
-        "default_style": "blues",
-        "styles": [style_blues, style_exposure],
+        "default_style": "Elevation",
+        "styles": [style_elevation, style_exposure],
     },
 }
