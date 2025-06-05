@@ -162,10 +162,14 @@ ows_cfg = {
                 },
                 {
                     "title": "Elevation",
-                    "abstract": """Depth""",
+                    "abstract": """Elevation Models""",
                     "layers": [
                         {
                             "include": "ows_config.elevation.ows_sdb.layer",
+                            "type": "python",
+                        },
+                        {
+                            "include": "ows_config.elevation.ows_intertidal.layer",
                             "type": "python",
                         },
                     ],

@@ -91,6 +91,6 @@ Todo...
     "wcs": {},
     "styling": {
         "default_style": "blues",
-        "styles": [style_blues],
+        "styles": [style_blues, style_exposure],
     },
 }
