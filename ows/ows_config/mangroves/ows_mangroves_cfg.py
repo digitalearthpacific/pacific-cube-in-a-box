@@ -1,9 +1,9 @@
 from ows_config.common.ows_reslim_cfg import reslim_continental
 
-style_canopy = {
-    "name": "style_canopy",
-    "title": "Mangrove Canopy Cover",
-    "abstract": "Mangrove Canopy Cover",
+style_mangroves = {
+    "name": "style_mangroves",
+    "title": "Mangrove Cover",
+    "abstract": "Mangrove Cover",
     "needed_bands": ["mangroves"],
     "index_function": {
         "function": "datacube_ows.band_utils.single_band",
@@ -15,20 +15,20 @@ style_canopy = {
     "value_map": {
         "mangroves": [
             {
-                "title": "No Mangrove Canopy",
+                "title": "No Mangroves",
                 "abstract": "",
                 "values": [0],
                 "alpha": 1.0,
                 "color": "#BDBDBD",
             },
             {
-                "title": "Sparse Mangrove Canopy",
+                "title": "Open Mangroves",
                 "abstract": "",
                 "values": [1],
                 "color": "#5ECC00",
             },
             {
-                "title": "Dense Mangrove Canopy",
+                "title": "Closed Mangroves",
                 "abstract": "",
                 "values": [2],
                 "color": "#3B7F00",
