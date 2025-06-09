@@ -13,22 +13,23 @@ style_elevation = {
         },
     },
     "color_ramp": [
-        {"value": -1.0, "color": "#034e7b"},
-        {"value": -0.8, "color": "#0570b0"},
-        {"value": -0.6, "color": "#3690c0"},
-        {"value": -0.4, "color": "#74a9cf"},
-        {"value": -0.2, "color": "#a6bddb"},
-        {"value": -0.0, "color": "#d0d1e6"},
-        # {"value": -0, "color": "#f1eef6", "alpha": 0.0},
+        {"value": -2.0, "color": "#e5f5e0"},  # Rare Subtidal
+        {"value": -0.6, "color": "#c7e9c0"},  # Subtidal Edge
+        {"value": -0.4, "color": "#a1d99b"},  # Dominant Range
+        {"value": -0.2, "color": "#41ab5d"},  # Mid Intertidal
+        {"value":  0.2, "color": "#78c679"},  # Upper Intertidal
+        {"value":  1.0, "color": "#c2e699"},  # Supratidal
+        {"value":  3.2, "color": "#f7fcb9"},  # High Supratidal
     ],
     "legend": {
-        "title": "Depth ",
-        "begin": "-1",
-        "end": "0",
-        "ticks_every": 0.25,
+        "title": "Elevation",
+        "begin": "-2.0",
+        "end": "3.2",
+        "ticks_every": 0.5,
         "units": "m",
         "tick_labels": {
-            "-1": {"prefix": "<"},
+        "-2.0": {"label": "<"},
+        "3.2": {"label": "+"}
         },
     },
 }
@@ -59,7 +60,7 @@ style_exposure = {
         "begin": "0",
         "end": "100",
         "ticks_every": 20,
-        "units": "m",
+        "units": "%",
         "tick_labels": {
             "-1": {"prefix": "<"},
         },
