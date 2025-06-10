@@ -41,12 +41,12 @@ For more information on the algorithm, see https://doi.org/10.1016/j.rse.2015.11
     "native_crs": "EPSG:3832",
     "native_resolution": [30.0, -30.0],
     "styling": {
-        "default_style": "legacy_style_wofs_summary_alltime_frequency_masked",
+        "default_style": "legacy_wofs_summary_alltime_frequency_masked",
         "styles": [
-            style_wofs_summary_alltime_frequency_masked,
             legacy_style_wofs_summary_alltime_frequency_masked,
-            style_wofs_summary_alltime_frequency,
+            style_wofs_summary_alltime_frequency_masked,
             legacy_style_wofs_summary_alltime_frequency,
+            style_wofs_summary_alltime_frequency,
             style_wofs_summary_alltime_wet,
             style_wofs_summary_alltime_clear,
         ],
