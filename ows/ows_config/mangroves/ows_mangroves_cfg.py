@@ -41,7 +41,7 @@ style_mangroves = {
 
 layer = {
     "title": "Mangroves",
-    "name": "mangroves",
+    "name": "style_mangroves",
     "abstract": """
 Todo...
 """,
