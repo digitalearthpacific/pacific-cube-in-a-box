@@ -41,7 +41,7 @@ style_mangroves = {
 
 layer = {
     "title": "Mangroves",
-    "name": "style_mangroves",
+    "name": "mangroves",
     "abstract": """
 Todo...
 """,
@@ -61,7 +61,7 @@ Todo...
     ],
     "wcs": {},
     "styling": {
-        "default_style": "mangroves",
+        "default_style": "style_mangroves",
         "styles": [style_mangroves],
     },
 }
