@@ -441,3 +441,36 @@ style_wofl_ls_wet = {
         ],
     },
 }
+
+#wofs flood prone arears based on all time summary
+flood_prone_areas_wofs_alltime_summary_masked = {
+    "name": "wofs_flood_prone_areas",
+    "title": "Flood Risk (Low to High)",
+    "abstract": "Highlights flood-prone areas based on water frequency between 10% to 40%. Uses a warm color scale to represent risk levels.",
+    "index_function": {
+        "function": "datacube_ows.band_utils.single_band",
+        "mapped_bands": True,
+        "kwargs": {
+            "band": "frequency_masked"
+        }
+    },
+    "needed_bands": ["frequency_masked"],
+    "color_ramp": [
+        {"value": 0.0, "color": "#000000", "alpha": 0.0},
+        {"value": 0.1, "color": "#ffffcc"},   # Very Low Risk
+        {"value": 0.2, "color": "#ffeda0"},   # Low Risk
+        {"value": 0.3, "color": "#feb24c"},   # Moderate Risk
+        {"value": 0.4, "color": "#f03b20"}   # High Risk
+    ],
+    "legend": {
+        "show_legend": True,
+        "begin": 0.1,
+        "end": 0.4,
+        "labels": {
+            "0.1": "Very Low Risk",
+            "0.2": "Low Risk",
+            "0.3": "Moderate Risk",
+            "0.4": "High Risk"
+        }
+    }
+}
