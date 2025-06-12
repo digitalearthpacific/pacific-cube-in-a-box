@@ -5,6 +5,7 @@ from ows_config.wofs.style_wofs_ls import (
     style_wofs_summary_alltime_frequency,
     style_wofs_summary_alltime_clear,
     style_wofs_summary_alltime_wet,
+    flood_prone_areas_wofs_alltime_summary_masked
 )
 
 from ows_config.wofs.style_wofs_ls_legacy import (
@@ -49,6 +50,8 @@ For more information on the algorithm, see https://doi.org/10.1016/j.rse.2015.11
             style_wofs_summary_alltime_frequency,
             style_wofs_summary_alltime_wet,
             style_wofs_summary_alltime_clear,
+            flood_prone_areas_wofs_alltime_summary_masked
+            
         ],
     },
 }
