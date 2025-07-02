@@ -253,6 +253,12 @@ Todo...
     "time_resolution": "summary",
     "bands": {
         "depth": [],
+        "mean": [],
+        "median": [],
+        "stdev": [],
+        "pc_pred": [],
+        "pc_deep": [],
+        "count": [],
     },
     "resource_limits": reslim_nasadem,
     "image_processing": {
