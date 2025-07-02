@@ -1,0 +1,53 @@
+---
+name: dep_s2_sdb
+description: Satellite-derived Bathymetry from Sentinel-2
+metadata_type: eo3
+
+license: CC-BY-4.0
+
+metadata:
+  product:
+    name: dep_s2_sdb
+
+storage:
+  crs: EPSG:3832
+  resolution:
+    x: 10
+    y: -10
+
+measurements:
+- name: "depth"
+  aliases: [ DEPTH ]
+  units: "1"
+  dtype: float32
+  nodata: .nan
+- name: "mean"
+  aliases: [ MEAN ]
+  units: "1"
+  dtype: float32
+  nodata: .nan
+- name: "median"
+  aliases: [ MEDIAN ]
+  units: "1"
+  dtype: float32
+  nodata: .nan
+- name: "stdev"
+  aliases: [ STDEV ]
+  units: "1"
+  dtype: float32
+  nodata: .nan
+- name: "pc_pred"
+  aliases: [ PERCENTAGE_PREDICTED ]
+  units: "1"
+  dtype: float32
+  nodata: .nan
+- name: "pc_deep"
+  aliases: [ PERCENTAGE_DEEP ]
+  units: "1"
+  dtype: float32
+  nodata: .nan
+- name: "count"
+  aliases: [ COUNT ]
+  units: "1"
+  dtype: uint8
+  nodata: 255

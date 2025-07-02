@@ -8,5 +8,5 @@ dep_ls_wofl,https://raw.githubusercontent.com/digitalearthpacific/pacific-cube-i
 dep_ls_wofs_summary_annual,https://raw.githubusercontent.com/digitalearthpacific/pacific-cube-in-a-box/main/products/dep_ls_wofs_summary_annual.odc-product.yaml
 dep_ls_wofs_summary_alltime,https://raw.githubusercontent.com/digitalearthpacific/pacific-cube-in-a-box/main/products/dep_ls_wofs_summary_alltime.odc-product.yaml
 dep_s2_mangroves,https://raw.githubusercontent.com/digitalearthpacific/pacific-cube-in-a-box/main/products/dep_s2_mangroves.odc-product.yaml
-dep_s2_sdb,https://raw.githubusercontent.com/digitalearthpacific/pacific-cube-in-a-box/main/products/dep_s2_sdb.odc-product.yaml
+dep_s2_sdb,https://raw.githubusercontent.com/digitalearthpacific/pacific-cube-in-a-box/main/products/dep_s2_sdbv2.odc-product.yaml
 dep_s2ls_intertidal,https://raw.githubusercontent.com/digitalearthpacific/pacific-cube-in-a-box/main/products/dep_s2ls_intertidal.odc-product.yaml
