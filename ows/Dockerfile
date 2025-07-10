@@ -6,9 +6,8 @@ RUN apt-get update && \
     apt-get install -y \
         postgresql-client \
     && apt-get autoclean \
-    && apt-get autoremove \
+    && apt-get autoremove -y \
     && rm -rf /var/lib/{apt,dpkg,cache,log}
-
 
 # Need these above to do the below
 # python3-pip \
