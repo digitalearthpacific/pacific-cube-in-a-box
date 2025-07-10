@@ -19,8 +19,6 @@ RUN apt-get update && apt-get install -y \
     && apt-get autoremove \
     && rm -rf /var/lib/{apt,dpkg,cache,log}
 
-RUN echo "update"
-
 RUN pip3 install --break-system-packages \
     odc-stac \
     odc-geo \
