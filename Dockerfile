@@ -24,8 +24,8 @@ RUN echo "update"
 RUN pip3 install --break-system-packages \
     odc-stac \
     odc-geo \
-    datacube \
-    "git+https://github.com/opendatacube/odc-tools.git#subdirectory=apps/dc_tools" \
+    datacube[postgres] \
+    "git+https://github.com/opendatacube/odc-tools.git@fix-single-url-indexing#subdirectory=apps/dc_tools" \
     "git+https://github.com/opendatacube/eo-datasets.git@integrate-1.9"
 
 RUN datacube --version
