@@ -4,12 +4,15 @@ USER root
 
 RUN apt-get update && \
     apt-get install -y \
-        # python3-pip \
-        # git \
         postgresql-client \
     && apt-get autoclean \
     && apt-get autoremove \
     && rm -rf /var/lib/{apt,dpkg,cache,log}
+
+
+# Need these above to do the below
+# python3-pip \
+# git \
 
 # RUN pip3 install --break-system-packages \
 #     datacube[postgres] \
