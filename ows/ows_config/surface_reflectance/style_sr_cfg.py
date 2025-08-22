@@ -214,7 +214,7 @@ style_s2_mndwi = {
 
 style_s2_ndbi = {
     "name": "ndbi",
-    "title": "NDBI - Green, SWIR",
+    "title": "NDBI - SWIR, NIR",
     "abstract": "Normalised Difference Built-up Index - a derived index that correlates well with the existence of built-up areas",
     "index_function": {
         "function": "datacube_ows.band_utils.norm_diff",
