@@ -191,7 +191,7 @@ style_s2_ndmi = {
 
 style_s2_mndwi = {
     "name": "mndwi",
-    "title": "MNDWI - Green, SWIR",
+    "title": "MNDWI - SWIR, NIR",
     "abstract": "Modified Normalised Difference Water Index - a derived index that correlates "
     "well with the existence of water (Xu 2006)",
     "index_function": {
@@ -208,6 +208,28 @@ style_s2_mndwi = {
         {"value": 0.6, "color": "#3e8ec4"},
         {"value": 0.8, "color": "#1563aa"},
         {"value": 1.0, "color": "#08306b"},
+    ],
+    "legend": legend_idx_0_1_5ticks,
+}
+
+style_s2_ndbi = {
+    "name": "ndbi",
+    "title": "NDBI - Green, SWIR",
+    "abstract": "Normalised Difference Built-up Index - a derived index that correlates well with the existence of built-up areas",
+    "index_function": {
+        "function": "datacube_ows.band_utils.norm_diff",
+        "mapped_bands": True,
+        "kwargs": {"band1": "swir_1", "band2": "nir"},
+    },
+    "needed_bands": ["nir", "swir_1"],
+    "color_ramp": [
+        {"value": -0.1, "color": "#f7fbff", "alpha": 0.0},
+        {"value": 0.0, "color": "#feebe2"},
+        {"value": 0.2, "color": "#fa9fb5"},
+        {"value": 0.4, "color": "#f768a1"},
+        {"value": 0.6, "color": "#dd3497"},
+        {"value": 0.8, "color": "#ae017e"},
+        {"value": 1.0, "color": "#7a0177"},
     ],
     "legend": legend_idx_0_1_5ticks,
 }
@@ -1265,6 +1287,7 @@ styles_s2_geomad = [
     style_tmad_rgb_sens,
     style_ndvi,
     style_ndwi,
+    style_s2_ndbi,
     style_s2_ndmi,
     style_s2_mndwi,
     style_s2_ndci,
