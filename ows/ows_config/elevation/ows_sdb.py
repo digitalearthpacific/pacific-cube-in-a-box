@@ -243,9 +243,9 @@ style_stdev = {
 }
 }
 
-layer = {
+layer_v2 = {
     "title": "SDB",
-    "name": "sdb",
+    "name": "sdb_v2",
     "abstract": """
 Todo...
 """,
@@ -275,5 +275,34 @@ Todo...
     "styling": {
         "default_style": "blues_depth",
         "styles": [style_blues_depth, style_blues_mean, style_blues_median, style_count_sdb, style_pc_prediction, style_pc_deep, style_stdev],
+    },
+}
+
+layer = {
+    "title": "Satellite Derived Bathymetry",
+    "name": "sdb",
+    "abstract": """
+Todo...
+""",
+    "product_name": "dep_s2_sdb",
+    "time_resolution": "summary",
+    "bands": {
+        "depth": []
+    },
+    "resource_limits": reslim_nasadem,
+    "image_processing": {
+        "extent_mask_func": "datacube_ows.ogc_utils.mask_by_val",
+        "always_fetch_bands": [],
+        "manual_merge": False,
+    },
+    "native_crs": "EPSG:3832",
+    "native_resolution": [
+        10,
+        -10,
+    ],
+    "wcs": {},
+    "styling": {
+        "default_style": "blues_depth",
+        "styles": [style_blues_depth],
     },
 }
