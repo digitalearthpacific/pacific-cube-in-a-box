@@ -172,16 +172,16 @@ seagrass = {
     "name": "seagrass",
     "title": "Seagrass",
     "abstract": "Seagrass habitat",
-    "needed_bands": ["classification"],
+    "needed_bands": ["seagrass"],
     "index_function": {
         "function": "datacube_ows.band_utils.single_band",
         "mapped_bands": True,
         "kwargs": {
-            "band": "classification",
+            "band": "seagrass",
         },
     },
     "value_map": {
-        "classification": [
+        "seagrass": [
             {
                 "title": "",
                 "abstract": "",
@@ -210,16 +210,16 @@ seagrass_60 = {
     "name": "seagrass_60",
     "title": "Seagrass 60% Threshold",
     "abstract": "Seagrass habitat with 60% probability threshold",
-    "needed_bands": ["classification"],
+    "needed_bands": ["seagrass_threshold_60"],
     "index_function": {
         "function": "datacube_ows.band_utils.single_band",
         "mapped_bands": True,
         "kwargs": {
-            "band": "classification",
+            "band": "seagrass_threshold_60",
         },
     },
     "value_map": {
-        "classification": [
+        "seagrass_threshold_60": [
             {
                 "title": "",
                 "abstract": "",
@@ -244,6 +244,46 @@ seagrass_60 = {
 }
 
 
+seagrass_only = {
+    "name": "seagrass",
+    "title": "Seagrass",
+    "abstract": "Seagrass habitat",
+    "needed_bands": ["seagrass"],
+    "index_function": {
+        "function": "datacube_ows.band_utils.single_band",
+        "mapped_bands": True,
+        "kwargs": {
+            "band": "seagrass",
+        },
+    },
+    "value_map": {
+        "seagrass": [
+            {
+                "title": "",
+                "abstract": "",
+                "values": [255],
+                "alpha": 0.0,
+                "color": "#707070",
+            },
+            {
+                "title": "Not Seagrass",
+                "abstract": "",
+                "values": [0],
+                "alpha": 0.0,
+                "color": "#968640",
+            },
+            {
+                "title": "Seagrass",
+                "abstract": "",
+                "values": [1],
+                "color": "#1acc44",
+            },
+        ]
+    },
+}
+
+
+
 layer = {
     "title": "Seagrass detection",
     "name": "dep_s2_seagrass",
@@ -266,7 +306,7 @@ Todo...
     ],
     "wcs": {},
     "styling": {
-        "default_style": "seagrass",
-        "styles": [seagrass, probability, classification, seagrass_60],
+        "default_style": "seagrass_only",
+        "styles": [seagrass_only, seagrass, probability, classification, seagrass_60],
     },
 }
