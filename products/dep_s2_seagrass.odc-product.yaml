@@ -1,0 +1,74 @@
+---
+name: dep_s2_seagrass
+description: Seagrass Extent
+metadata_type: eo3
+
+license: CC-BY-4.0
+
+metadata:
+  product:
+    name: dep_s2_seagrass
+
+storage:
+  crs: EPSG:3832
+  resolution:
+    x: 10
+    y: -10
+
+measurements:
+  - name: classification
+    aliases: ["classification"]
+    units: "1"
+    dtype: uint8
+    nodata: 255
+    flags_definition:
+      classification:
+        bits: [0, 1, 2, 3, 4, 5, 6, 7]
+        description: Classification
+        values:
+          255: nodata
+          1: sediment
+          2: sand
+          3: rubble
+          4: seagrass
+          5: seaweed
+          6: coral
+          9: mangrove
+          10: land
+          11: algae
+          12: deeps
+          13: rock
+
+  - name: seagrass_probability
+    aliases: ["probability"]
+    dtype: uint8
+    nodata: 255
+    units: "1"
+
+  - name: seagrass
+    aliases: ["seagrass"]
+    dtype: uint8
+    nodata: 255
+    units: "1"
+    flags_definition:
+      seagrass:
+        bits: [0, 1, 2, 3, 4, 5, 6, 7]
+        description: Seagrass
+        values:
+          255: nodata
+          0: not_seagrass
+          1: seagrass
+
+  - name: seagrass_threshold_60
+    aliases: ["seagrass_threshold_60"]
+    dtype: uint8
+    nodata: 255
+    units: "1"
+    flags_definition:
+      seagrass:
+        bits: [0, 1, 2, 3, 4, 5, 6, 7]
+        description: Seagrass
+        values:
+          255: nodata
+          0: not_seagrass
+          1: seagrass

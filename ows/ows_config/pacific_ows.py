@@ -233,6 +233,16 @@ ows_cfg = {
                                 },
                             ],
                         },
+                        {
+                            "title": "Seagrass",
+                            "abstract": """Seagrass extent""",
+                            "layers": [
+                                {
+                                    "include": "ows_config.land_cover.seagrass.layer",
+                                    "type": "python",
+                                },
+                            ],
+                        }
                     ],
                 },
             ],
