@@ -193,6 +193,7 @@ seagrass = {
                 "title": "Not Seagrass",
                 "abstract": "",
                 "values": [0],
+                "alpha": 1.0,
                 "color": "#968640",
             },
             {
@@ -224,7 +225,7 @@ seagrass_60 = {
                 "title": "",
                 "abstract": "",
                 "values": [255],
-                "alpha": 0.0,
+                "alpha": 1.0,
                 "color": "#707070",
             },
             {
@@ -242,46 +243,6 @@ seagrass_60 = {
         ]
     },
 }
-
-
-seagrass_only = {
-    "name": "seagrass",
-    "title": "Seagrass",
-    "abstract": "Seagrass habitat",
-    "needed_bands": ["seagrass"],
-    "index_function": {
-        "function": "datacube_ows.band_utils.single_band",
-        "mapped_bands": True,
-        "kwargs": {
-            "band": "seagrass",
-        },
-    },
-    "value_map": {
-        "seagrass": [
-            {
-                "title": "",
-                "abstract": "",
-                "values": [255],
-                "alpha": 0.0,
-                "color": "#707070",
-            },
-            {
-                "title": "Not Seagrass",
-                "abstract": "",
-                "values": [0],
-                "alpha": 0.0,
-                "color": "#968640",
-            },
-            {
-                "title": "Seagrass",
-                "abstract": "",
-                "values": [1],
-                "color": "#1acc44",
-            },
-        ]
-    },
-}
-
 
 
 layer = {
@@ -307,6 +268,6 @@ Todo...
     "wcs": {},
     "styling": {
         "default_style": "seagrass_only",
-        "styles": [seagrass_only, seagrass, probability, classification, seagrass_60],
+        "styles": [seagrass, probability, classification, seagrass_60],
     },
 }
