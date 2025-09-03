@@ -267,7 +267,7 @@ Todo...
     ],
     "wcs": {},
     "styling": {
-        "default_style": "seagrass_only",
+        "default_style": "seagrass",
         "styles": [seagrass, probability, classification, seagrass_60],
     },
 }
