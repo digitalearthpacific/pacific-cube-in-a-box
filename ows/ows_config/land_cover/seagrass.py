@@ -193,7 +193,7 @@ seagrass = {
                 "title": "Not Seagrass",
                 "abstract": "",
                 "values": [0],
-                "alpha": 1.0,
+                "alpha": 0.0,
                 "color": "#968640",
             },
             {
@@ -225,13 +225,14 @@ seagrass_60 = {
                 "title": "",
                 "abstract": "",
                 "values": [255],
-                "alpha": 1.0,
+                "alpha": 0.0,
                 "color": "#707070",
             },
             {
                 "title": "Not Seagrass",
                 "abstract": "",
                 "values": [0],
+                "alpha": 0.0,
                 "color": "#968640",
             },
             {
