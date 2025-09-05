@@ -44,6 +44,16 @@ index-dep-wofs-alltime:
 		--catalog-href='https://stac.prod.digitalearthpacific.io' \
 		--collections='dep_ls_wofs_summary_alltime'
 
+index-fc:
+	stac-to-dc \
+		--catalog-href='https://stac.staging.digitalearthpacific.io' \
+		--collections='dep_ls_fc'
+
+index-fc-summary-annual:
+	stac-to-dc \
+		--catalog-href='https://stac.staging.digitalearthpacific.io' \
+		--collections='dep_ls_fc_summary_annual'
+
 index-mangroves:
 	stac-to-dc \
 		--catalog-href='https://stac.staging.digitalearthpacific.io' \
