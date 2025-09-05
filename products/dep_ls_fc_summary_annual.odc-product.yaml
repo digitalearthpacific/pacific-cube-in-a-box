@@ -1,6 +1,6 @@
 ---
-name: fc_ls_summary_annual
-description: DE Africa Landsat Fractional Cover Percentiles
+name: dep_ls_fc_summary_annual
+description: Landsat Fractional Cover Annual Percentiles
 metadata_type: eo3
 
 license: CC-BY-4.0
