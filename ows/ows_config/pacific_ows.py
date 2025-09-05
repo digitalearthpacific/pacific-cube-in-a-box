@@ -242,7 +242,27 @@ ows_cfg = {
                                     "type": "python",
                                 },
                             ],
-                        }
+                        },
+                        {
+                            "title": "Daily Fractional Cover",
+                            "abstract": """Daily Fractional Cover""",
+                            "layers": [
+                                {
+                                    "include": "ows_config.fractional_cover.ows_fc_ls_cfg.layer",
+                                    "type": "python"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Annual Fractional Cover",
+                            "abstract": """Annual Fractional Cover""",
+                            "layers": [
+                                {
+                                    "include": "ows_config.fractional_cover.ows_fc_ls_summary_annual_cfg.layer",
+                                    "type": "python"
+                                }
+                            ]
+                        },
                     ],
                 },
             ],
