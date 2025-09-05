@@ -7,7 +7,7 @@ license: CC-BY-4.0
 
 metadata:
   product:
-    name: fc_ls
+    name: dep_ls_fc
 
 measurements:
   - name: bs

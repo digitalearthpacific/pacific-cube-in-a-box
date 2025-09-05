@@ -7,7 +7,7 @@ license: CC-BY-4.0
 
 metadata:
   product:
-    name: fc_ls_summary_annual
+    name: dep_ls_fc_summary_annual
 
 storage:
   crs: EPSG:6933
