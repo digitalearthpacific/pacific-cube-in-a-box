@@ -57,7 +57,7 @@ Fractional cover allows users to understand the large scale patterns and trends 
 
 The fractional cover algorithm was developed by the Joint Remote Sensing Research Program.
 """,
-    "product_name": "fc_ls",
+    "product_name": "dep_ls_fc",
     "bands": bands_fc,
     "resource_limits": reslim_landsat,
     "dynamic": True,
