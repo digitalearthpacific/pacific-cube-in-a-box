@@ -68,7 +68,7 @@ The fractional cover algorithm was developed by the Joint Remote Sensing Researc
     },
     "flags": [
         {
-            "product": "wofs_ls",
+            "product": "dep_ls_wofl",
             "band": "water",
             "fuse_func": "datacube_ows.wms_utils.wofls_fuser",
             "ignore_info_flags": [],
