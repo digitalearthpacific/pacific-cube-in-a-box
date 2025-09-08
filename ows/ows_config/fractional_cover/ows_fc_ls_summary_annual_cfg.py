@@ -323,7 +323,7 @@ fc_percentiles_styles = [
 
 layer = {
     "title": "Fractional Cover annual summary",
-    "name": "fc_ls_summary_annual",
+    "name": "dep_ls_fc_summary_annual",
     "abstract": """
 Fractional cover provides information about the proportions of green vegetation, non-green vegetation (including deciduous trees during autumn, dry grass, etc.), and bare soil for every 30 m x 30 m ground footprint. Fractional cover provides insight into how areas of dry vegetation and/or bare soil and green vegetation are changing over time. The percentile summaries are designed to make it easier to analyse and interpret fractional cover. Percentiles provide an indicator of where an observation sits, relative to the rest of the observations for the pixel. For example, the 90th percentile is the value below which 90% of the observations fall.
 
