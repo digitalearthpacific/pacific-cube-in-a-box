@@ -335,7 +335,7 @@ The fractional cover algorithm was developed by the Joint Remote Sensing Researc
     "time_resolution": "year",
     "bands": bands_fc_percentile,
     "resource_limits": reslim_wms_min_zoom_15,
-    "native_crs": "EPSG:6933",
+    "native_crs": "EPSG:3832",
     "native_resolution": [30, -30],
     "image_processing": {
         "extent_mask_func": "datacube_ows.ogc_utils.mask_by_val",

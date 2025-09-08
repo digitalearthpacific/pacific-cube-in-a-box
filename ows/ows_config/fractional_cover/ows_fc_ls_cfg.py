@@ -74,7 +74,7 @@ The fractional cover algorithm was developed by the Joint Remote Sensing Researc
             "ignore_info_flags": [],
         },
     ],
-    "native_crs": "EPSG:3857",
+    "native_crs": "EPSG:3832",
     "native_resolution": [30.0, -30.0],
     "styling": {
         "default_style": "fc_rgb_unmasked",
