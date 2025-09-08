@@ -10,7 +10,7 @@ metadata:
     name: dep_ls_fc_summary_annual
 
 storage:
-  crs: EPSG:6933
+  crs: EPSG:3832
   resolution:
     x: 30
     y: -30
