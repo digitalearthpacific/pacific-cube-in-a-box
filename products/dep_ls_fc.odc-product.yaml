@@ -1,0 +1,32 @@
+---
+name: dep_ls_fc
+description: Landsat Fractional Cover
+metadata_type: eo3
+
+license: CC-BY-4.0
+
+metadata:
+  product:
+    name: dep_ls_fc
+
+measurements:
+  - name: bs
+    units: "percent"
+    dtype: uint8
+    nodata: 255
+    aliases: ["bare"]
+  - name: pv
+    units: "percent"
+    dtype: uint8
+    nodata: 255
+    aliases: ["green_veg"]
+  - name: npv
+    units: "percent"
+    dtype: uint8
+    nodata: 255
+    aliases: ["dead_veg"]
+  - name: ue
+    units: "1"
+    dtype: uint8
+    nodata: 255
+    aliases: ["err"]
