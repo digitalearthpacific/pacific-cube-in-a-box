@@ -241,7 +241,7 @@ seagrass_60 = {
                 "title": "Seagrass",
                 "abstract": "",
                 "values": [1],
-                "color": "#1acc44",
+                "color": "#00FFD5",
             },
         ]
     },
