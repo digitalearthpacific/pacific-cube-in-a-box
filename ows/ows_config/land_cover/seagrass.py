@@ -155,7 +155,7 @@ classification = {
                 "title": "Land",
                 "abstract": "",
                 "values": [10],
-                "color": "#FFFFFF00",
+                "color": "#707070",
             }
         ]
     },
@@ -233,7 +233,7 @@ seagrass_60 = {
                 "title": "Seagrass",
                 "abstract": "",
                 "values": [1],
-                "color": "#00FFD5",
+                "color": "#1acc44",
             },
         ]
     },
