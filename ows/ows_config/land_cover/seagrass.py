@@ -119,7 +119,7 @@ classification = {
                 "title": "Seagrass",
                 "abstract": "",
                 "values": [4],
-                "color": "#1acc44",
+                "color": "#00FFD5",
             },
             {
                 "title": "Algae",
@@ -155,7 +155,7 @@ classification = {
                 "title": "Land",
                 "abstract": "",
                 "values": [10],
-                "color": "#00000000",
+                "color": "#FFFFFF00",
             }
         ]
     },
@@ -194,7 +194,7 @@ seagrass = {
                 "title": "Seagrass",
                 "abstract": "",
                 "values": [1],
-                "color": "#1acc44",
+                "color": "#00FFD5",
             },
         ]
     },
@@ -233,7 +233,7 @@ seagrass_60 = {
                 "title": "Seagrass",
                 "abstract": "",
                 "values": [1],
-                "color": "#1acc44",
+                "color": "#00FFD5",
             },
         ]
     },
