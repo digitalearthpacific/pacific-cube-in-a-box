@@ -82,6 +82,117 @@ probability = {
     },
 }
 
+def plot_image_with_transparent_background(cfg, data):
+    """
+    Plots an image from datacube-ows with a transparent background.
+    """
+    # Apply the OWS style to get the RGBA image
+    styled_image = apply_ows_style_cfg(cfg, data)
+
+    # Create a matplotlib figure and axes
+    fig, ax = plt.subplots(figsize=(10, 8))
+
+    # Plot the styled image
+    plot_image(styled_image, ax=ax)
+
+    # Set the background of the axes to be transparent
+    ax.set_facecolor("none")
+
+    # Set the background of the figure to be transparent
+    fig.patch.set_alpha(0.0)
+
+    # Display the plot
+    plt.show()
+
+# Example usage (assuming 'probability' and 'data' are defined)
+# plot_image_with_transparent_background(probability, data)
+
+
+
+# def seagrass_nodata_mask(data):
+#     """
+#     A function to create a nodata mask.
+#     Pixels with a value of 255 are considered nodata.
+#     """
+#     return data != 255
+
+# probability = {
+#     "name": "probability",
+#     "title": "Probability",
+#     "abstract": "Probability",
+#     "needed_bands": ["seagrass_probability"],
+#     "index_function": {
+#         "function": "datacube_ows.band_utils.single_band",
+#         "mapped_bands": True,
+#         "kwargs": {
+#             "band": "seagrass_probability",
+#         },
+#     },
+#     "valid_data_mask": [
+#         {
+#             "id": "nodata",
+#             "function": seagrass_nodata_mask,
+#             "bands": ["seagrass_probability"],
+#         },
+#     ],
+#     "color_ramp": [
+#         {
+#             "value": 0,
+#             "color": "black",
+#         },
+#         {
+#             "value": 1,
+#             "color": "#010007",
+#         },
+#         {
+#             "value": 10,
+#             "color": "#170b3b",
+#         },
+#         {
+#             "value": 20,
+#             "color": "#410967",
+#         },
+#         {
+#             "value": 30,
+#             "color": "#6b176e",
+#         },
+#         {
+#             "value": 40,
+#             "color": "#952666",
+#         },
+#         {
+#             "value": 50,
+#             "color": "#bb3754",
+#         },
+#         {
+#             "value": 60,
+#             "color": "#dd5238",
+#         },
+#         {
+#             "value": 70,
+#             "color": "#f37719",
+#         },
+#         {
+#             "value": 80,
+#             "color": "#fba60b",
+#         },
+#         {
+#             "value": 90,
+#             "color": "#f5d948",
+#         },
+#         {
+#             "value": 100,
+#             "color": "#fcfea4",
+#         },
+#     ],
+#     "range": [0, 100],
+#     "legend": {
+#         "begin": "0",
+#         "end": "100",
+#         "ticks_every": "20",
+#     },
+# }
+
 
 classification = {
     "name": "classification",
@@ -161,7 +272,6 @@ classification = {
             {
                 "title": "Land",
                 "abstract": "",
-                "alpha": 0.0,
                 "values": [10],
                 "color": "#707070",
             }
