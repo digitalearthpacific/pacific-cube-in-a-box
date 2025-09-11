@@ -132,7 +132,7 @@ classification = {
                 "abstract": "",
                 "values": [6],
                 "color": "#9322B3",
-            },  # No 7 or 8 in the data
+            },
             {
                 "title": "Rock",
                 "abstract": "",
