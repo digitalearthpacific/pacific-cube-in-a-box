@@ -38,6 +38,44 @@ style_mangroves = {
     "legend": {"width": 2.5, "height": 1.0},
 }
 
+style_mangroves_alt = {
+    "name": "style_mangroves_alt",
+    "title": "Mangrove Cover",
+    "abstract": "Mangrove Cover",
+    "needed_bands": ["mangroves"],
+    "index_function": {
+        "function": "datacube_ows.band_utils.single_band",
+        "mapped_bands": True,
+        "kwargs": {
+            "band": "mangroves",
+        },
+    },
+    "value_map": {
+        "mangroves": [
+            {
+                "title": "No Mangroves",
+                "abstract": "",
+                "values": [0],
+                "alpha": 1.0,
+                "color": "#BDBDBD",
+            },
+            {
+                "title": "Open Mangroves",
+                "abstract": "",
+                "values": [1],
+                "color": "#A15EFF",
+            },
+            {
+                "title": "Closed Mangroves",
+                "abstract": "",
+                "values": [2],
+                "color": "#5E2B97",
+            }
+        ]
+    },
+    "legend": {"width": 2.5, "height": 1.0},
+}
+
 
 layer = {
     "title": "Mangroves",
@@ -62,7 +100,7 @@ Todo...
     "wcs": {},
     "styling": {
         "default_style": "style_mangroves",
-        "styles": [style_mangroves],
+        "styles": [style_mangroves, style_mangroves_alt],
     },
 }
 
