@@ -228,7 +228,7 @@ ows_cfg = {
                             "abstract": """Mangrove cover""",
                             "layers": [
                                 {
-                                    "include": "ows_config.mangroves.ows_mangroves_cfg.layer",
+                                    "include": "ows_config.vegetation.mangroves.layer",
                                     "type": "python",
                                 },
                             ],
@@ -244,14 +244,24 @@ ows_cfg = {
                             ],
                         },
                         {
+                            "title": "Vegetation Height",
+                            "abstract": """Vegetation height""",
+                            "layers": [
+                                {
+                                    "include": "ows_config.vegetation.vegheight.layer",
+                                    "type": "python",
+                                },
+                            ],
+                        },
+                        {
                             "title": "Daily Fractional Cover",
                             "abstract": """Daily Fractional Cover""",
                             "layers": [
                                 {
                                     "include": "ows_config.fractional_cover.ows_fc_ls_cfg.layer",
-                                    "type": "python"
+                                    "type": "python",
                                 }
-                            ]
+                            ],
                         },
                         {
                             "title": "Annual Fractional Cover",
@@ -259,9 +269,9 @@ ows_cfg = {
                             "layers": [
                                 {
                                     "include": "ows_config.fractional_cover.ows_fc_ls_summary_annual_cfg.layer",
-                                    "type": "python"
+                                    "type": "python",
                                 }
-                            ]
+                            ],
                         },
                     ],
                 },

@@ -1,0 +1,23 @@
+---
+name: dep_s2_vegheight
+description: Vegetation height
+metadata_type: eo3
+
+license: CC-BY-4.0
+
+metadata:
+  product:
+    name: dep_s2_vegheight
+
+storage:
+  crs: EPSG:3832
+  resolution:
+    x: 10
+    y: -10
+
+measurements:
+  - name: height
+    aliases: ["HEIGHT", "vegheight"]
+    dtype: float32
+    nodata: .nan
+    units: "1"
