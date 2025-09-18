@@ -52,6 +52,8 @@ height = {
         "begin": "0",
         "end": "40",
         "ticks_every": "8",
+        "units": "m",
+        "tick_labels": {"40.0": {"label": "40+"}},
     },
 }
 

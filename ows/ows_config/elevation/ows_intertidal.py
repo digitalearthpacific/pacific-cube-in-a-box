@@ -17,23 +17,20 @@ style_elevation = {
         {"value": -0.6, "color": "#3f007d"},
         {"value": -0.4, "color": "#756bb1"},
         {"value": -0.2, "color": "#cbc9e2"},
-        {"value":  0.0, "color": "#f7fcb9"},
-        {"value":  0.2, "color": "#D0B57A"},
-        {"value":  0.4, "color": "#78c679"},
-        {"value":  0.6, "color": "#41ab5d"},
-        {"value":  1.0, "color": "#205c30"},
+        {"value": 0.0, "color": "#f7fcb9"},
+        {"value": 0.2, "color": "#D0B57A"},
+        {"value": 0.4, "color": "#78c679"},
+        {"value": 0.6, "color": "#41ab5d"},
+        {"value": 1.0, "color": "#205c30"},
     ],
     "legend": {
-    "title": "Elevation",
-    "begin": "-1.0",
-    "end": "1.0",
-    "ticks_every": 0.5,
-    "units": "m",
-    "tick_labels": {
-        "-1.0": {"prefix": "<"},
-        "1.0":{"label": "1.0+"}
-    }
-}
+        "title": "Elevation",
+        "begin": "-1.0",
+        "end": "1.0",
+        "ticks_every": 0.5,
+        "units": "m",
+        "tick_labels": {"-1.0": {"prefix": "<"}, "1.0": {"label": "1.0+"}},
+    },
 }
 
 style_exposure = {
