@@ -304,7 +304,7 @@ fc_rgb = {
         "show_legend": True,
         "url": {
             "en": "https://deafrica-services.s3.af-south-1.amazonaws.com/fc_ls/fc_legend.png",
-        }
+        },
     },
 }
 
