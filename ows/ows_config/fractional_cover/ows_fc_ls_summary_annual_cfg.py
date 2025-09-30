@@ -36,7 +36,6 @@ bands_fc_percentile = {
     "bs_pc_10": [],
     "bs_pc_50": [],
     "bs_pc_90": [],
-    "count_valid": [],
 }
 
 
@@ -304,7 +303,7 @@ fc_rgb = {
         "show_legend": True,
         "url": {
             "en": "https://deafrica-services.s3.af-south-1.amazonaws.com/fc_ls/fc_legend.png",
-        }
+        },
     },
 }
 
