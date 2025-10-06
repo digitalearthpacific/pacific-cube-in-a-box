@@ -77,6 +77,75 @@ style_mangroves_alt = {
 }
 
 
+
+style_mangroves_percent = {
+    "name": "style_mangroves_percent",
+    "title": "Mangrove Distribution (%)",
+    "abstract": "Mangrove percentage distriution using custom classification ranges",
+    "needed_bands": ["mangroves"],
+    "index_function": {
+        "function": "datacube_ows.band_utils.single_band",
+        "mapped_bands": True,
+        "kwargs": {
+            "band": "mangroves",
+        },
+    },
+    "value_map": {
+        "mangroves": [
+            {
+                "title": "<10%",
+                "abstract": "",
+                "range": [0.0, 10.0],
+                "color": "#ffffcc",
+            },
+            {
+                "title": "10–15%",
+                "abstract": "",
+                "range": [10.0, 15.0],
+                "color": "#c2e699",
+            },
+            {
+                "title": "20–25%",
+                "abstract": "",
+                "range": [20.0, 25.0],
+                "color": "#78c679",
+            },
+            {
+                "title": "25–30%",
+                "abstract": "",
+                "range": [25.0, 30.0],
+                "color": "#41ab5d",
+            },
+            {
+                "title": "30–40%",
+                "abstract": "",
+                "range": [30.0, 40.0],
+                "color": "#238443",
+            },
+            {
+                "title": "40–60%",
+                "abstract": "",
+                "range": [40.0, 60.0],
+                "color": "#006837",
+            },
+            {
+                "title": "60–100%",
+                "abstract": "",
+                "range": [60.0, 100.0],
+                "color": "#004529",
+            },
+        ]
+    },
+    "legend": {
+        "width": 2.5,
+        "height": 1.0,
+        "ticks": False,
+        "tick_labels": True,
+        "units": "%",
+    },
+}
+
+
 layer = {
     "title": "Mangroves",
     "name": "mangroves",
