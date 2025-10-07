@@ -106,7 +106,7 @@ style_mangroves_percent = {
     "legend": {
         "width": 2.5,
         "height": 1.0,
-        "ticks": [0, 10, 15, 20, 25, 30, 40, 60, 100],
+        "ticks": [0, 25, 40, 60, 100],
         
 "tick_labels": {
         "0": {"label": "0%"},
