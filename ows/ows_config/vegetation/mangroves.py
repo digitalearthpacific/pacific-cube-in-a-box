@@ -81,7 +81,7 @@ style_mangroves_alt = {
 style_mangroves_percent = {
     "name": "style_mangroves_percent",
     "title": "Mangrove Distribution (%)",
-    "abstract": "Mangrove percentage distriution using custom classification ranges",
+    "abstract": "Mangrove percentage distribution using custom classification ranges",
     "needed_bands": ["mangroves"],
     "index_function": {
         "function": "datacube_ows.band_utils.single_band",
@@ -90,57 +90,35 @@ style_mangroves_percent = {
             "band": "mangroves",
         },
     },
-    "value_map": {
-        "mangroves": [
-            {
-                "title": "<10%",
-                "abstract": "",
-                "range": [0.0, 10.0],
-                "color": "#ffffcc",
-            },
-            {
-                "title": "10–15%",
-                "abstract": "",
-                "range": [10.0, 15.0],
-                "color": "#c2e699",
-            },
-            {
-                "title": "20–25%",
-                "abstract": "",
-                "range": [20.0, 25.0],
-                "color": "#78c679",
-            },
-            {
-                "title": "25–30%",
-                "abstract": "",
-                "range": [25.0, 30.0],
-                "color": "#41ab5d",
-            },
-            {
-                "title": "30–40%",
-                "abstract": "",
-                "range": [30.0, 40.0],
-                "color": "#238443",
-            },
-            {
-                "title": "40–60%",
-                "abstract": "",
-                "range": [40.0, 60.0],
-                "color": "#006837",
-            },
-            {
-                "title": "60–100%",
-                "abstract": "",
-                "range": [60.0, 100.0],
-                "color": "#004529",
-            },
-        ]
-    },
+
+    "color_ramp": [
+        {"value": 0.0, "color": "#000000", "alpha": 1.0},
+        {"value": 10.0, "color": "#ffffcc"},
+        {"value": 15.0, "color": "#c2e699"},
+        {"value": 20.0, "color": "#a1d884"},  
+        {"value": 25.0, "color": "#78c679"},
+        {"value": 30.0, "color": "#41ab5d"},
+        {"value": 40.0, "color": "#238443"},
+        {"value": 60.0, "color": "#006837"},
+        {"value": 100.0, "color": "#004529"},
+    ],
+
     "legend": {
         "width": 2.5,
         "height": 1.0,
-        "ticks": False,
-        "tick_labels": True,
+        "ticks": [0, 10, 15, 20, 25, 30, 40, 60, 100],
+        
+"tick_labels": {
+        "0": {"label": "0%"},
+        "10": {"label": "10%"},
+        "15": {"label": "15%"},
+        "20": {"label": "20%"},
+        "25": {"label": "25%"},
+        "30": {"label": "30%"},
+        "40": {"label": "40%"},
+        "60": {"label": "60%"},
+        "100": {"label": "100%"},
+        },
         "units": "%",
     },
 }
