@@ -129,9 +129,15 @@ TODO""",
 }
 
 # Common bands as a dict, where they're in both ls5/7 and ls8/9 dicts
-bands_ls_common = bands_ls5_7_sr.copy()
-bands_ls_common.update(bands_ls8_9_sr)
-bands_ls_common = {k: v for k, v in bands_ls_common.items() if k in bands_ls5_7_sr and k in bands_ls8_9_sr}
+bands_ls_common = {
+    "blue": ["blue"],
+    "green": ["green"],
+    "red": ["red"],
+    "nir": ["nir"],
+    "swir_1": ["swir_1"],
+    "swir_2": ["swir_2"],
+    "pw": ["pq"],
+}
 
 # Get the styles from ls5/7 but drop style_lsc2_pq
 styles_ls_common = [style for style in styles_landsat_5_7 if style["name"] != "pixel_quality"]
