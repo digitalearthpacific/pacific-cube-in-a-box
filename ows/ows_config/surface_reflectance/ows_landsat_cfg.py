@@ -33,7 +33,7 @@ TODO
     "styling": {
         "default_style": "simple_rgb",
         "styles": styles_ls_geomad,
-    }
+    },
 }
 
 layer_ls5 = {
@@ -56,7 +56,7 @@ TODO""",
     "styling": {
         "default_style": "simple_rgb",
         "styles": styles_landsat_5_7,
-    }
+    },
 }
 
 layer_ls7 = {
@@ -79,7 +79,7 @@ TODO""",
     "styling": {
         "default_style": "simple_rgb",
         "styles": styles_landsat_5_7,
-    }
+    },
 }
 
 layer_ls8 = {
@@ -102,7 +102,7 @@ TODO""",
     "styling": {
         "default_style": "simple_rgb",
         "styles": styles_landsat_8_9,
-    }
+    },
 }
 
 layer_ls9 = {
@@ -125,5 +125,56 @@ TODO""",
     "styling": {
         "default_style": "simple_rgb",
         "styles": styles_landsat_8_9,
-    }
+    },
+}
+
+bands_ls_common = set(bands_ls5_7_sr) | set(bands_ls8_9_sr)
+styles_ls_common = {**styles_landsat_5_7, **styles_landsat_8_9}
+bands_ls_common = list(bands_ls_common)
+
+combined_layer = {
+    "title": "Surface Reflectance (Landsat)",
+    "name": "landsat-c2-l2-sr",
+    "abstract": """USGS Landsat Analysis Ready Data Collection 2 Level 2, Surface Reflectance (SR) products for Landsat 5, 7, 8 and 9.""",
+    "multi_product": True,
+    "product_names": [
+        "ls5_c2l2_sr",
+        "ls7_c2l2_sr",
+        "ls8_c2l2_sr",
+        "ls9_c2l2_sr",
+    ],
+    "bands": bands_ls_common,
+    "resource_limits": reslim_landsat,
+    "dynamic": True,
+    "native_crs": "EPSG:6933",
+    "native_resolution": [30, -30],
+    "image_processing": {
+        "extent_mask_func": "datacube_ows.ogc_utils.mask_by_val",
+        "always_fetch_bands": [],
+        "manual_merge": False,
+    },
+    "flags": [
+        {
+            "band": "pixel_qa",
+            "products": [
+                "ls5_c2l2_sr",
+                "ls7_c2l2_sr",
+                "ls8_c2l2_sr",
+                "ls9_c2l2_sr",
+            ],
+            "ignore_time": False,
+            "ignore_info_flags": [],
+        },
+        {
+            "band": "land",
+            "products": [
+                "geodata_coast_100k",
+                "geodata_coast_100k",
+                "geodata_coast_100k",
+            ],
+            "ignore_time": True,
+            "ignore_info_flags": [],
+        },
+    ],
+    "styling": {"default_style": "simple_rgb", "styles": styles_ls_common},
 }

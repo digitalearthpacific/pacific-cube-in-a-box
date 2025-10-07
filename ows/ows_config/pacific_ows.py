@@ -128,6 +128,10 @@ ows_cfg = {
                                     "include": "ows_config.surface_reflectance.ows_landsat_cfg.layer_ls9",
                                     "type": "python",
                                 },
+                                {
+                                    "include": "ows_config.surface_reflectance.ows_landsat_cfg.combined_layer",
+                                    "type": "python",
+                                },
                             ],
                         },
                         {
