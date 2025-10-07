@@ -136,7 +136,7 @@ bands_ls_common = {
     "nir": ["nir"],
     "swir_1": ["swir_1"],
     "swir_2": ["swir_2"],
-    "pw": ["pq"],
+    "pq": ["pq"],
 }
 
 # Get the styles from ls5/7 but drop style_lsc2_pq
