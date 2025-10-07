@@ -174,17 +174,7 @@ combined_layer = {
             ],
             "ignore_time": False,
             "ignore_info_flags": [],
-        },
-        {
-            "band": "land",
-            "products": [
-                "geodata_coast_100k",
-                "geodata_coast_100k",
-                "geodata_coast_100k",
-            ],
-            "ignore_time": True,
-            "ignore_info_flags": [],
-        },
+        }
     ],
     "styling": {"default_style": "simple_rgb", "styles": styles_ls_common},
 }
