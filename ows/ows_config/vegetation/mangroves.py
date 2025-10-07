@@ -101,6 +101,7 @@ style_mangroves_percent = {
         {"value": 40.0, "color": "#238443"},
         {"value": 60.0, "color": "#006837"},
         {"value": 100.0, "color": "#004529"},
+        {"value": 255, "color": "#000000", "alpha": 1.0},
     ],
 
     "legend": {
