@@ -156,7 +156,7 @@ combined_layer = {
     "bands": bands_ls_common,
     "resource_limits": reslim_landsat,
     "dynamic": True,
-    "native_crs": "EPSG:6933",
+    "native_crs": "EPSG:3832",
     "native_resolution": [30, -30],
     "image_processing": {
         "extent_mask_func": "datacube_ows.ogc_utils.mask_by_val",
