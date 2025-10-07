@@ -147,8 +147,8 @@ Todo...
     ],
     "wcs": {},
     "styling": {
-        "default_style": "style_mangroves",
-        "styles": [style_mangroves, style_mangroves_alt],
+        "default_style": "style_mangroves_percent",
+        "styles": [style_mangroves_percent],
     },
 }
 
