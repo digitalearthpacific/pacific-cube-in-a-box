@@ -165,7 +165,7 @@ combined_layer = {
     },
     "flags": [
         {
-            "band": "pixel_qa",
+            "band": "pq",
             "products": [
                 "ls5_c2l2_sr",
                 "ls7_c2l2_sr",
