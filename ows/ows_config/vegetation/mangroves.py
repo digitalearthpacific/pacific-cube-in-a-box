@@ -80,7 +80,7 @@ style_mangroves_alt = {
 
 style_mangroves_percent = {
     "name": "style_mangroves_percent",
-    "title": "Mangrove Distribution (%)",
+    "title": "Mangrove Distribution",
     "abstract": "Mangrove percentage distribution using custom classification ranges",
     "needed_bands": ["mangroves"],
     "index_function": {
@@ -103,23 +103,12 @@ style_mangroves_percent = {
         {"value": 100.0, "color": "#004529"},
         {"value": 255, "color": "#000000", "alpha": 1.0},
     ],
-
+    
     "legend": {
         "width": 2.5,
         "height": 1.0,
-        "ticks": [0, 25, 40, 60, 100],
-        
-"tick_labels": {
-        "0": {"label": "0%"},
-        "10": {"label": "10%"},
-        "15": {"label": "15%"},
-        "20": {"label": "20%"},
-        "25": {"label": "25%"},
-        "30": {"label": "30%"},
-        "40": {"label": "40%"},
-        "60": {"label": "60%"},
-        "100": {"label": "100%"},
-        },
+        "begin": 0,
+        "end":100,
         "units": "%",
     },
 }
