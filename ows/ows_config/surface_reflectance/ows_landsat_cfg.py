@@ -133,7 +133,7 @@ bands_ls_common = {
     "blue": ["blue"],
     "green": ["green"],
     "red": ["red"],
-    "nir": ["nir"],
+    "nir08": ["nir"],
     "swir_1": ["swir_1"],
     "swir_2": ["swir_2"],
     "pq": ["pq"],
