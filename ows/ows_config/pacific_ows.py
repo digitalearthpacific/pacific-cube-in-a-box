@@ -238,6 +238,16 @@ ows_cfg = {
                             ],
                         },
                         {
+                            "title": "Mangroves (AMMI)",
+                            "abstract": """Mangrove cover (AMMI)""",
+                            "layers": [
+                                {
+                                    "include": "ows_config.vegetation.mangroves.layer_ammi",
+                                    "type": "python",
+                                },
+                            ],
+                        },
+                        {
                             "title": "Seagrass",
                             "abstract": """Seagrass extent""",
                             "layers": [

@@ -136,8 +136,34 @@ Todo...
     ],
     "wcs": {},
     "styling": {
+        "default_style": "style_mangroves",
+        "styles": [style_mangroves, style_mangroves_alt],
+    },
+}
+
+
+layer_ammi = {
+    "title": "Mangroves (AMMI)",
+    "name": "dep_s2_ammi",
+    "abstract": """Mangrove distribution map derived from Sentinel-2 data using the Automated Mangrove Mapping Index (AMMI)
+""",
+    "product_name": "dep_s2_ammi",
+    "time_resolution": "summary",
+    "bands": {"mangroves": []},
+    "resource_limits": reslim_continental,
+    "image_processing": {
+        "extent_mask_func": "datacube_ows.ogc_utils.mask_by_val",
+        "always_fetch_bands": [],
+        "manual_merge": False,
+    },
+    "native_crs": "EPSG:3832",
+    "native_resolution": [
+        10,
+        -10,
+    ],
+    "wcs": {},
+    "styling": {
         "default_style": "style_mangroves_percent",
         "styles": [style_mangroves_percent],
     },
 }
-

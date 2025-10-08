@@ -1,0 +1,23 @@
+---
+name: dep_s2_ammi
+description: Sentinel-2 Mangroves (AMMI)
+metadata_type: eo3
+
+license: CC-BY-4.0
+
+metadata:
+  product:
+    name: dep_s2_ammi
+
+storage:
+  crs: EPSG:3832
+  resolution:
+    x: 10
+    y: -10
+
+measurements:
+- name: "mangroves"
+  aliases: [ MANGROVES ]
+  units: "1"
+  dtype: uint8
+  nodata: 255
