@@ -40,8 +40,8 @@ style_mangroves = {
 
 style_mangroves_alt = {
     "name": "style_mangroves_alt",
-    "title": "Mangrove Cover",
-    "abstract": "Mangrove Cover",
+    "title": "Mangrove Cover (Purple)",
+    "abstract": "Mangrove Cover in a lovely purple colour scheme",
     "needed_bands": ["mangroves"],
     "index_function": {
         "function": "datacube_ows.band_utils.single_band",
