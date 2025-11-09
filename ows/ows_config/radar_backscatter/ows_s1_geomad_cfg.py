@@ -164,7 +164,7 @@ style_bcmad_std = {
 
 
 layer = {
-    "title": "Sentinel-1 RTC Mosaic",
+    "title": "Annual GeoMAD (Sentinel-1)",
     "name": "dep_s1_geomad",
     "abstract": """
 todo...""",

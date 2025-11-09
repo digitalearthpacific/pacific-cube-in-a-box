@@ -134,16 +134,16 @@ ows_cfg = {
                                 },
                             ],
                         },
-                        {
-                            "title": "Radar Backscatter",
-                            "abstract": """Radar Backscatter""",
-                            "layers": [
-                                {
-                                    "include": "ows_config.radar_backscatter.ows_s1_geomad_cfg.layer",
-                                    "type": "python",
-                                },
-                            ],
-                        },
+                        # {
+                        #     "title": "Radar Backscatter",
+                        #     "abstract": """Radar Backscatter""",
+                        #     "layers": [
+                        #         {
+                        #             "include": "ows_config.radar_backscatter.ows_s1_geomad_cfg.layer",
+                        #             "type": "python",
+                        #         },
+                        #     ],
+                        # },
                         {
                             "title": "Annual Summary Products",
                             "abstract": """Annual Summary Products""",
@@ -154,6 +154,10 @@ ows_cfg = {
                                 # },
                                 {
                                     "include": "ows_config.surface_reflectance.ows_s2_cfg.dep_s2_geomad",
+                                    "type": "python",
+                                },
+                                {
+                                    "include": "ows_config.radar_backscatter.ows_s1_geomad_cfg.layer",
                                     "type": "python",
                                 },
                                 # {
