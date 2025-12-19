@@ -15,7 +15,6 @@ height = {
     "color_ramp": [
         {
             "value": 0,
-            "alpha": 0.0,
             "color": "black",
         },
         {
@@ -39,21 +38,21 @@ height = {
             "color": "#35b779",
         },
         {
-            "value": 18.0,
+            "value": 12.0,
             "color": "#90d743",
         },
         {
-            "value": 40.0,
+            "value": 20.0,
             "color": "#fde725",
         },
     ],
-    "range": [0, 40],
+    "range": [0, 20],
     "legend": {
         "begin": "0",
-        "end": "40",
-        "ticks_every": "8",
+        "end": "20",
+        "ticks_every": "4",
         "units": "m",
-        "tick_labels": {"40.0": {"label": "40+"}},
+        "tick_labels": {"20.0": {"label": "20+"}},
     },
 }
 
