@@ -21,3 +21,9 @@ measurements:
     dtype: float32
     nodata: .nan
     units: "1"
+
+  - name: confidence
+    aliases: ["CONFIDENCE", "conf"]
+    dtype: float32
+    nodata: .nan
+    units: "1"
