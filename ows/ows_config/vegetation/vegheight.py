@@ -80,11 +80,12 @@ confidence = {
         "begin": "0.0",
         "end": "1.0",
         "ticks_every": "0.2",
+        "title": "Normalized Average Nearby Observations",
         "units": "",
     },
 }
 
-layer_height = {
+layer = {
     "title": "Vegetation Height",
     "name": "dep_s2_vegheight",  # unique WMS layer name
     "abstract": "Todo...",
