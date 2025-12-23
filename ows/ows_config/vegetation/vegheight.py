@@ -86,8 +86,8 @@ confidence = {
 }
 
 layer = {
+    "name": "dep_s2_vegheight",
     "title": "Vegetation Height",
-    "name": "dep_s2_vegheight",  # unique WMS layer name
     "abstract": "Todo...",
     "product_name": "dep_s2_vegheight",
     "time_resolution": "summary",
@@ -100,7 +100,10 @@ layer = {
     "native_crs": "EPSG:3832",
     "native_resolution": [10, -10],
     "wcs": {},
-    "bands": {"height": []},
+    "bands": {
+        "height": [],
+        "confidence": [],
+    },
     "styling": {
         "default_style": "height",
         "styles": [height, confidence],
