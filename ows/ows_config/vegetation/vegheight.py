@@ -56,16 +56,41 @@ height = {
     },
 }
 
+confidence = {
+    "name": "confidence",
+    "title": "confidence",
+    "abstract": "Vegetation height confidence",
+    "needed_bands": ["confidence"],
+    "index_function": {
+        "function": "datacube_ows.band_utils.single_band",
+        "mapped_bands": True,
+        "kwargs": {"band": "confidence"},
+    },
+    # Grayscale: black (0) -> white (1)
+    "color_ramp": [
+        {"value": 0.0, "color": "#000000"},
+        {"value": 0.2, "color": "#333333"},
+        {"value": 0.4, "color": "#666666"},
+        {"value": 0.6, "color": "#999999"},
+        {"value": 0.8, "color": "#cccccc"},
+        {"value": 1.0, "color": "#ffffff"},
+    ],
+    "range": [0.0, 1.0],
+    "legend": {
+        "begin": "0.0",
+        "end": "1.0",
+        "ticks_every": "0.2",
+        "title": "Normalized Average Nearby Observations",
+        "units": "",
+    },
+}
 
 layer = {
-    "title": "Vegetation Height",
     "name": "dep_s2_vegheight",
-    "abstract": """
-Todo...
-""",
+    "title": "Vegetation Height",
+    "abstract": "Todo...",
     "product_name": "dep_s2_vegheight",
     "time_resolution": "summary",
-    "bands": {"height": [],},
     "resource_limits": reslim_continental,
     "image_processing": {
         "extent_mask_func": "datacube_ows.ogc_utils.mask_by_val",
@@ -73,13 +98,14 @@ Todo...
         "manual_merge": False,
     },
     "native_crs": "EPSG:3832",
-    "native_resolution": [
-        10,
-        -10,
-    ],
+    "native_resolution": [10, -10],
     "wcs": {},
+    "bands": {
+        "height": [],
+        "confidence": [],
+    },
     "styling": {
         "default_style": "height",
-        "styles": [height],
+        "styles": [height, confidence],
     },
 }
