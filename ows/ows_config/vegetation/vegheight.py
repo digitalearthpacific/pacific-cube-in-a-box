@@ -84,9 +84,9 @@ confidence = {
     },
 }
 
-# --- common layer settings to avoid repetition ---
-
-_common = {
+layer_height = {
+    "title": "Vegetation Height",
+    "name": "dep_s2_vegheight",  # unique WMS layer name
     "abstract": "Todo...",
     "product_name": "dep_s2_vegheight",
     "time_resolution": "summary",
@@ -99,26 +99,9 @@ _common = {
     "native_crs": "EPSG:3832",
     "native_resolution": [10, -10],
     "wcs": {},
-}
-
-layer_height = {
-    **_common,
-    "title": "Vegetation Height",
-    "name": "dep_s2_vegheight_height",  # unique WMS layer name
     "bands": {"height": []},
     "styling": {
         "default_style": "height",
-        "styles": [height],
-    },
-}
-
-layer_confidence = {
-    **_common,
-    "title": "Vegetation Height Confidence",
-    "name": "dep_s2_vegheight_confidence",  # unique WMS layer name
-    "bands": {"confidence": []},
-    "styling": {
-        "default_style": "confidence",
-        "styles": [confidence],
+        "styles": [height, confidence],
     },
 }
