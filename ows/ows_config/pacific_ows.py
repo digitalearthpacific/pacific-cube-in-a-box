@@ -148,10 +148,10 @@ ows_cfg = {
                             "title": "Annual Summary Products",
                             "abstract": """Annual Summary Products""",
                             "layers": [
-                                # {
-                                #     "include": "ows_config.surface_reflectance.ows_landsat_cfg.dep_ls_geomad",
-                                #     "type": "python",
-                                # },
+                                {
+                                    "include": "ows_config.surface_reflectance.ows_landsat_cfg.dep_ls_geomad",
+                                    "type": "python",
+                                },
                                 {
                                     "include": "ows_config.surface_reflectance.ows_s2_cfg.dep_s2_geomad",
                                     "type": "python",
@@ -160,10 +160,6 @@ ows_cfg = {
                                     "include": "ows_config.radar_backscatter.ows_s1_geomad_cfg.layer",
                                     "type": "python",
                                 },
-                                # {
-                                #     "include": "ows_config.radar_backscatter.ows_s1_mosaic_cfg.layer",
-                                #     "type": "python",
-                                # },
                             ],
                         },
                     ],

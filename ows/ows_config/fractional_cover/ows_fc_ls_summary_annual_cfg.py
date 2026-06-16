@@ -332,7 +332,7 @@ Each annual summary contains the 10th, 50th, and 90th percentiles estimated inde
 The fractional cover algorithm was developed by the Joint Remote Sensing Research Program. Before the percentile calculation, areas of water and cloud cover, as mapped in the Water Observations from Space (WOfS) Feature Layer, are excluded.
 """,
     "product_name": "dep_ls_fc_summary_annual",
-    "time_resolution": "year",
+    "time_resolution": "summary",
     "bands": bands_fc_percentile,
     "resource_limits": reslim_wms_min_zoom_15,
     "native_crs": "EPSG:3832",
