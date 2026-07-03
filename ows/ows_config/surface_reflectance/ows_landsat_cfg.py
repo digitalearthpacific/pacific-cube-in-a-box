@@ -11,7 +11,7 @@ from ows_config.surface_reflectance.style_sr_cfg import (
 )
 
 dep_ls_geomad = {
-    "title": "Annual GeoMAD (Landsat 8 & 9)",
+    "title": "Annual GeoMAD (Landsat)",
     "name": "dep_ls_geomad",
     "abstract": """
 TODO
