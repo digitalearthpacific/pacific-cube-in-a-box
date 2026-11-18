@@ -178,15 +178,16 @@ ows_cfg = {
                         },
                     ],
                 },
-                # {
-                #     "title": "Land Cover",
-                #     "abstract": """Land Cover""",
-                #     "layers": [
-                #         {
-                #             "include": "ows_config.land_cover.ows_landcover.dep_s2s1_mrd_layer",
-                #             "type": "python",
-                #         },
-                #     ],
+                {
+                    "title": "Land Cover",
+                    "abstract": """Land Cover""",
+                    "layers": [
+                        {
+                            "include": "ows_config.land_cover.ows_landcover.dep_s2s1_mrd_layer",
+                            "type": "python",
+                        },
+                    ],
+                },
                 {
                     "title": "Surface water",
                     "abstract": """Surface water as measured by the Water Observations from Space (WOfS) algorithm.""",

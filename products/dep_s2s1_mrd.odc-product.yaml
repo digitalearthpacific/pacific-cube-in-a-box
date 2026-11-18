@@ -19,14 +19,13 @@ measurements:
   - name: class
     aliases: ["classification"]
     units: "1"
-    dtype: int8
-    nodata: 0
+    dtype: uint8
+    nodata: 255
     flags_definition:
       class:
         bits: [0, 1, 2, 3, 4, 5, 6, 7]
         description: Class
         values:
-          0: nodata
           1: bare land
           2: forest
           3: crops
@@ -35,9 +34,10 @@ measurements:
           6: mangroves
           7: water
           8: quarry
+          255: nodata
 
   - name: proba
     aliases: ["probability"]
-    dtype: float32
-    nodata: .nan
     units: "1"
+    dtype: uint8
+    nodata: 255
