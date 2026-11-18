@@ -88,7 +88,7 @@ style_colours = {
             {
                 "title": "",
                 "abstract": "",
-                "values": [0],
+                "values": [255],
                 "alpha": 1.0,
                 "color": "#707070",
             },
@@ -162,7 +162,7 @@ style_mud_and_gravel = {
             {
                 "title": "",
                 "abstract": "",
-                "values": [0],
+                "values": [255],
                 "alpha": 0.0,
                 "color": "#707070",
             },
@@ -192,9 +192,7 @@ style_mud_and_gravel = {
 dep_s2s1_mrd_layer = {
     "title": "Mineral resource detection",
     "name": "dep_s2s1_mrd",
-    "abstract": """
-Todo...
-""",
+    "abstract": """Annual land cover for Fiji (10 m) to support Mineral Resource Detection; random forest on DEP Sentinel-2/Sentinel-1 geomedians and Copernicus DEM. class 1-8, proba = probability of the predicted class (0-100).""",
     "product_name": "dep_s2s1_mrd",
     "time_resolution": "summary",
     "bands": {"class": [], "proba": []},
